@@ -17,7 +17,7 @@ export const CategoryCard = () => {
                 <h1 className="text-3xl font-semibold">Categories</h1>
                 <h2 className="text-slate-500">Choose the category that matches your cycling expertise and endurance level</h2>
             </div>
-            <div className="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-8 py-4 px-12 ">
+            <div className="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-8 py-4 px-8 md:px-12 ">
 
                                     {/* Card 1 */}
             <Card className='bg-gray-800/50 text-white hover:scale-105 transform transition-transform duration-300 px-4'>
