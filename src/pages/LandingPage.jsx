@@ -15,6 +15,9 @@ import {
     DialogTitle,
     DialogTrigger,
 } from "@/components/ui/dialog"
+import EventDetails from "./EventDetails";
+import { CategoryCard } from "./CategoryCard";
+
 
 const LandingPage = () => {
     return (
@@ -113,7 +116,8 @@ const LandingPage = () => {
                         </SpotlightCard>
                     </div>
                 </div>
-
+                <EventDetails />
+                <CategoryCard />
             </body>
         </div>
     )
