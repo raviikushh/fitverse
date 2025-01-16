@@ -1,5 +1,5 @@
 import { Button } from "@/components/ui/button";
-import { Input } from "@/components/ui/input";
+import Navbar from "./Navbar";
 // import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigger } from "@/components/ui/dropdown-menu";
 import BlurText from "./BlurText";
 import ShinyText from "./ShinyText";
@@ -8,64 +8,17 @@ import { GrLocation } from "react-icons/gr";
 import { FaRunning } from "react-icons/fa";
 import { IoIosStarOutline } from "react-icons/io";
 import StarBorder from "./StarBorder";
-import { CiMenuBurger } from "react-icons/ci";
-import {
-    Dialog,
-    DialogContent,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog"
 import EventDetails from "./EventDetails";
 import { CategoryCard } from "./CategoryCard";
+import Contact from "./Contact";
+import Footer from "./Footer";
+import { HashLink } from "react-router-hash-link";
 
 
 const LandingPage = () => {
     return (
         <div>
-            <div className="mobile md:hidden flex justify-end p-4 bg-black/90">
-                
-                <Dialog>
-                    <DialogTrigger asChild>
-                        {/* <Button variant="outline">Edit Profile</Button> */}
-                        <CiMenuBurger className="text-3xl text-white " />
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[425px] bg-black text-orange-600 top-44 py-20 ">
-                        <DialogTitle className="text-2xl font-semibold text-center">Event Details</DialogTitle>
-                        <DialogTitle className="text-2xl font-semibold text-center">Register</DialogTitle>
-                        <DialogTitle className="text-2xl font-semibold text-center">About</DialogTitle>
-                        <DialogTitle className="text-2xl font-semibold text-center">Contact</DialogTitle>
-                    </DialogContent>
-                </Dialog>
-            </div>
-            <div className="nav hidden md:block">
-                <nav className="flex items-center justify-around bg-black/90 px-6 py-4 shadow-md ">
-                    {/* Left Section: Logo */}
-                    <div className="text-lg font-bold text-gray-200">
-                        <a href="#">Cyclothon</a>
-                    </div>
-                    {/* Center Section */}
-                    <div className="hidden md:block">
-                        <Input type="text" placeholder="Search events" className="w-64" />
-                    </div>
-                    {/* Right Section: Navigation Links */}
-                    <div className="flex space-x-6">
-                        <a href="#eventDetails" className="text-gray-100 text-lg hover:text-orange-600 font-semibold">
-                            Event Details
-                        </a>
-                        <a href="#register" className="text-gray-100 text-lg hover:text-orange-600 font-semibold">
-                            Register
-                        </a>
-                        <a href="#about" className="text-gray-100 text-lg hover:text-orange-600 font-semibold">
-                            About
-                        </a>
-                        <a href="#contact" className="text-gray-100 text-lg hover:text-orange-600 font-semibold">
-                            Contact
-                        </a>
-                    </div>
-                </nav>
-            </div>
-
-
+            <Navbar />
             <body>
                 <div className="hero py-12 grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:px-32 bg-gradient-to-r from-black/90 via-black/90 to-orange-900 text-white font-semibold ">
                     <div className="textarea">
@@ -86,7 +39,9 @@ const LandingPage = () => {
                                 color="white"
                                 speed="5s"
                             >
-                                Register Now
+                                <HashLink smooth to="/event#register" className="hover:text-black">
+                                    Register Now
+                                </HashLink>
                             </StarBorder>
                             <Button variant="outline" className='bg-black/90 font-semibold text-md hover:text-orange-600 hover:bg-black hover:border-orange-600 py-5'>Learn More</Button>
                         </div>
@@ -118,6 +73,8 @@ const LandingPage = () => {
                 </div>
                 <EventDetails />
                 <CategoryCard />
+                <Contact />
+                <Footer />
             </body>
         </div>
     )

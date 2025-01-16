@@ -5,9 +5,11 @@ import { IoIosStar } from "react-icons/io";
 
 const EventDetails = () => {
     return (
-        <div className="mt-16">
+        <>
+        <div className="" id="eventDetails">
+            <div className="mt-16" ></div>
             <div className="header flex justify-center items-center flex-col px-6 ">
-                <h1 className="text-3xl font-semibold">Event Details</h1>
+                <h1 className="text-3xl font-semibold" >Event Details</h1>
                 <h2 className="text-slate-600">Join us for an unforgettable cycling experience through the scenic routes of Jamshedpur</h2>
             </div>
             <div className="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 py-4 px-8 ">
@@ -53,6 +55,7 @@ const EventDetails = () => {
                 </SpotlightCard>
             </div>
         </div>
+        </>
     )
 }
 
