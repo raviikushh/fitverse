@@ -25,17 +25,17 @@ const Navbar = () => {
                         </HashLink>
                         </DialogTitle>
                         <DialogTitle className="text-2xl font-semibold text-center">
-                        <HashLink smooth to="/event#eventDetails">
+                        <HashLink smooth to="/event#register">
                             Register
                         </HashLink>
                         </DialogTitle>
                         <DialogTitle className="text-2xl font-semibold text-center">
-                        <HashLink smooth to="/event#eventDetails">
+                        <HashLink smooth to="/event#about">
                             About
                         </HashLink>
                         </DialogTitle>
                         <DialogTitle className="text-2xl font-semibold text-center">
-                        <HashLink smooth to="/event#eventDetails">
+                        <HashLink smooth to="/event#contact">
                            Contact
                         </HashLink>
                         </DialogTitle>
