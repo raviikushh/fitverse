@@ -22,7 +22,7 @@ const StarBorder = ({
             animationDuration: speed,
           }}
         ></div>
-        <div className="relative z-1 bg-gradient-to-r from-blue-800 to-blue-600 border border-blue-400  text-black text-center text-[14px] py-[10px] px-[20px] ">
+        <div className="relative z-1 bg-gradient-to-r from-blue-800 to-blue-600 border border-blue-400  text-white text-center text-[14px] py-[10px] px-[20px] ">
           {children}
         </div>
       </Component>
