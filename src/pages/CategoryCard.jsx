@@ -8,8 +8,10 @@ import {
 } from "@/components/ui/card";
 import { IoIosStar } from "react-icons/io";
 import { Button } from "@/components/ui/button";
+import { useNavigate } from "react-router-dom";
 
 export const CategoryCard = () => {
+    const navigate = useNavigate();
     return (
         <div className="mt-12 bg-green-100 text-green-900 py-12" id="register">
             <div className="header flex justify-center items-center flex-col px-6">
@@ -35,7 +37,7 @@ export const CategoryCard = () => {
                         ))}
                     </CardContent>
                     <CardFooter>
-                        <Button className="w-full bg-green-600 text-white hover:bg-green-800">
+                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={()=>{navigate("/register")}}>
                             Register
                         </Button>
                     </CardFooter>
@@ -57,7 +59,7 @@ export const CategoryCard = () => {
                         ))}
                     </CardContent>
                     <CardFooter>
-                        <Button className="w-full bg-green-600 text-white hover:bg-green-800">
+                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={()=>{navigate("/register")}}>
                             Register
                         </Button>
                     </CardFooter>
@@ -79,7 +81,7 @@ export const CategoryCard = () => {
                         ))}
                     </CardContent>
                     <CardFooter>
-                        <Button className="w-full bg-green-600 text-white hover:bg-green-800">
+                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={()=>{navigate("/register")}}>
                             Register
                         </Button>
                     </CardFooter>

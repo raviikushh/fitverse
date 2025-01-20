@@ -55,7 +55,7 @@ const LandingPage = () => {
                     </div>
                     <div className="cards mt-8 md:mt-0">
                         <SpotlightCard
-                            className="custom-spotlight-card cursor-pointer bg-green-700"
+                            className="custom-spotlight-card cursor-pointer bg-green-900/95"
                             spotlightColor="rgba(0, 255, 0, 0.2)"
                         >
                             <div className="location flex gap-2">
