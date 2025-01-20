@@ -18,7 +18,7 @@ const LandingPage = () => {
         <div>
             <Navbar />
             <body>
-                <div className="hero py-12 grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:px-32 bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400 text-white font-semibold">
+                <div className="hero py-12 grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:px-32 bg-gradient-to-r from-green-600 via-green-500 to-green-400 text-white font-semibold">
                     <div className="textarea">
                         <h1 className="text-6xl">Cyclothon 2025</h1>
                         <BlurText
@@ -26,28 +26,28 @@ const LandingPage = () => {
                             delay={170}
                             animateBy="words"
                             direction="top"
-                            className="text-6xl mb-8 font-semibold text-blue-100"
+                            className="text-6xl mb-8 font-semibold text-green-100"
                         />
                         <ShinyText
                             text="Join the most exciting cycling event of the year. Experience the thrill of cycling through scenic routes."
                             disabled={false}
-                            speed={5}
+                            speed={6}
                             className=""
                         />
-                        <div className="btn flex justify-center items-center mt-4 gap-6 ">
+                        <div className="btn flex justify-center items-center mt-4 gap-6">
                             <StarBorder
                                 as="button"
                                 className="custom-class"
                                 color="white"
                                 speed="5s"
                             >
-                                <HashLink smooth to="/event#register" className="hover:text-blue-300">
+                                <HashLink smooth to="/event#register" className="hover:text-green-300">
                                     Register Now
                                 </HashLink>
                             </StarBorder>
                             <Button
                                 variant="outline"
-                                className="bg-blue-800 font-semibold text-md hover:text-blue-400 hover:bg-blue-700 py-5"
+                                className="bg-green-800 font-semibold text-md hover:text-green-400 hover:bg-green-700 py-5"
                             >
                                 Learn More
                             </Button>
@@ -55,29 +55,29 @@ const LandingPage = () => {
                     </div>
                     <div className="cards mt-8 md:mt-0">
                         <SpotlightCard
-                            className="custom-spotlight-card cursor-pointerb bg-blue-800"
-                            spotlightColor="rgba(0, 229, 255, 0.2)"
+                            className="custom-spotlight-card cursor-pointer bg-green-700"
+                            spotlightColor="rgba(0, 255, 0, 0.2)"
                         >
                             <div className="location flex gap-2">
-                                <GrLocation className="text-2xl text-blue-300" />
+                                <GrLocation className="text-2xl text-green-300" />
                                 <h2>Jamshedpur</h2>
                             </div>
                             <div className="date flex gap-2 mt-2">
-                                <FaRunning className="text-2xl text-blue-500" />
-                                <h2>26 Jan, 2025</h2>
+                                <FaRunning className="text-2xl text-green-500" />
+                                <h2>08 feb, 2025</h2>
                             </div>
                             <div className="multiple flex gap-2 mt-2">
-                                <IoIosStarOutline className="text-2xl text-blue-400" />
+                                <IoIosStarOutline className="text-2xl text-green-400" />
                                 <h2>Multiple Categories Available</h2>
                             </div>
-                            <div className="registration bg-blue-700 text-white p-2 rounded-lg mt-2 text-lg">
+                            <div className="registration bg-green-600 text-white p-2 rounded-lg mt-2 text-lg">
                                 <h2>Early Bird Registration</h2>
-                                <h2 className="custom-class text-blue-200">₹ 999 onwards</h2>
+                                <h2 className="custom-class text-white">₹ 500 onwards</h2>
                                 <ShinyText
                                     text="Limited slots available"
                                     disabled={false}
                                     speed={5}
-                                    className="custom-class text-sm "
+                                    className="custom-class text-sm"
                                 />
                             </div>
                         </SpotlightCard>

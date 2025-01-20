@@ -12,7 +12,6 @@ import { HashLink } from "react-router-hash-link";
 import { Input } from "@/components/ui/input";
 import RollingGallery from "./RollingGallery";
 
-
 const MainPage = () => {
     const navigate = useNavigate();
 
@@ -30,77 +29,75 @@ const MainPage = () => {
         <div className="-mt-20 md:-mt-0">
             {/* Navbar */}
             <div className="sticky top-0 z-50 backdrop:blur">
-            {/* Mobile View */}
-            <div className="mobile md:hidden flex justify-between p-4 bg-blue-600">
-                <Dialog>
-                <div className="text-lg font-bold text-white">
-                        <a href="#">
-                            <img src={logo} alt="logo" className="h-14"/>
-                        </a>
-                    </div>
-                    <DialogTrigger asChild>
-                        <CiMenuBurger className="text-3xl text-white" />
-                    </DialogTrigger>
-                    <DialogContent className="sm:max-w-[425px] bg-white text-blue-600 top-44 py-20">
-                        <DialogTitle className="text-2xl font-semibold text-center">
-                            <HashLink smooth to="/" className="hover:text-blue-800">
+                {/* Mobile View */}
+                <div className="mobile md:hidden flex justify-between p-4 bg-green-600">
+                    <Dialog>
+                        <div className="text-lg font-bold text-white">
+                            <a href="#">
+                                <img src={logo} alt="logo" className="h-14" />
+                            </a>
+                        </div>
+                        <DialogTrigger asChild>
+                            <CiMenuBurger className="text-3xl text-white" />
+                        </DialogTrigger>
+                        <DialogContent className="sm:max-w-[425px] bg-white text-green-600 top-44 py-20">
+                            <DialogTitle className="text-2xl font-semibold text-center">
+                                <HashLink smooth to="/" className="hover:text-green-800">
+                                    About
+                                </HashLink>
+                            </DialogTitle>
+                            <DialogTitle className="text-2xl font-semibold text-center">
+                                <HashLink smooth to="/" className="hover:text-green-800">
+                                    Contact
+                                </HashLink>
+                            </DialogTitle>
+                        </DialogContent>
+                    </Dialog>
+                </div>
+
+                {/* Desktop View */}
+                <div className="nav hidden md:block">
+                    <nav className="flex items-center justify-around bg-green-600 py-4 shadow-md gap-48">
+                        {/* Left Section: Logo */}
+                        <div className="text-lg font-bold text-white">
+                            <a href="#">
+                                <img src={logo} alt="logo" className="h-14" />
+                            </a>
+                        </div>
+
+                        {/* Center Section */}
+                        <div className="hidden md:block">
+                            <Input
+                                type="text"
+                                placeholder="Search events"
+                                className="w-64 bg-white text-green-600 border border-green-300 placeholder-green-400"
+                            />
+                        </div>
+
+                        {/* Right Section: Navigation Links */}
+                        <div className="flex space-x-6">
+                            <HashLink
+                                smooth
+                                to=""
+                                className="text-white text-lg hover:text-green-200 font-semibold"
+                            >
                                 About
                             </HashLink>
-                        </DialogTitle>
-                        <DialogTitle className="text-2xl font-semibold text-center">
-                            <HashLink smooth to="/" className="hover:text-blue-800">
+                            <HashLink
+                                smooth
+                                to=""
+                                className="text-white text-lg hover:text-green-200 font-semibold"
+                            >
                                 Contact
                             </HashLink>
-                        </DialogTitle>
-                    </DialogContent>
-                </Dialog>
+                        </div>
+                    </nav>
+                </div>
             </div>
-
-            {/* Desktop View */}
-            <div className="nav hidden md:block">
-                <nav className="flex items-center justify-around bg-blue-600 py-4 shadow-md gap-48">
-                    {/* Left Section: Logo */}
-                    <div className="text-lg font-bold text-white">
-                        <a href="#">
-                            <img src={logo} alt="logo" className="h-14"/>
-                        </a>
-                    </div>
-
-                    {/* Center Section */}
-                    <div className="hidden md:block">
-                        <Input
-                            type="text"
-                            placeholder="Search events"
-                            className="w-64 bg-white text-blue-600 border border-blue-300 placeholder-blue-400"
-                        />
-                    </div>
-
-                    {/* Right Section: Navigation Links */}
-                    <div className="flex space-x-6">
-                        <HashLink
-                            smooth
-                            to=""
-                            className="text-white text-lg hover:text-blue-200 font-semibold"
-                        >
-                            About
-                        </HashLink>
-                        <HashLink
-                            smooth
-                            to=""
-                            className="text-white text-lg hover:text-blue-200 font-semibold"
-                        >
-                            Contact
-                        </HashLink>
-                    </div>
-                </nav>
-            </div>
-        </div>
-
-
 
             {/* Main Content */}
-            <main className=""> {/* Added pt-20 to offset the fixed navbar */}
-            <RollingGallery autoplay={true} pauseOnHover={true} />
+            <main className="">
+                <RollingGallery autoplay={true} pauseOnHover={true} />
                 <section className="mb-8">
                     <h2 className="text-xl font-semibold mb-6 text-center">Upcoming Event</h2>
                     <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto">
@@ -126,7 +123,7 @@ const MainPage = () => {
             </main>
 
             {/* Footer */}
-            <footer className="bg-gray-800 text-white text-center py-4 mt-auto">
+            <footer className="bg-green-800 text-white text-center py-4 mt-auto">
                 <p>© 2025 Active Forever. All rights reserved.</p>
             </footer>
         </div>
