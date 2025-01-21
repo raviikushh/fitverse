@@ -19,7 +19,7 @@ const MainPage = () => {
     const event = {
         id: 1,
         name: "Cyclothon 2025",
-        date: "March 15, 2025",
+        date: "Feb 08, 2025",
         location: "Jamshedpur",
         description: "Join us for an unforgettable cycling experience through scenic routes.",
         image: "https://media.istockphoto.com/id/1002107936/photo/cyclists-racing-on-country-roads.jpg?s=612x612&w=0&k=20&c=1Cax1BiTqgJgs_KjniF4JtFzA7wKHIckw-h25aHNfJI=", // Replace with actual image URL
@@ -108,6 +108,7 @@ const MainPage = () => {
                         />
                         <div className="p-6">
                             <h3 className="text-2xl font-semibold">{event.name}</h3>
+                            <p>Cycling for a cause</p>
                             <p className="text-gray-600 mt-2">{event.date}</p>
                             <p className="text-gray-600">{event.location}</p>
                             <p className="mt-4 text-gray-700">{event.description}</p>

@@ -24,12 +24,12 @@ export const CategoryCard = () => {
                 {/* Card 1 */}
                 <Card className="bg-white text-green-900 hover:scale-105 transform transition-transform duration-300 px-4 shadow-md">
                     <CardHeader>
-                        <CardTitle className="text-green-600 text-2xl">Elite - 21KM</CardTitle>
+                        <CardTitle className="text-green-600 text-2xl">21 Kilometer</CardTitle>
                         <CardTitle className="text-green-900 text-3xl">₹500</CardTitle>
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        {["Professional timing chip", "Premium cycling jersey", "Elite finisher medal", "Prize money eligibility"].map((item, idx) => (
+                        {["Professional timing chip", "Premium cycling jersey", "Elite finisher medal", "Certificate"].map((item, idx) => (
                             <div key={idx} className="c1 flex gap-2 items-center">
                                 <IoIosStar className="text-green-600 text-xl" />
                                 <h2 className="text-lg">{item}</h2>
@@ -46,12 +46,12 @@ export const CategoryCard = () => {
                 {/* Card 2 */}
                 <Card className="bg-white text-green-900 hover:scale-105 transform transition-transform duration-300 px-4 shadow-md">
                     <CardHeader>
-                        <CardTitle className="text-green-600 text-2xl">Amateur - 10KM</CardTitle>
+                        <CardTitle className="text-green-600 text-2xl">10 Kilometer</CardTitle>
                         <CardTitle className="text-green-900 text-3xl">₹500</CardTitle>
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        {["Professional timing chip", "Premium cycling jersey", "Elite finisher medal", "Prize money eligibility"].map((item, idx) => (
+                        {["Professional timing chip", "Premium cycling jersey", "Elite finisher medal", "Certificate"].map((item, idx) => (
                             <div key={idx} className="c1 flex gap-2 items-center">
                                 <IoIosStar className="text-green-600 text-xl" />
                                 <h2 className="text-lg">{item}</h2>
@@ -68,12 +68,12 @@ export const CategoryCard = () => {
                 {/* Card 3 */}
                 <Card className="bg-white text-green-900 hover:scale-105 transform transition-transform duration-300 px-4 shadow-md">
                     <CardHeader>
-                        <CardTitle className="text-green-600 text-2xl">Fun Ride - 5KM</CardTitle>
+                        <CardTitle className="text-green-600 text-2xl">5 Kilometer</CardTitle>
                         <CardTitle className="text-green-900 text-3xl">₹500</CardTitle>
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        {["Professional timing chip", "Premium cycling jersey", "Elite finisher medal", "Prize money eligibility"].map((item, idx) => (
+                        {["Professional timing chip", "Premium cycling jersey", "Elite finisher medal", "Certificate"].map((item, idx) => (
                             <div key={idx} className="c1 flex gap-2 items-center">
                                 <IoIosStar className="text-green-600 text-xl" />
                                 <h2 className="text-lg">{item}</h2>

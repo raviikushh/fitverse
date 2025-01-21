@@ -10,7 +10,8 @@ const EventDetails = () => {
             <div className="header flex justify-center items-center flex-col px-6">
                 <h1 className="text-3xl font-semibold text-green-900">Event Details</h1>
                 <h2 className="text-green-700">
-                    Join us for an unforgettable cycling experience through the scenic routes of Jamshedpur
+                    This event is being organised by Rotary, Jamshedpur Steel City
+                    Event co-ordinated by active forever,on the occasion of world cancer day.
                 </h2>
             </div>
             <div className="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 py-4 px-8">
@@ -21,10 +22,11 @@ const EventDetails = () => {
                         <h2 className="text-xl font-semibold text-green-900">Route Information</h2>
                     </div>
                     <div className="info flex flex-col gap-2 mt-2 px-8 text-lg text-green-800">
-                        <h2>Starting Point: India Gate</h2>
+                        <h2>Starting Point: Atmosphere Domuhani
+                        </h2>
                         <h2>Well-marked route</h2>
-                        <h2>Traffic-free zones</h2>
-                        <h2>Multiple aid stations</h2>
+                        <h2>through Marine drive</h2>
+                        {/* <h2>Multiple aid stations</h2> */}
                     </div>
                 </SpotlightCard>
 
@@ -35,10 +37,14 @@ const EventDetails = () => {
                         <h2 className="text-xl font-semibold text-green-900">Event Facilities</h2>
                     </div>
                     <div className="info flex flex-col gap-2 mt-2 px-8 text-lg text-green-800">
-                        <h2>On-site medical assistance</h2>
-                        <h2>Free parking at the venue</h2>
-                        <h2>Refreshment zones</h2>
-                        <h2>Professional photographers</h2>
+                        <h2>T shirt 
+                        </h2>
+                        <h2>certificate & Medals
+                        </h2>
+                        <h2>
+                            Refreshment
+                        </h2>
+                        <h2>Professional photographer  & Videography</h2>
                     </div>
                 </SpotlightCard>
 
@@ -50,8 +56,10 @@ const EventDetails = () => {
                     </div>
                     <div className="info flex flex-col gap-2 mt-2 px-8 text-lg text-green-800">
                         <h2>Event Date: 08th Feb 2025</h2>
-                        <h2>Reporting Time: 6:00 AM</h2>
-                        <h2>Bring your own helmet</h2>
+                        <h2>Reporting Time: 5:30 AM</h2>
+                        <h2>Flag Off: 6:00 AM</h2>
+                        <h2>Bring your own Helmet
+                        </h2>
                         <h2>Follow traffic rules</h2>
                     </div>
                 </SpotlightCard>

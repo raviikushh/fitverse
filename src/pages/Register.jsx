@@ -19,7 +19,7 @@ const Register = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         const formData = new FormData(event.target);
-        formData.append("access_key", "5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c");
+        formData.append("access_key", "c0def3d7-e05c-43ad-a34b-d0dddfe618b2");
 
         const saveFormSubmission = async () => {
             const response = await fetch("https://api.web3forms.com/submit", {
@@ -95,9 +95,9 @@ const Register = () => {
                         onChange={(e) => setRace(e.target.value)}
                         className="w-full border border-green-300 rounded-md p-2"
                     >
-                        <option value="21KM ₹500">Elite - 21KM ₹500</option>
-                        <option value="10KM ₹500">Amateur - 10KM ₹500</option>
-                        <option value="5KM ₹500">Fun Ride - 5KM ₹500</option>
+                        <option value="21KM ₹500">21KM ₹500</option>
+                        <option value="10KM ₹500">10KM ₹500</option>
+                        <option value="5KM ₹500">5KM ₹500</option>
                     </select>
                 </div>
 
