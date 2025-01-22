@@ -41,19 +41,22 @@ const Register = () => {
     const amount = fee*100;
     const currency = "INR";
 
-        const response = await fetch("https://cyclothon.onrender.com/order",
-            {
-                method: "POST",
-                body: JSON.stringify({
-                    amount,
-                    currency
-                }),
-            headers:{
-                "Content-Type" : "application/json",
-            }    
-            }
+        // Show loading toast
+        const loadingToastId = toast.loading("Processing payment...");
 
-        )
+        const response = await fetch("https://cyclothon.onrender.com/order", {
+            method: "POST",
+            body: JSON.stringify({
+            amount,
+            currency
+            }),
+            headers: {
+            "Content-Type": "application/json",
+            }
+        });
+
+        // Dismiss loading toast
+        toast.dismiss(loadingToastId);
         const order = await response.json();
         // console.log(order);
         const formData = new FormData(event.target);
@@ -87,7 +90,7 @@ const Register = () => {
                 if (jsonRes.msg == 'success') {
                     // Add Payment ID to formData for Web3Forms submission
                     formData.append("Payment_Id", response.razorpay_payment_id);
-                    formData.append("access_key", "c0def3d7-e05c-43ad-a34b-d0dddfe618b2");   //c0def3d7-e05c-43ad-a34b-d0dddfe618b2
+                    formData.append("access_key", "5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c");   //c0def3d7-e05c-43ad-a34b-d0dddfe618b2
                                                         //5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c  -- my testing
                     try {
                         const web3Response = await fetch("https://api.web3forms.com/submit", {
@@ -96,7 +99,7 @@ const Register = () => {
                         });
 
                         const web3Data = await web3Response.json();
-
+                        
                         if (web3Data.success) {
                             toast.success("Registration successful! Email sent.");
                             event.target.reset(); // Clear form on success
