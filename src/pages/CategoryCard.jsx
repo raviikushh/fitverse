@@ -26,7 +26,7 @@ export const CategoryCard = () => {
                     <CardHeader>
                         <CardTitle className="text-green-600 text-2xl">21 Kilometer</CardTitle>
                         <CardTitle className="text-green-900 text-3xl">₹500</CardTitle>
-                        <h2>₹250 for students upto 12th</h2>
+                        <h2 className="text-red-600">₹250 for students upto 12th</h2>
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -38,7 +38,7 @@ export const CategoryCard = () => {
                         ))}
                     </CardContent>
                     <CardFooter>
-                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={()=>{navigate("/register")}}>
+                        <Button className="w-full bg-green-600 text-white hover:bg-green-800"  onClick={() => navigate("/register", { state: { category: "21KM ₹500" } })}>
                             Register
                         </Button>
                     </CardFooter>
@@ -49,7 +49,7 @@ export const CategoryCard = () => {
                     <CardHeader>
                         <CardTitle className="text-green-600 text-2xl">10 Kilometer</CardTitle>
                         <CardTitle className="text-green-900 text-3xl">₹500</CardTitle>
-                        <h2>₹250 for students upto 12th</h2>
+                        <h2 className="text-red-600">₹250 for students upto 12th</h2>
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -61,7 +61,7 @@ export const CategoryCard = () => {
                         ))}
                     </CardContent>
                     <CardFooter>
-                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={()=>{navigate("/register")}}>
+                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={() => navigate("/register", { state: { category: "10KM ₹500" } })}>
                             Register
                         </Button>
                     </CardFooter>
@@ -72,7 +72,7 @@ export const CategoryCard = () => {
                     <CardHeader>
                         <CardTitle className="text-green-600 text-2xl">5 Kilometer</CardTitle>
                         <CardTitle className="text-green-900 text-3xl">₹500</CardTitle>
-                        <h2>₹250 for students upto 12th</h2>
+                        <h2 className="text-red-600">₹250 for students upto 12th</h2>
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -84,7 +84,7 @@ export const CategoryCard = () => {
                         ))}
                     </CardContent>
                     <CardFooter>
-                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={()=>{navigate("/register")}}>
+                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={() => navigate("/register", { state: { category: "5KM ₹500" } })}>
                             Register
                         </Button>
                     </CardFooter>

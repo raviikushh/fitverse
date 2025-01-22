@@ -20,7 +20,7 @@ const LandingPage = () => {
             <body>
                 <div className="hero py-12 grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:px-32 bg-gradient-to-r from-green-600 via-green-500 to-green-400 text-white font-semibold">
                     <div className="textarea">
-                        <h1 className="text-6xl">Cyclothon 2025</h1>
+                        <h1 className="text-6xl">Cyclathon 2025</h1>
                         <BlurText
                             text="Challenge Your Limits!"
                             delay={170}
@@ -32,7 +32,7 @@ const LandingPage = () => {
                             text="Join the most exciting cycling event of the year. Experience the thrill of cycling through scenic routes."
                             disabled={false}
                             speed={6}
-                            className=""
+                            className="text-white"
                         />
                         <div className="btn flex justify-center items-center mt-4 gap-6">
                             <StarBorder
@@ -55,8 +55,8 @@ const LandingPage = () => {
                     </div>
                     <div className="cards mt-8 md:mt-0">
                         <SpotlightCard
-                            className="custom-spotlight-card cursor-pointer bg-green-900/95"
-                            spotlightColor="rgba(0, 255, 0, 0.2)"
+                            className="custom-spotlight-card cursor-pointer bg-black"
+                            spotlightColor="cyan"
                         >
                             <div className="location flex gap-2">
                                 <GrLocation className="text-2xl text-green-300" />
