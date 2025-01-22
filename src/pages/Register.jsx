@@ -68,7 +68,7 @@ const Register = () => {
         // console.log(order);
         const formData = new FormData(event.target);
         var options = {
-            "key": "rzp_test_Z35QzKUpQhqmkf", // Enter the Key ID generated from the Dashboard
+            "key": "rzp_live_B9n1PDzQiKCbp1", // Enter the Key ID generated from the Dashboard
             amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
             currency,
             "name": "Active Forever", //your business name
