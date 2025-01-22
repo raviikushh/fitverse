@@ -11,6 +11,7 @@ import {
 import { HashLink } from "react-router-hash-link";
 import { Input } from "@/components/ui/input";
 import RollingGallery from "./RollingGallery";
+import event_img from '../assets/event_img.jpg'
 
 const MainPage = () => {
     const navigate = useNavigate();
@@ -22,7 +23,7 @@ const MainPage = () => {
         date: "Feb 08, 2025",
         location: "Jamshedpur",
         description: "Join us for an unforgettable cycling experience through scenic routes.",
-        image: "https://media.istockphoto.com/id/1002107936/photo/cyclists-racing-on-country-roads.jpg?s=612x612&w=0&k=20&c=1Cax1BiTqgJgs_KjniF4JtFzA7wKHIckw-h25aHNfJI=", // Replace with actual image URL
+        image: event_img, // Replace with actual image URL
     };
 
     return (
@@ -107,11 +108,11 @@ const MainPage = () => {
                 <RollingGallery autoplay={true} pauseOnHover={true} />
                 <section className="mb-8 ">
                     <h2 className="text-xl font-semibold mb-6 text-center">Upcoming Event</h2>
-                    <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all">
+                    <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all" onClick={() => navigate(`/event`)}>
                         <img
                             src={event.image}
                             alt={event.name}
-                            className="w-full h-64 object-cover"
+                            className="w-full h-[500px] object-fit"
                         />
                         <div className="p-6">
                             <h3 className="text-2xl font-semibold">{event.name}</h3>
@@ -132,8 +133,9 @@ const MainPage = () => {
             </main>
 
             {/* Footer */}
-            <footer className="bg-green-800 text-white text-center py-4 mt-auto">
+            <footer className="bg-green-800 text-white flex justify-between py-4 px-1 md:px-6 mt-auto">
                 <p>© 2025 Active Forever. All rights reserved.</p>
+                <p>Built by <a href="https://ravi07.vercel.app/" className="underline text-blue-300">Ravi</a></p>
             </footer>
         </div>
     );
