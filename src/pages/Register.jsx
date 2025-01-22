@@ -39,7 +39,7 @@ const Register = () => {
     const amount = fee*100;
     const currency = "INR";
 
-        const response = await fetch("http://localhost:5000/order",
+        const response = await fetch("http://127.0.0.1:8787/orders",
             {
                 method: "POST",
                 body: JSON.stringify({
@@ -71,7 +71,7 @@ const Register = () => {
                 // formData.Payment_Id = response.razorpay_payment_id;
                 // formData.append("Payment_Id", paymentId);
 
-                const validateRes = await fetch("http://localhost:5000/order/validate", {
+                const validateRes = await fetch("http://127.0.0.1:8787/orders/validate", {
                     method: "POST",
                     body: JSON.stringify(response),
                     headers: {
