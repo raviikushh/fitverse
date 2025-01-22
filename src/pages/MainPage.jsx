@@ -18,7 +18,7 @@ const MainPage = () => {
     // Event details
     const event = {
         id: 1,
-        name: "Cyclothon 2025",
+        name: "Cyclathon 2025",
         date: "Feb 08, 2025",
         location: "Jamshedpur",
         description: "Join us for an unforgettable cycling experience through scenic routes.",
@@ -26,7 +26,7 @@ const MainPage = () => {
     };
 
     return (
-        <div className="-mt-20 md:-mt-0">
+        <div className="bg-green-100 md:-mt-0">
             {/* Navbar */}
             <div className="sticky top-0 z-50 backdrop:blur">
                 {/* Mobile View */}
@@ -96,11 +96,18 @@ const MainPage = () => {
             </div>
 
             {/* Main Content */}
-            <main className="">
+            <main className="bg-green-100 ">
+                <h1 className="text-center font-extrabold text-5xl md:text-6xl text-green-700 leading-tight tracking-wide mb-4">
+                    ActiveForever: <span className="text-green-500">Inspiring Fitness, Empowering Lives</span>.
+                </h1>
+                <p className="text-center text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                    Join us for transformative activities, events, and programs designed to keep you moving and thriving!
+                </p>
+
                 <RollingGallery autoplay={true} pauseOnHover={true} />
-                <section className="mb-8">
+                <section className="mb-8 ">
                     <h2 className="text-xl font-semibold mb-6 text-center">Upcoming Event</h2>
-                    <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto">
+                    <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all">
                         <img
                             src={event.image}
                             alt={event.name}
@@ -110,8 +117,9 @@ const MainPage = () => {
                             <h3 className="text-2xl font-semibold">{event.name}</h3>
                             <p>Cycling for a cause</p>
                             <p className="text-gray-600 mt-2">{event.date}</p>
-                            <p className="text-gray-600">{event.location}</p>
+                            <p className="text-gray-600 font-semibold">{event.location}</p>
                             <p className="mt-4 text-gray-700">{event.description}</p>
+                            <p className="text-green-600 font-semibold">This Event is Being Organised by Rotary, Jamshedpur Steel City and co-ordinated by Active Forever,on the occasion of World Cancer Day.</p>
                             <Button
                                 className="mt-6 bg-green-500 hover:bg-green-600 w-full"
                                 onClick={() => navigate(`/event`)}

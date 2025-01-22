@@ -6,18 +6,19 @@ import {
   useAnimation,
   useTransform,
 } from "framer-motion";
+import img1 from '../assets/img1.jpg'
+import img2 from '../assets/img2.jpg'
+import img3 from '../assets/img3.jpg'
+import img4 from '../assets/img4.jpg'
+import img5 from '../assets/img5.jpg'
+import img_medal from '../assets/img_medal.jpg'
+import img_last from '../assets/img_last.jpg'
 
 const RollingGallery = ({
   autoplay = false,
   pauseOnHover = false,
   images = [
-    "https://media.istockphoto.com/id/1002107936/photo/cyclists-racing-on-country-roads.jpg?s=612x612&w=0&k=20&c=1Cax1BiTqgJgs_KjniF4JtFzA7wKHIckw-h25aHNfJI=",
-    "https://media.istockphoto.com/id/477445662/photo/professional-road-cyclist.jpg?s=612x612&w=0&k=20&c=eFMux1Cr6h0UE5EOgl_XTzwO52ha9hisg0YPDES-Z2A=",
-    "https://media.istockphoto.com/id/1151375292/photo/handsome-young-man-cycling-on-the-road.jpg?s=612x612&w=0&k=20&c=aSDw0UO13kzdQF5THsqJTxXbFivHIxLthNQvot_fACA=",
-    "https://media.istockphoto.com/id/1176169958/photo/group-of-cyclist-at-professional-race.jpg?s=612x612&w=0&k=20&c=MUf_tAKY37CmEhtscLNC12UOctWKGXVrFaIS1s3Y2LE=",
-    "https://media.istockphoto.com/id/1450332453/photo/fitness-high-five-and-friends-cycling-on-the-road-for-cardio-exercise-sports-training-and.jpg?s=612x612&w=0&k=20&c=WTxrRs0CKqAY80wbzriZI7QNErzkuoJa0udUduvvC9Y=",
-    "https://media.istockphoto.com/id/497894977/photo/cyclist-sprinting.jpg?s=612x612&w=0&k=20&c=lejkpZmCNS84naQDWIw1Dzj2UElg7ZaQL8Kq2uEzvgw=",
-    "https://media.istockphoto.com/id/1470412192/photo/asian-chinese-professional-cyclist-athlete-sportsman-sprinting-cycling-in-rural-area.jpg?s=612x612&w=0&k=20&c=gkbr4ZHhcxctx88jtvUH0J5aT2qhFTdsra2DzTm6RWE=",
+   img1,img2,img3,img4,img5,img_medal,img_last
   ],
 }) => {
   const [isScreenSizeSm, setIsScreenSizeSm] = useState(

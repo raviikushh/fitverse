@@ -45,7 +45,7 @@ const Register = () => {
 
 
         //   Razorpay
-        const amount = 1 * 100;
+        const amount = fee * 100;
         const currency = "INR";
 
         // Show loading toast
@@ -97,7 +97,7 @@ const Register = () => {
                 if (jsonRes.msg == 'success') {
                     // Add Payment ID to formData for Web3Forms submission
                     formData.append("Payment_Id", response.razorpay_payment_id);
-                    formData.append("access_key", "5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c");   //c0def3d7-e05c-43ad-a34b-d0dddfe618b2
+                    formData.append("access_key", "c0def3d7-e05c-43ad-a34b-d0dddfe618b2");   //c0def3d7-e05c-43ad-a34b-d0dddfe618b2
                                                         //5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c  -- my testing
                     try {
                         const web3Response = await fetch("https://api.web3forms.com/submit", {
