@@ -107,7 +107,7 @@ const MainPage = () => {
 
                 <RollingGallery autoplay={true} pauseOnHover={true} />
                 <section className="mb-8 ">
-                    <h2 className="text-xl font-semibold mb-6 text-center">Upcoming Event</h2>
+                    <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Upcoming Event</h2>
                     <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all" onClick={() => navigate(`/event`)}>
                         <img
                             src={event.image}
