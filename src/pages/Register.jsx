@@ -7,45 +7,7 @@ const Register = () => {
     const [category, setCategory] = useState("others");
     const [race, setRace] = useState("Elite");
     const [fee, setFee] = useState(500);
-
-    const handleCategoryChange = (e) => {
-        const selectedCategory = e.target.value;
-        setCategory(selectedCategory);
-        setFee(selectedCategory === "student" ? 250 : 500);
-    };
-
-
-    // WEB 3 forms
-    const onSubmit = async (event) => {
-        event.preventDefault();
-        const formData = new FormData(event.target);
-        formData.append("access_key", "c0def3d7-e05c-43ad-a34b-d0dddfe618b2");
-
-        const saveFormSubmission = async () => {
-            const response = await fetch("https://api.web3forms.com/submit", {
-                method: "POST",
-                body: formData,
-            });
-            const data = await response.json();
-            if (!data.success) {
-                throw new Error("Form submission failed");
-            }
-            return data;
-        };
-
-        toast.promise(
-            saveFormSubmission(),
-            {
-                loading: "Submitting...",
-                success: <b>Submitted successfully!</b>,
-                error: <b>Submission failed. Please try again.</b>,
-            }
-        ).then(() => {
-            setFormData({ name: "", email: "", message: "", phone: "" })
-            event.target.reset(); // Clear the form after success
-        });
-    };
-
+    // const [paymentId, setPaymentId] = useState();
     const [formData, setFormData] = useState({
         Race_category: { race },
         name: "",
@@ -57,8 +19,154 @@ const Register = () => {
         Emergency_contact: "",
         Blood_Group: "",
         T_shirt_size: "",
-        fees: {fee}
+        fees: {fee},
+        Payment_Id: ""
     });
+
+    const handleCategoryChange = (e) => {
+        const selectedCategory = e.target.value;
+        setCategory(selectedCategory);
+        setFee(selectedCategory === "student" ? 250 : 500);
+    };
+
+    // console.log(formData.name);
+    
+    const onSubmit = async (event) => {
+        event.preventDefault();
+
+
+           //   Razorpay
+    const amount = fee*100;
+    const currency = "INR";
+
+        const response = await fetch("http://localhost:5000/order",
+            {
+                method: "POST",
+                body: JSON.stringify({
+                    amount,
+                    currency
+                }),
+            headers:{
+                "Content-Type" : "application/json",
+            }    
+            }
+
+        )
+        const order = await response.json();
+        console.log(order);
+        const formData = new FormData(event.target);
+        var options = {
+            "key": "rzp_test_Z35QzKUpQhqmkf", // Enter the Key ID generated from the Dashboard
+            amount, // Amount is in currency subunits. Default currency is INR. Hence, 50000 refers to 50000 paise
+            currency,
+            "name": "Active Forever", //your business name
+            "image": "https://example.com/your_logo",
+            "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
+            "handler": async function (response){
+                console.log(response.razorpay_payment_id);
+                console.log(response.razorpay_order_id);
+                console.log(response.razorpay_signature);
+                // setPaymentId(response.razorpay_payment_id);
+
+                // formData.Payment_Id = response.razorpay_payment_id;
+                // formData.append("Payment_Id", paymentId);
+
+                const validateRes = await fetch("http://localhost:5000/order/validate", {
+                    method: "POST",
+                    body: JSON.stringify(response),
+                    headers: {
+                        "Content-Type": "application/json",
+                    },
+                });
+
+                const jsonRes = await validateRes.json();
+                console.log(jsonRes);
+
+                if (jsonRes.msg == 'success') {
+                    // Add Payment ID to formData for Web3Forms submission
+                    formData.append("Payment_Id", response.razorpay_payment_id);
+                    formData.append("access_key", "5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c");
+
+                    try {
+                        const web3Response = await fetch("https://api.web3forms.com/submit", {
+                            method: "POST",
+                            body: formData,
+                        });
+
+                        const web3Data = await web3Response.json();
+
+                        if (web3Data.success) {
+                            toast.success("Registration successful! Email sent.");
+                            event.target.reset(); // Clear form on success
+                        } else {
+                            toast.error("Email submission failed. Please try again.");
+                        }
+                    } catch (error) {
+                        toast.error("An error occurred during submission.");
+                    }
+                } else {
+                    toast.error("Payment validation failed. Please try again.");
+                }
+
+
+            console.log(formData.get("name"));
+            },
+            "prefill": { //We recommend using the prefill parameter to auto-fill customer's contact information, especially their phone number
+                "name": formData.get("name"), //your customer's name
+                "email": formData.get("email"), 
+                "contact": formData.get("phone")  //Provide the customer's phone number for better conversion rates 
+            },
+            "notes": {
+                "address": formData.get("address")
+            },
+            "theme": {
+                "color": "#3399cc"
+            }
+        };
+        var rzp1 = new window.Razorpay(options);
+        rzp1.on('payment.failed', function (response){
+                alert(response.error.code);
+                alert(response.error.description);
+                alert(response.error.source);
+                alert(response.error.step);
+                alert(response.error.reason);
+                alert(response.error.metadata.order_id);
+                alert(response.error.metadata.payment_id);
+        });
+        rzp1.open();
+        event.preventDefault();
+
+            // WEB 3 froms..............................................................................................................................................
+
+        // const formData = new FormData(event.target);
+        // formData.append("access_key", "5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c");
+
+        // const saveFormSubmission = async () => {
+        //     const response = await fetch("https://api.web3forms.com/submit", {
+        //         method: "POST",
+        //         body: formData,
+        //     });
+        //     const data = await response.json();
+        //     if (!data.success) {
+        //         throw new Error("Form submission failed");
+        //     }
+        //     return data;
+        // };
+
+        // toast.promise(
+        //     saveFormSubmission(),
+        //     {
+        //         loading: "Submitting...",
+        //         success: <b>Submitted successfully!</b>,
+        //         error: <b>Submission failed. Please try again.</b>,
+        //     }
+        // ).then(() => {
+        //     setFormData({ name: "", email: "", message: "", phone: "" })
+        //     event.target.reset(); // Clear the form after success
+        // });
+    };
+
+
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -67,7 +175,6 @@ const Register = () => {
             [name]: value,
         });
     };
-
 
 
 
@@ -286,6 +393,7 @@ const Register = () => {
                 <button
                     type="submit"
                     className="w-full bg-gradient-to-r from-green-600 to-green-500 text-white py-2 px-4 rounded-md shadow-sm hover:from-green-700 hover:to-green-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-400"
+                //    onClick={paymentHandler}
                 >
                     Register
                 </button>
