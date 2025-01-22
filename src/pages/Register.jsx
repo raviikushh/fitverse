@@ -292,11 +292,11 @@ const Register = () => {
                                 setAddress(e.target.value);
                             }}
                         >
+                            <option value="Bistupur">Bistupur</option>
                             <option value="Kadma">Kadma</option>
                             <option value="Sakchi">Sakchi</option>
                             <option value="Sonari">Sonari</option>
                             <option value="Telco">Telco</option>
-                            <option value="Bistupur">Bistupur</option>
                             <option value="Others">Others</option>
                         </select>
                     </div>
@@ -332,7 +332,7 @@ const Register = () => {
                             onChange={handleCategoryChange}
                             className="w-full border border-green-300 rounded-md p-2"
                         >
-                            <option value="student">Select category</option>
+                            <option value="select">Select category</option>
                             <option value="student">Student (₹250)</option>
                             <option value="others">Others (₹500)</option>
                         </select>
