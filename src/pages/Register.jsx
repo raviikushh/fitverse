@@ -7,6 +7,8 @@ const Register = () => {
     const [category, setCategory] = useState("others");
     const [race, setRace] = useState("Elite");
     const [fee, setFee] = useState(500);
+    const [address, setAddress] = useState('');
+
     // const [paymentId, setPaymentId] = useState();
     const [formData, setFormData] = useState({
         Race_category: { race },
@@ -14,7 +16,7 @@ const Register = () => {
         email: "",
         age: "",
         phone: "",
-        address: "",
+        address: {address},
         category: { category },
         Emergency_contact: "",
         Blood_Group: "",
@@ -53,7 +55,7 @@ const Register = () => {
 
         )
         const order = await response.json();
-        console.log(order);
+        // console.log(order);
         const formData = new FormData(event.target);
         var options = {
             "key": "rzp_test_Z35QzKUpQhqmkf", // Enter the Key ID generated from the Dashboard
@@ -80,13 +82,13 @@ const Register = () => {
                 });
 
                 const jsonRes = await validateRes.json();
-                console.log(jsonRes);
+                // console.log(jsonRes);
 
                 if (jsonRes.msg == 'success') {
                     // Add Payment ID to formData for Web3Forms submission
                     formData.append("Payment_Id", response.razorpay_payment_id);
-                    formData.append("access_key", "5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c");
-
+                    formData.append("access_key", "c0def3d7-e05c-43ad-a34b-d0dddfe618b2");   //c0def3d7-e05c-43ad-a34b-d0dddfe618b2
+                                                        //5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c  -- my testing
                     try {
                         const web3Response = await fetch("https://api.web3forms.com/submit", {
                             method: "POST",
@@ -166,6 +168,7 @@ const Register = () => {
         // });
     };
 
+    // console.log(address)
 
 
     const handleChange = (e) => {
@@ -272,7 +275,12 @@ const Register = () => {
                     <label className="block text-green-700 font-medium mb-2">Address:</label>
                     <select
                         className="w-full border border-green-300 rounded-md p-2"
-                        onChange={(e) => setIsOtherAddress(e.target.value === "Others")}
+                        value = {address}
+                        name="address"
+                        onChange={(e) => {
+                            setIsOtherAddress(e.target.value === "Others");
+                            setAddress(e.target.value);
+                        }}
                     >
                         <option value="Kadma">Kadma</option>
                         <option value="Sakchi">Sakchi</option>
@@ -290,10 +298,11 @@ const Register = () => {
                         <input
                             id="address"
                             name="address"
-                            value={formData.address}
-                            onChange={handleChange}
+                            // value={address}
+                            onChange={(e)=> {setAddress(e.target.value)}}
                             type="text"
                             required
+                            placeholder="Enter short address"
                             className="w-full border border-green-300 rounded-md p-2"
                         />
                     </div>
