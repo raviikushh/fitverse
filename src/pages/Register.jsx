@@ -314,8 +314,10 @@ const Register = () => {
                 {/* Category */}
                 <div className="mb-4">
                     <label className="block text-green-700 font-medium mb-2">
-                        Category:
+                        Category:  <span className="text-sm text-red-600">*Student - upto 12th only</span>
                     </label>
+                   
+                    <p className="text-sm text-red-600">*Any misinformation will lead to disqualification</p>
                     <select
                         id="category"
                         name="category"

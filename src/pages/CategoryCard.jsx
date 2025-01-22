@@ -26,6 +26,7 @@ export const CategoryCard = () => {
                     <CardHeader>
                         <CardTitle className="text-green-600 text-2xl">21 Kilometer</CardTitle>
                         <CardTitle className="text-green-900 text-3xl">₹500</CardTitle>
+                        <h2>₹250 for students upto 12th</h2>
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -48,6 +49,7 @@ export const CategoryCard = () => {
                     <CardHeader>
                         <CardTitle className="text-green-600 text-2xl">10 Kilometer</CardTitle>
                         <CardTitle className="text-green-900 text-3xl">₹500</CardTitle>
+                        <h2>₹250 for students upto 12th</h2>
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
@@ -70,6 +72,7 @@ export const CategoryCard = () => {
                     <CardHeader>
                         <CardTitle className="text-green-600 text-2xl">5 Kilometer</CardTitle>
                         <CardTitle className="text-green-900 text-3xl">₹500</CardTitle>
+                        <h2>₹250 for students upto 12th</h2>
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
