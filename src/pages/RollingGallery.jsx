@@ -30,7 +30,7 @@ const RollingGallery = ({
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  const cylinderWidth = isScreenSizeSm ? 1100 : 1800;
+  const cylinderWidth = isScreenSizeSm ? 1500 : 2300;
   const faceCount = images.length;
   const faceWidth = (cylinderWidth / faceCount) * 1.5;
   const radius = cylinderWidth / (2 * Math.PI);
@@ -130,7 +130,7 @@ const RollingGallery = ({
                 src={url}
                 alt="gallery"
                 className="pointer-events-none rounded-[15px] border-[3px] border-white object-cover transition-transform duration-300 ease-out group-hover:scale-105
-                           h-[100px] w-[220px] sm:h-[120px] sm:w-[300px] md:h-[180px] md:w-[400px]"
+                           h-[200px] w-[220px] sm:h-[120px] sm:w-[300px] md:h-[180px] md:w-[400px]"
               />
             </div>
           ))}
