@@ -39,7 +39,7 @@ const Register = () => {
     const amount = fee*100;
     const currency = "INR";
 
-        const response = await fetch("http://127.0.0.1:8787/orders",
+        const response = await fetch("https://cyclothon.onrender.com/order",
             {
                 method: "POST",
                 body: JSON.stringify({
@@ -71,7 +71,7 @@ const Register = () => {
                 // formData.Payment_Id = response.razorpay_payment_id;
                 // formData.append("Payment_Id", paymentId);
 
-                const validateRes = await fetch("http://127.0.0.1:8787/orders/validate", {
+                const validateRes = await fetch("https://cyclothon.onrender.com/order/validate", {
                     method: "POST",
                     body: JSON.stringify(response),
                     headers: {
@@ -279,7 +279,7 @@ const Register = () => {
                         <option value="Sonari">Sonari</option>
                         <option value="Telco">Telco</option>
                         <option value="Bistupur">Bistupur</option>
-                        <option value="Others">Others</option>
+                        <option value="Others">Others</option>  
                     </select>
                 </div>
                 {isOtherAddress && (
