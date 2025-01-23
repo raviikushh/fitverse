@@ -72,7 +72,7 @@ const MainPageNav = () => {
                             </HashLink>
                             <HashLink
                                 smooth
-                                to=""
+                                to="/contact"
                                 className="text-white text-lg hover:text-green-200 font-semibold"
                             >
                                 Contact
