@@ -5,7 +5,7 @@ const About = () => {
   return (
     <>
     <MainPageNav />
-    <main className="bg-gray-100 min-h-screen py-12 px-6 mt-24">
+    <main className="bg-gray-100 min-h-screen py-12 px-6 mt-20">
       <section className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         <div className="bg-gradient-to-r from-green-500 to-green-700 text-white text-center py-10">
           <h1 className="text-4xl font-bold mb-4">About Active Forever</h1>

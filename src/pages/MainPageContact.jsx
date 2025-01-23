@@ -52,7 +52,7 @@ const MainPageContact = () => {
      return (
          <>
          <MainPageNav/>
-             <div className="contact-page mt-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-100 to-green-50" id="contact">
+             <div className="contact-page mt-20 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-green-100 to-green-50" id="contact">
                  <h1 className="text-4xl font-bold text-center pt-10 text-green-800">
                      Reach to Us
                  </h1>

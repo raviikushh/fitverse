@@ -21,7 +21,7 @@ const MainPage = () => {
     return (
         <>
         <MainPageNav />
-        <div className="bg-green-100 mt-[20%] md:mt-[6%] pt-8">
+        <div className="bg-green-100 mt-[20%] md:mt-[4%] pt-10">
             {/* Main Content */}
             <main className="bg-green-100">
                 <h1 className="text-center font-extrabold text-5xl md:text-6xl text-green-700 leading-tight tracking-wide mb-4 ">
