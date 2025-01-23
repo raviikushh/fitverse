@@ -19,11 +19,12 @@ const MainPage = () => {
     };
 
     return (
-        <div className="bg-green-100 mt-24">
-            <MainPageNav />
+        <>
+        <MainPageNav />
+        <div className="bg-green-100 mt-[20%] md:mt-[6%] pt-8">
             {/* Main Content */}
-            <main className="bg-green-100 ">
-                <h1 className="text-center font-extrabold text-5xl md:text-6xl text-green-700 leading-tight tracking-wide mb-4">
+            <main className="bg-green-100">
+                <h1 className="text-center font-extrabold text-5xl md:text-6xl text-green-700 leading-tight tracking-wide mb-4 ">
                     ActiveForever: <span className="text-green-500">Inspiring Fitness, Empowering Lives</span>.
                 </h1>
                 <p className="text-center text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
@@ -63,6 +64,7 @@ const MainPage = () => {
                 <p>Built by <a href="https://ravi07.vercel.app/" className="underline text-blue-300">Ravi</a></p>
             </footer>
         </div>
+        </>
     );
 };
 
