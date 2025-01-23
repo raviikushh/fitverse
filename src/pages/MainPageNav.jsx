@@ -29,12 +29,12 @@ const MainPageNav = () => {
                         </DialogTrigger>
                         <DialogContent className="sm:max-w-[425px] bg-white text-green-600 top-44 py-20">
                             <DialogTitle className="text-2xl font-semibold text-center">
-                                <HashLink smooth to="/" className="hover:text-green-800">
+                                <HashLink smooth to="/about" className="hover:text-green-800">
                                     About
                                 </HashLink>
                             </DialogTitle>
                             <DialogTitle className="text-2xl font-semibold text-center">
-                                <HashLink smooth to="/" className="hover:text-green-800">
+                                <HashLink smooth to="/contact" className="hover:text-green-800">
                                     Contact
                                 </HashLink>
                             </DialogTitle>
