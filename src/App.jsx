@@ -5,6 +5,8 @@ import LandingPage from './pages/LandingPage'
 import { HashRouter, Routes, Route } from 'react-router-dom'
 import ScrollToTop from './pages/ScrollToTop'
 import Register from './pages/Register'
+import About from './pages/about'
+import MainPageContact from './pages/MainPageContact'
 
 function App() {
 
@@ -16,6 +18,8 @@ function App() {
         <Route path='/' element={<MainPage/>}/>
         <Route path='event' element={<LandingPage/>} />
         <Route path='register' element={<Register/>} />
+        <Route path='/about' element={<About/>} />
+        <Route path='/contact' element={<MainPageContact/>} />
       </Routes>
      </HashRouter>
     </>

@@ -9,9 +9,8 @@ const EventDetails = () => {
             <div className="mt-16"></div>
             <div className="header flex justify-center items-center flex-col px-6">
                 <h1 className="text-3xl font-semibold text-green-900">Event Details</h1>
-                <h2 className="text-green-700">
-                    This event is being organised by Rotary, Jamshedpur Steel City
-                    Event co-ordinated by active forever,on the occasion of world cancer day.
+                <h2 className="text-green-700 font-semibold text-lg">
+                This Event is Being Organised by Rotary, Jamshedpur Steel City and co-ordinated by Active Forever,on the occasion of World Cancer Day.
                 </h2>
             </div>
             <div className="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mt-8 py-4 px-8">

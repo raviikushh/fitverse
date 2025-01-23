@@ -1,17 +1,9 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import logo from '../assets/logo.png'
-import { CiMenuBurger } from "react-icons/ci";
-import {
-    Dialog,
-    DialogContent,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog";
-import { HashLink } from "react-router-hash-link";
-import { Input } from "@/components/ui/input";
 import RollingGallery from "./RollingGallery";
 import event_img from '../assets/event_img.jpg'
+import MainPageNav from "./MainPageNav";
+
 
 const MainPage = () => {
     const navigate = useNavigate();
@@ -27,75 +19,8 @@ const MainPage = () => {
     };
 
     return (
-        <div className="bg-green-100 md:-mt-0">
-            {/* Navbar */}
-            <div className="sticky top-0 z-50 backdrop:blur">
-                {/* Mobile View */}
-                <div className="mobile md:hidden flex justify-between p-4 bg-green-600">
-                    <Dialog>
-                        <div className="text-lg font-bold text-white">
-                            <a href="#">
-                                <img src={logo} alt="logo" className="h-14" />
-                            </a>
-                        </div>
-                        <DialogTrigger asChild>
-                            <CiMenuBurger className="text-3xl text-white" />
-                        </DialogTrigger>
-                        <DialogContent className="sm:max-w-[425px] bg-white text-green-600 top-44 py-20">
-                            <DialogTitle className="text-2xl font-semibold text-center">
-                                <HashLink smooth to="/" className="hover:text-green-800">
-                                    About
-                                </HashLink>
-                            </DialogTitle>
-                            <DialogTitle className="text-2xl font-semibold text-center">
-                                <HashLink smooth to="/" className="hover:text-green-800">
-                                    Contact
-                                </HashLink>
-                            </DialogTitle>
-                        </DialogContent>
-                    </Dialog>
-                </div>
-
-                {/* Desktop View */}
-                <div className="nav hidden md:block">
-                    <nav className="flex items-center justify-around bg-green-600 py-4 shadow-md gap-48">
-                        {/* Left Section: Logo */}
-                        <div className="text-lg font-bold text-white">
-                            <a href="#">
-                                <img src={logo} alt="logo" className="h-14" />
-                            </a>
-                        </div>
-
-                        {/* Center Section */}
-                        <div className="hidden md:block">
-                            <Input
-                                type="text"
-                                placeholder="Search events"
-                                className="w-64 bg-white text-green-600 border border-green-300 placeholder-green-400"
-                            />
-                        </div>
-
-                        {/* Right Section: Navigation Links */}
-                        <div className="flex space-x-6">
-                            <HashLink
-                                smooth
-                                to=""
-                                className="text-white text-lg hover:text-green-200 font-semibold"
-                            >
-                                About
-                            </HashLink>
-                            <HashLink
-                                smooth
-                                to=""
-                                className="text-white text-lg hover:text-green-200 font-semibold"
-                            >
-                                Contact
-                            </HashLink>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-
+        <div className="bg-green-100 mt-24">
+            <MainPageNav />
             {/* Main Content */}
             <main className="bg-green-100 ">
                 <h1 className="text-center font-extrabold text-5xl md:text-6xl text-green-700 leading-tight tracking-wide mb-4">
@@ -106,23 +31,23 @@ const MainPage = () => {
                 </p>
 
                 <RollingGallery autoplay={true} pauseOnHover={true} />
-                <section className="mb-8 ">
+                <section className="mb-8 px-6 pb-6">
                     <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Upcoming Event</h2>
-                    <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all" onClick={() => navigate(`/event`)}>
+                    <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10 flex flex-col md:flex-row" onClick={() => navigate(`/event`)}>
                         <img
                             src={event.image}
                             alt={event.name}
-                            className="w-full h-[500px] object-fit"
+                            className="w-full h-[500px] md:h-[500px] object-contain"
                         />
                         <div className="p-6">
-                            <h3 className="text-2xl font-semibold">{event.name}</h3>
-                            <p>Cycling for a cause</p>
+                            <h3 className="text-3xl font-semibold">{event.name}</h3>
+                            <p className="text-lg text-orange-600 md:mt-2">Cycling for a cause</p>
                             <p className="text-gray-600 mt-2">{event.date}</p>
                             <p className="text-gray-600 font-semibold">{event.location}</p>
-                            <p className="mt-4 text-gray-700">{event.description}</p>
-                            <p className="text-green-600 font-semibold">This Event is Being Organised by Rotary, Jamshedpur Steel City and co-ordinated by Active Forever,on the occasion of World Cancer Day.</p>
+                            <p className="mt-4 text-gray-700 md:text-lg">{event.description}</p>
+                            <p className="text-green-600 font-semibold md:mt-2 text-lg text-justify">This Event is Being Organised by Rotary, Jamshedpur Steel City and co-ordinated by Active Forever,on the occasion of World Cancer Day.</p>
                             <Button
-                                className="mt-6 bg-green-500 hover:bg-green-600 w-full"
+                                className="mt-6 bg-green-500 hover:bg-green-600 w-full "
                                 onClick={() => navigate(`/event`)}
                             >
                                 View Event Details
