@@ -61,7 +61,7 @@ const MainPage = () => {
             {/* Footer */}
             <footer className="bg-green-800 text-white flex justify-between py-4 px-1 md:px-6 mt-auto">
                 <p>© 2025 Active Forever. All rights reserved.</p>
-                <p>Built by <a href="https://ravi07.vercel.app/" className="underline text-blue-300">Ravi</a></p>
+                <p>Built by <a href="https://www.dawndigitrix.com/" className="underline text-blue-300">Dawndigitrix</a></p>
             </footer>
         </div>
         </>
