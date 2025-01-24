@@ -21,10 +21,10 @@ const EventDetails = () => {
                         <h2 className="text-xl font-semibold text-green-900">Route Information</h2>
                     </div>
                     <div className="info flex flex-col gap-2 mt-2 px-8 text-lg text-green-800">
-                        <h2>Starting Point: Atmosphere Domuhani
+                        <h2>Starting Point: To be updated soon....
                         </h2>
                         <h2>Well-marked route</h2>
-                        <h2>through Marine drive</h2>
+                        {/* <h2>through Marine drive</h2> */}
                         {/* <h2>Multiple aid stations</h2> */}
                     </div>
                 </SpotlightCard>

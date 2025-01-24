@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import RollingGallery from "./RollingGallery";
-import event_img from '../assets/event_img.jpg'
+import event_img from '../assets/new_event_img.jpg'
 import MainPageNav from "./MainPageNav";
 
 
@@ -42,7 +42,7 @@ const MainPage = () => {
                         />
                         <div className="p-6">
                             <h3 className="text-3xl font-semibold">{event.name}</h3>
-                            <p className="text-lg text-orange-600 md:mt-2">Cycling for a cause</p>
+                            <p className="text-lg text-orange-600 md:mt-2">Cycle for a cause</p>
                             <p className="text-gray-600 mt-2">{event.date}</p>
                             <p className="text-gray-600 font-semibold">{event.location}</p>
                             <p className="mt-4 text-gray-700 md:text-lg">{event.description}</p>

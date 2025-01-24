@@ -13,7 +13,7 @@ const Register = () => {
     const [isOtherAddress, setIsOtherAddress] = useState(false);
     const [category, setCategory] = useState("");
     // const [race, setRace] = useState("Elite");
-    const [fee, setFee] = useState(500);
+    // const [fee, setFee] = useState(500);
     const [address, setAddress] = useState('');
 
     // const [paymentId, setPaymentId] = useState();
@@ -28,14 +28,14 @@ const Register = () => {
         Emergency_contact: "",
         Blood_Group: "",
         T_shirt_size: "",
-        fees: { fee },
+        fees: 500,
         Payment_Id: ""
     });
 
     const handleCategoryChange = (e) => {
         const selectedCategory = e.target.value;
         setCategory(selectedCategory);
-        setFee(selectedCategory === "student" ? 250 : 500);
+        // setFee(selectedCategory === "student" ? 250 : 500);
     };
 
     // console.log(formData.name);
@@ -45,7 +45,7 @@ const Register = () => {
 
 
         //   Razorpay
-        const amount = fee * 100;
+        const amount = 500 * 100;
         const currency = "INR";
 
         // Show loading toast
@@ -321,7 +321,7 @@ const Register = () => {
                     {/* Category */}
                     <div className="mb-4">
                         <label className="block text-green-700 font-medium mb-2">
-                            Category:  <span className="text-sm text-red-600">*Student - upto 12th only</span>
+                            Category: 
                         </label>
 
                         <p className="text-sm text-red-600">*Any misinformation will lead to disqualification</p>
@@ -333,8 +333,8 @@ const Register = () => {
                             className="w-full border border-green-300 rounded-md p-2"
                         >
                             <option value="select">Select category</option>
-                            <option value="student">Student (₹250)</option>
-                            <option value="others">Others (₹500)</option>
+                            <option value="Above 18">Above 18</option>
+                            <option value="Below 18">Below 18</option>
                         </select>
                     </div>
 
@@ -404,7 +404,7 @@ const Register = () => {
                             type="text"
                             id="fees"
                             name="fees"
-                            value={fee}
+                            value= "₹500"
                             readOnly
                             className="w-full border border-green-300 rounded-md p-2 font-bold text-green-800"
                         />
