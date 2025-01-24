@@ -333,8 +333,8 @@ const Register = () => {
                             className="w-full border border-green-300 rounded-md p-2"
                         >
                             <option value="select">Select category</option>
-                            <option value="Above 18">Above 18</option>
-                            <option value="Below 18">Below 18</option>
+                            <option value="Above 18">Above 18 yrs</option>
+                            <option value="Below 18">Below 18 yrs</option>
                         </select>
                     </div>
 
