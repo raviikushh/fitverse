@@ -38,17 +38,17 @@ const MainPage = () => {
                             <img
                                 src={event.image}
                                 alt={event.name}
-                                className="w-full h-[500px] md:h-[500px] object-contain"
+                                className="w-full h-[500px] md:h-[500px] object-fit p-2 md:p-0"
                             />
                             <div className="p-6">
                                 <h3 className="text-3xl font-semibold">{event.name}</h3>
                                 <p className="text-lg text-orange-600 md:mt-2">Cycle for a cause</p>
                                 <p className="text-gray-600 mt-2">{event.date}</p>
                                 <p className="text-gray-600 font-semibold">{event.location}</p>
-                                <p className="mt-4 text-gray-700 md:text-lg">{event.description}</p>
-                                <p className="text-green-600 font-semibold md:mt-2 text-lg text-justify">This Event is Being Organised by Rotary, Jamshedpur Steel City and co-ordinated by Active Forever,on the occasion of World Cancer Day.</p>
+                                <p className="md:mt-10 text-gray-700 md:text-lg">{event.description}</p>
+                                <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is Being Organised by Rotary, Jamshedpur Steel City and co-ordinated by Active Forever,on the occasion of World Cancer Day.</p>
                                 <Button
-                                    className="mt-6 bg-green-500 hover:bg-green-600 w-full "
+                                    className="mt-6 bg-green-500 hover:bg-green-600 w-full"
                                     onClick={() => navigate(`/event`)}
                                 >
                                     View Event Details
