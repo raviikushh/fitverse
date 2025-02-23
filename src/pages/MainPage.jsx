@@ -1,7 +1,7 @@
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import RollingGallery from "./RollingGallery";
-import event_img from '../assets/new_event_img.jpg'
+import event_img from '../assets/event_img.jpg'
 import MainPageNav from "./MainPageNav";
 
 
@@ -11,10 +11,10 @@ const MainPage = () => {
     // Event details
     const event = {
         id: 1,
-        name: "Cyclathon 2025",
-        date: "Feb 08, 2025",
+        name: "7 Days Transaformation Program",
+        date: "24-30, MARCH 2025",
         location: "Jamshedpur",
-        description: "Join us for an unforgettable cycling experience through scenic routes.",
+        description: "Join us for an unforgettable 7 days transformation program.",
         image: event_img, // Replace with actual image URL
     };
 
@@ -38,15 +38,14 @@ const MainPage = () => {
                             <img
                                 src={event.image}
                                 alt={event.name}
-                                className="w-full h-[500px] md:h-[500px] object-fit p-2 md:p-0"
+                                className=" w-full h-[500px] md:h-[500px] object-fit p-2 md:p-0"
                             />
                             <div className="p-6">
                                 <h3 className="text-3xl font-semibold">{event.name}</h3>
-                                <p className="text-lg text-orange-600 md:mt-2">Cycle for a cause</p>
                                 <p className="text-gray-600 mt-2">{event.date}</p>
                                 <p className="text-gray-600 font-semibold">{event.location}</p>
                                 <p className="md:mt-10 text-gray-700 md:text-lg">{event.description}</p>
-                                <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is Being Organised by Rotary, Jamshedpur Steel City and co-ordinated by Active Forever,on the occasion of World Cancer Day.</p>
+                                <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is being organised by Active Forever in partnership with Anytime Fitness</p>
                                 <Button
                                     className="mt-6 bg-green-500 hover:bg-green-600 w-full"
                                     onClick={() => navigate(`/event`)}
