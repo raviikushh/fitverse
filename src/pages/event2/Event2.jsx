@@ -4,6 +4,7 @@ import Contact from "../Contact"
 import Footer from "../Footer"
 
 const event2 = () => {
+    // Event 2
     return (
         <div>
             <Navbar />
