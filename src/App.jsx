@@ -7,6 +7,7 @@ import ScrollToTop from './pages/ScrollToTop'
 import Register from './pages/Register'
 import About from './pages/About'
 import MainPageContact from './pages/MainPageContact'
+import Event2 from './pages/event2/event2'
 
 function App() {
 
@@ -20,6 +21,7 @@ function App() {
         <Route path='register' element={<Register/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<MainPageContact/>} />
+        <Route path='/event2' element={<Event2/>} />
       </Routes>
      </HashRouter>
     </>

@@ -34,7 +34,7 @@ const MainPage = () => {
                     <RollingGallery autoplay={true} pauseOnHover={true} />
                     <section className="mb-8 px-6 pb-6">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Upcoming Event</h2>
-                        <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10 flex flex-col md:flex-row" onClick={() => navigate(`/event`)}>
+                        <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10 flex flex-col md:flex-row" onClick={() => navigate(`/event2`)}>
                             <img
                                 src={event.image}
                                 alt={event.name}
@@ -48,7 +48,7 @@ const MainPage = () => {
                                 <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is being organised by Active Forever in partnership with Anytime Fitness</p>
                                 <Button
                                     className="mt-6 bg-green-500 hover:bg-green-600 w-full"
-                                    onClick={() => navigate(`/event`)}
+                                    onClick={() => navigate(`/event2`)}
                                 >
                                     View Event Details
                                 </Button>
