@@ -7,7 +7,7 @@ import ScrollToTop from './pages/ScrollToTop'
 import Register from './pages/Register'
 import About from './pages/About'
 import MainPageContact from './pages/MainPageContact'
-import Event2 from './pages/event2/event2'
+import Event2 from '../src/pages/event2/event2'
 
 function App() {
 
