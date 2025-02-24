@@ -32,7 +32,7 @@ const MainPage = () => {
                     </p>
 
                     <RollingGallery autoplay={true} pauseOnHover={true} />
-                    <section className="mb-8 px-6 pb-6">
+                    <section className="mb-8 px-6 pb-6 bg-green-300">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Upcoming Event</h2>
                         <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10 flex flex-col md:flex-row" onClick={() => navigate(`/event2`)}>
                             <img
@@ -53,6 +53,22 @@ const MainPage = () => {
                                     View Event Details
                                 </Button>
                             </div>
+                        </div>
+                    </section>
+                    <section className="bg-green-300 py-6 px-6">
+                        <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Past Events</h2>
+                        <div className="past_events bg-white shadow-lg min-h-96 rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10 flex flex-col  mb-8 p-6 gap-4" onClick={() => navigate(`/event`)}>
+                            <h2 className="text-4xl font-extrabold mb-2 text-center text-black mt-2">Cyclathon 2025</h2>
+                            <h2 className="text-xl font-semibold text-black text-center ">Challenge Your Limits!</h2>
+                            <h2 className="font-bold">8th FEB, 2025</h2>
+                            <h2 className="font-bold text-slate-500">Multiple Categories Available</h2>
+                            <h2 className="text-lg text-justify text-green-800">This Event is Being Organised by Rotary, Jamshedpur Steel City and co-ordinated by Active Forever,on the occasion of World Cancer Day.</h2>
+                            <Button
+                                    className="mt-6 bg-green-500 hover:bg-green-600 w-full"
+                                    onClick={() => navigate(`/event`)}
+                                >
+                                    View Event Details
+                                </Button>
                         </div>
                     </section>
                 </main>
