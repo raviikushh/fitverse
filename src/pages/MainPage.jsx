@@ -32,7 +32,7 @@ const MainPage = () => {
                     </p>
 
                     <RollingGallery autoplay={true} pauseOnHover={true} />
-                    <section className="mb-8 px-6 pb-6 bg-green-300">
+                    <section className="mb-8 px-6 pb-6 bg-green-200 md:mt-8">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Upcoming Event</h2>
                         <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10 flex flex-col md:flex-row" onClick={() => navigate(`/event2`)}>
                             <img
