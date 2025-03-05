@@ -38,29 +38,9 @@ const MainPage = () => {
 
                     <section className="mb-8 px-6 pb-6 py-6 bg-green-200 md:mt-8">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Upcoming Events</h2>
-                        <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10 flex flex-col md:flex-row" onClick={() => navigate(`/event2`)}>
-                            <img
-                                src={event.image}
-                                alt={event.name}
-                                className=" w-full h-[500px] md:h-[500px] object-fit p-2 md:p-0"
-                            />
-                            <div className="p-6">
-                                <h3 className="text-3xl font-semibold">{event.name}</h3>
-                                <p className="text-gray-600 mt-2">{event.date}</p>
-                                <p className="text-gray-600 font-semibold">{event.location}</p>
-                                <p className="md:mt-10 text-gray-700 md:text-lg">{event.description}</p>
-                                <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is being organised by Active Forever in partnership with Anytime Fitness</p>
-                                <Button
-                                    className="mt-6 bg-green-500 hover:bg-green-600 w-full"
-                                    onClick={() => navigate(`/event2`)}
-                                >
-                                    View Event Details
-                                </Button>
-                            </div>
-                        </div>
 
-                        {/* Event 3 */}
-                        <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-32  flex flex-col md:flex-row" onClick={() => navigate(`/event3`)}>
+                          {/* Event 3 */}
+                          <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" onClick={() => navigate(`/event3`)}>
                             <img
                                 src={event3}
                                 alt={event.name}
@@ -82,6 +62,30 @@ const MainPage = () => {
                             </div>
 
                         </div>
+
+
+                        <div className="bg-gray-100 shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-32 flex flex-col md:flex-row" onClick={() => navigate(`/event2`)}>
+                            <img
+                                src={event.image}
+                                alt={event.name}
+                                className=" w-full h-[500px] md:h-[500px] object-fit p-2 md:p-0"
+                            />
+                            <div className="p-6">
+                                <h3 className="text-3xl font-semibold">{event.name}</h3>
+                                <p className="text-gray-600 mt-2">{event.date}</p>
+                                <p className="text-gray-600 font-semibold">{event.location}</p>
+                                <p className="md:mt-10 text-gray-700 md:text-lg">{event.description}</p>
+                                <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is being organised by Active Forever in partnership with Anytime Fitness</p>
+                                <Button
+                                    className="mt-6 bg-green-500 hover:bg-green-600 w-full"
+                                    onClick={() => navigate(`/event2`)}
+                                >
+                                    View Event Details
+                                </Button>
+                            </div>
+                        </div>
+
+                      
                     </section>
 
 
