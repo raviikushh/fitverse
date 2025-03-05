@@ -8,6 +8,7 @@ import Register from './pages/Register'
 import About from './pages/About'
 import MainPageContact from './pages/MainPageContact'
 import Event2 from './pages/event2/Event2'
+import Event3 from './pages/event3/Event3'
 
 function App() {
 
@@ -22,6 +23,7 @@ function App() {
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<MainPageContact/>} />
         <Route path='/event2' element={<Event2/>} />
+        <Route path='/event3' element={<Event3/>} />
       </Routes>
      </HashRouter>
     </>
