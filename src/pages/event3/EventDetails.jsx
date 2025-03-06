@@ -37,7 +37,7 @@ const EventDetails = () => {
                     <div className="info flex flex-col gap-2 mt-2 px-8 text-lg text-green-800">
                         {/* <h2>T shirt 
                         </h2> */}
-                        <h2>certificate & Medals
+                        <h2> Medals
                         </h2>
                         <h2>
                             Refreshments with Thandai
