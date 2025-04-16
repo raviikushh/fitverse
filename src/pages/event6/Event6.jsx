@@ -26,7 +26,7 @@ const Event6 = () => {
                             delay={170}
                             animateBy="words"
                             direction="top"
-                            className="text-6xl mb-8 font-semibold text-green-100"
+                            className="text-5xl mb-8 font-semibold text-green-100"
                         />
                         {/* <ShinyText
                             text="Join the most exciting cycling event of the year. Experience the thrill of cycling through scenic routes."
