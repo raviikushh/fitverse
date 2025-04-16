@@ -11,6 +11,9 @@ import { FaRunning } from "react-icons/fa";
 import { IoIosStarOutline } from "react-icons/io";
 import StarBorder from "../StarBorder";
 import { HashLink } from "react-router-hash-link";
+import { Category } from "./Category";
+
+
 
 
 const Event5 = () => {
@@ -84,6 +87,7 @@ const Event5 = () => {
                     </div>
                 </div>
                 {/* <Reg/> */}
+                <Category/>
             <Contact/>
             <Footer/>
         </body>
