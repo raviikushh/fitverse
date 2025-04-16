@@ -9,6 +9,7 @@ import { useNavigate } from "react-router-dom";
 
 const Register5 = () => {
     const location = useLocation();
+    console.log(location.state);
     const passedCategory = location.state?.category || "10KM ₹399";
     const [race, setRace] = useState(passedCategory);
     const [showPaymentModal5, setShowPaymentModal5] = useState(false);
@@ -197,6 +198,7 @@ const Register5 = () => {
                             value={formData.T_shirt_size}
                             onChange={handleChange}
                         >
+                            <option value="XS">XS</option>
                             <option value="S">S</option>
                             <option value="M">M</option>
                             <option value="L">L</option>

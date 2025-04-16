@@ -63,15 +63,15 @@ const Event5 = () => {
                         >
                             <div className="location flex gap-2">
                                 <GrLocation className="text-2xl text-green-300" />
-                                <h2>Jamshedpur</h2>
+                                <h2>Decathlon store, Bistupur</h2>
                             </div>
                             <div className="date flex gap-2 mt-2">
                                 <FaRunning className="text-2xl text-green-500" />
-                                <h2>22 April, 2025</h2>
+                                <h2>11 May, 2025</h2>
                             </div>
                             <div className="multiple flex gap-2 mt-2">
                                 <IoIosStarOutline className="text-2xl text-green-400" />
-                                <h2>5 Km Walkathon </h2>
+                                <h2>Multiple Categories Available</h2>
                             </div>
                             <div className="registration bg-green-600 text-white p-2 rounded-lg mt-2 text-lg">
                                 <h2>Gifts for all the participants</h2>

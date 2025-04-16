@@ -31,7 +31,7 @@ export const Category = () => {
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        {["T-Shirt", "Medal for all participants", "Certificates"].map((item, idx) => (
+                        {["T-Shirt", "Medal for all participants", "Certificates","Refreshments"].map((item, idx) => (
                             <div key={idx} className="c1 flex gap-2 items-center">
                                 <IoIosStar className="text-green-600 text-xl" />
                                 <h2 className="text-lg">{item}</h2>
@@ -39,7 +39,7 @@ export const Category = () => {
                         ))}
                     </CardContent>
                     <CardFooter>
-                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={() => navigate("/register5", { state: { category: "10KM ₹500" } })}>
+                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={() => navigate("/register5", { state: { category: "10KM ₹399" } })}>
                             Register
                         </Button>
                     </CardFooter>
@@ -53,7 +53,7 @@ export const Category = () => {
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        {["T-Shirt", "Medal for all participants", "Certificates"].map((item, idx) => (
+                        {["T-Shirt", "Medal for all participants", "Certificates","Refreshments"].map((item, idx) => (
                             <div key={idx} className="c1 flex gap-2 items-center">
                                 <IoIosStar className="text-green-600 text-xl" />
                                 <h2 className="text-lg">{item}</h2>
@@ -61,7 +61,7 @@ export const Category = () => {
                         ))}
                     </CardContent>
                     <CardFooter>
-                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={() => navigate("/register5", { state: { category: "5KM ₹500" } })}>
+                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={() => navigate("/register5", { state: { category: "5KM ₹299" } })}>
                             Register
                         </Button>
                     </CardFooter>
