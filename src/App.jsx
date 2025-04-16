@@ -10,6 +10,8 @@ import MainPageContact from './pages/MainPageContact'
 import Event2 from './pages/event2/Event2'
 import Event3 from './pages/event3/Event3'
 import Event4 from './pages/event4/Event4'
+import Event5 from './pages/event5/Event5'
+import Event6 from './pages/event6/Event6'
 import Registration from './pages/event4/Registration'
 
 function App() {
@@ -27,6 +29,8 @@ function App() {
         <Route path='/event2' element={<Event2/>} />
         <Route path='/event3' element={<Event3/>} />
         <Route path='/event4' element={<Event4/>} />
+        <Route path='/event5' element={<Event5/>} />
+        <Route path='/event6' element={<Event6/>} />
         <Route path='/register4' element={<Registration/>} />
         <Route path='*' element={<LandingPage/>} />
       </Routes>

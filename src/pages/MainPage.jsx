@@ -5,6 +5,9 @@ import event_img from '../assets/event_img.jpg'
 import MainPageNav from "./MainPageNav";
 import event3 from '../assets/event3.jpg'
 import event4 from '../assets/event4.jpg'
+import event5 from '../assets/event5.jpg'
+import event6 from '../assets/event6.jpg'
+
 
 
 const MainPage = () => {
@@ -40,6 +43,8 @@ const MainPage = () => {
                     <section className="mb-8 px-6 pb-6 py-6 bg-green-200 md:mt-8">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Upcoming Events</h2>
 
+
+                  
                         {/* Event 4 */}
 
                         <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" onClick={() => navigate(`/event4`)}>
@@ -63,6 +68,58 @@ const MainPage = () => {
                                 </Button>
                             </div>
                         </div>
+
+
+                           {/* Event 5 */}
+
+                     <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" onClick={() => navigate(`/event5`)}>
+                            <img
+                                src={event5}
+                                alt={event}
+                                className=" w-[400px] h-[500px] md:h-[500px] object-fit p-2 md:p-0"
+                            />
+
+                            <div className="p-6">
+                                <h3 className="text-3xl font-semibold">Summer 10K RUN</h3>
+                                <p className="text-gray-600 mt-2">11 May 2025</p>
+                                <p className="text-gray-600 font-semibold">Decathlon store, Bistupur</p>
+                                <p className="md:mt-10 text-gray-700 md:text-lg">join us for an unforgettable Summer Run</p>
+                                <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is being organised by Active Forever</p>
+                                <Button
+                                    className="mt-6 bg-green-500 hover:bg-green-600 w-full"
+                                    onClick={() => navigate(`/event5`)}
+                                >
+                                    View Event Details
+                                </Button>
+                            </div>
+                        </div>
+
+
+
+                           {/* Event 6 */}
+
+                     <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" onClick={() => navigate(`/event6`)}>
+                            <img
+                                src={event6}
+                                alt={event}
+                                className=" w-[400px] h-[500px] md:h-[500px] object-fit p-2 md:p-0"
+                            />
+
+                            <div className="p-6">
+                                <h3 className="text-3xl font-semibold text-justify">21 Days Transformation Challenge</h3>
+                                <p className="text-gray-600 mt-2">5 May - 25 May 2025</p>
+                                <p className="text-gray-600 font-semibold">Online Sessions</p>
+                                <p className="md:mt-10 text-gray-700 md:text-lg">join us for an unforgettable Transformation Challenge</p>
+                                <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is being organised by Active Forever</p>
+                                <Button
+                                    className="mt-6 bg-green-500 hover:bg-green-600 w-full"
+                                    onClick={() => navigate(`/event6`)}
+                                >
+                                    View Event Details
+                                </Button>
+                            </div>
+                        </div>
+
                         
                     </section>
 
