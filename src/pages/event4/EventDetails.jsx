@@ -70,7 +70,7 @@ const EventDetails = () => {
                     </div>
                 </SpotlightCard>
             </div>
-            <div className="cards flex justify-center items-center flex-col mt-10">
+            <div className="cards flex justify-center items-center flex-col mt-10" id="register">
             <Card className="bg-white text-green-900 hover:scale-105 transform transition-transform duration-300 px-4 shadow-md w-96 md:w-96">
                 <CardHeader>
                     <CardTitle className="text-green-600 text-2xl">5 KM Walkathon</CardTitle>
@@ -98,9 +98,9 @@ const EventDetails = () => {
                 <CardFooter>
                     <Button
                         variant="outline"
-                        className="bg-green-500 font-semibold text-md hover:text-green-400 hover:bg-green-700 py-5"
+                        className="bg-cyan-500 font-semibold text-md text-white hover:text-green-800 hover:bg-cyan-400 py-5"
                     >
-                        Pay & Register
+                        Click Here →
                     </Button>
                 <button
                         type="submit"

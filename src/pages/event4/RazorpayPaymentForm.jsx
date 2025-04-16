@@ -4,7 +4,7 @@ const RazorpayPaymentForm = () => {
   useEffect(() => {
     const script = document.createElement('script');
     script.src = 'https://checkout.razorpay.com/v1/payment-button.js';
-    script.setAttribute('data-payment_button_id', 'pl_QJQao0GXm2YGIt');  
+    script.setAttribute('data-payment_button_id', 'pl_QJjbP57CZyvBHT');  
     script.async = true;
 
     const form = document.getElementById('razorpay-form');
@@ -19,4 +19,5 @@ const RazorpayPaymentForm = () => {
 };
 
 export default RazorpayPaymentForm;
+
 
