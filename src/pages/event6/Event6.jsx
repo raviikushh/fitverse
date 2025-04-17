@@ -11,6 +11,8 @@ import { FaRunning } from "react-icons/fa";
 import { IoIosStarOutline } from "react-icons/io";
 import StarBorder from "../StarBorder";
 import { HashLink } from "react-router-hash-link";
+import EventDetails6 from "./EventDetails6";
+import Register6 from "./Register6";
 
 
 const Event6 = () => {
@@ -41,7 +43,7 @@ const Event6 = () => {
                                 color="white"
                                 speed="5s"
                             >
-                                <HashLink smooth to="/event4#register" className="hover:text-green-300">
+                                <HashLink smooth to="/event6#register" className="hover:text-green-300">
                                     Register Now
                                 </HashLink>
                             </StarBorder>
@@ -60,19 +62,19 @@ const Event6 = () => {
                         >
                             <div className="location flex gap-2">
                                 <GrLocation className="text-2xl text-green-300" />
-                                <h2>Jamshedpur</h2>
+                                <h2>Online Zoom Calll</h2>
                             </div>
                             <div className="date flex gap-2 mt-2">
                                 <FaRunning className="text-2xl text-green-500" />
-                                <h2>22 April, 2025</h2>
+                                <h2>5-25 May 2025</h2>
                             </div>
                             <div className="multiple flex gap-2 mt-2">
                                 <IoIosStarOutline className="text-2xl text-green-400" />
-                                <h2>5 Km Walkathon </h2>
+                                <h2>Transformation Challenge </h2>
                             </div>
                             <div className="registration bg-green-600 text-white p-2 rounded-lg mt-2 text-lg">
-                                <h2>Gifts for all the participants</h2>
-                                <h2 className="custom-class text-white">Register Now</h2>
+                                <h2>Advanced BMI checkup</h2>
+                                <h2 className="custom-class text-white">₹499 Only</h2>
                                 <ShinyText
                                     text="Limited slots available"
                                     disabled={false}
@@ -83,7 +85,9 @@ const Event6 = () => {
                         </SpotlightCard>
                     </div>
                 </div>
+                <EventDetails6/>
                 {/* <Reg/> */}
+                <Register6/>
             <Contact/>
             <Footer/>
         </body>

@@ -65,7 +65,7 @@ const EventDetails = () => {
                     </div>
                     <div className="info flex flex-col gap-2 mt-2 px-8 text-lg text-green-800">
                         <h2>Event Date: 22 April 2025</h2>
-                        <h2>Starts From 5:30 PM</h2>
+                        <h2>Starts From 5:30 AM</h2>
                         <h2></h2>
                     </div>
                 </SpotlightCard>
