@@ -50,7 +50,7 @@ const EventDetails6 = () => {
                     <div className="info flex flex-col gap-2 mt-2 px-8 text-lg text-green-800">
                         {/* <h2>T shirt 
                         </h2> */}
-                        <h2>One Day Session by Dr. Anjali Lead Coach of Bharat Mission
+                        <h2>One Day Session by Dr. Anjali Lead Coach of Fit Bharat Mission
                         </h2>
                         <h2>
                           16 Online Yoga Session by Alisha and Ridhi 
