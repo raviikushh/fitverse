@@ -56,7 +56,7 @@ const Register5 = () => {
     const onSubmit = async (event) => {
         event.preventDefault();
         const formSubmitData = new FormData(event.target);
-        formSubmitData.append("access_key", "c0def3d7-e05c-43ad-a34b-d0dddfe618b2");  // Replace with your access key -- 5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c
+        formSubmitData.append("access_key", "5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c");  // Replace with your access key -- 5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c
         formSubmitData.append("Race_category", race);
         formSubmitData.append("fees", fee);
 
