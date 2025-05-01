@@ -44,7 +44,7 @@ const Event5 = () => {
                                 color="white"
                                 speed="5s"
                             >
-                                <HashLink smooth to="/event4#register" className="hover:text-green-300">
+                                <HashLink smooth to="/event5#register" className="hover:text-green-300">
                                     Register Now
                                 </HashLink>
                             </StarBorder>
