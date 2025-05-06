@@ -14,10 +14,14 @@ import { HashLink } from "react-router-hash-link";
 import { Category } from "./Category";
 
 const Event5 = () => {
-  const [showPopup, setShowPopup] = useState(true);
+  const [showPopup, setShowPopup] = useState(false);
 
   useEffect(() => {
-    // Automatically show on load — already default is true
+    const timer = setTimeout(() => {
+        setShowPopup(true);
+      }, 1500); 
+    
+      return () => clearTimeout(timer); // Cleanup on unmount
   }, []);
 
   return (
