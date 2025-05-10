@@ -90,7 +90,7 @@ const MainPage = () => {
 
                             <div className="p-6">
                                 <h3 className="text-3xl font-semibold ">21 Days Transformation Challenge</h3>
-                                <p className="text-gray-600 mt-2">5 May - 25 May 2025</p>
+                                <p className="text-gray-600 mt-2">1 June - 21 June 2025</p>
                                 <p className="text-gray-600 font-semibold">Online Sessions</p>
                                 <p className="md:mt-10 text-gray-700 md:text-lg">join us for an unforgettable Transformation Challenge</p>
                                 <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is being organised by Active Forever</p>
