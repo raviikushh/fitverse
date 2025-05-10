@@ -38,18 +38,18 @@ const MainPage = () => {
 
                     <RollingGallery autoplay={true} pauseOnHover={true} />
 
-
+                    
 
                     <section className="mb-8 px-6 pb-6 py-6 bg-green-200 md:mt-8">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Upcoming Events</h2>
 
 
+                  
+                        
 
+                           {/* Event 5 */}
 
-
-                        {/* Event 5 */}
-
-                        <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" >
+                     <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" >
                             <img
                                 src={event5}
                                 alt={event}
@@ -62,29 +62,20 @@ const MainPage = () => {
                                 <p className="text-gray-600 font-semibold">Decathlon store, Bistupur</p>
                                 <p className="md:mt-10 text-gray-700 md:text-lg">join us for an unforgettable Summer Run</p>
                                 <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is being organised by Active Forever</p>
-                                {/* <Button
+                                <Button
                                     className="mt-6 bg-green-500 hover:bg-green-600 w-full"
-                                // onClick={() => navigate(`/event5`)}
+                                    onClick={() => navigate(`/event5`)}
                                 >
                                     View Event Details
-                                </Button> */}
-
-
-
-                                <Button
-                                    className="mt-6 bg-red-400 cursor-not-allowed w-full"
-                                    disabled
-                                >
-                                    Registration Closed
                                 </Button>
                             </div>
                         </div>
 
 
 
-                        {/* Event 6 */}
+                           {/* Event 6 */}
 
-                        <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" onClick={() => navigate(`/event6`)}>
+                     <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" onClick={() => navigate(`/event6`)}>
                             <img
                                 src={event6}
                                 alt={event}
@@ -106,12 +97,12 @@ const MainPage = () => {
                             </div>
                         </div>
 
-
+                        
                     </section>
 
 
-                    {/* -------------------------------------------------- PAST EVENTS ----------------------------------------------------------- */}
-
+{/* -------------------------------------------------- PAST EVENTS ----------------------------------------------------------- */}
+                    
 
                     <section className="bg-green-300 py-6 px-6">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Past Events</h2>
@@ -167,7 +158,7 @@ const MainPage = () => {
                         </div>
 
                         {/* Event 1 */}
-
+                    
                         <div className="past_events bg-white shadow-lg min-h-96 rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-14 flex flex-col  mb-8 p-6 gap-4" onClick={() => navigate(`/event`)}>
                             <h2 className="text-4xl font-extrabold mb-2 text-center text-black mt-2">Cyclathon 2025</h2>
                             <h2 className="text-xl font-semibold text-black text-center ">Challenge Your Limits!</h2>
@@ -181,7 +172,7 @@ const MainPage = () => {
                                 View Event Details
                             </Button>
                         </div>
-
+                        
                     </section>
 
 
