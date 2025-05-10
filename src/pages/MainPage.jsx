@@ -49,7 +49,7 @@ const MainPage = () => {
 
                            {/* Event 5 */}
 
-                     <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" >
+                     <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" onClick={() => navigate(`/event5`)}>
                             <img
                                 src={event5}
                                 alt={event}
@@ -67,6 +67,12 @@ const MainPage = () => {
                                     onClick={() => navigate(`/event5`)}
                                 >
                                     View Event Details
+                                </Button>
+                                <Button
+                                    className="mt-6 bg-red-400 cursor-not-allowed w-full"
+                                    disabled
+                                >
+                                    Registration Closed
                                 </Button>
                             </div>
                         </div>
