@@ -21,7 +21,7 @@ export const Category = () => {
                 </h2>
             </div>
             <div className="cards grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12 mt-8 py-4 px-8 md:px-12">
-           
+
 
                 {/* Card 2 */}
                 <Card className="bg-white text-green-900 hover:scale-105 transform transition-transform duration-300 px-4 shadow-md">
@@ -31,7 +31,7 @@ export const Category = () => {
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        {["T-Shirt", "Medal for all participants", "Certificates","Refreshments"].map((item, idx) => (
+                        {["T-Shirt", "Medal for all participants", "Certificates", "Refreshments"].map((item, idx) => (
                             <div key={idx} className="c1 flex gap-2 items-center">
                                 <IoIosStar className="text-green-600 text-xl" />
                                 <h2 className="text-lg">{item}</h2>
@@ -39,8 +39,11 @@ export const Category = () => {
                         ))}
                     </CardContent>
                     <CardFooter>
-                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={() => navigate("/register5", { state: { category: "10KM ₹399" } })}>
-                            Register
+                        <Button
+                            className="mt-6 bg-red-400 cursor-not-allowed w-full"
+                            disabled
+                        >
+                            Registration Closed
                         </Button>
                     </CardFooter>
                 </Card>
@@ -53,7 +56,7 @@ export const Category = () => {
                         <CardDescription>Early bird price</CardDescription>
                     </CardHeader>
                     <CardContent>
-                        {["T-Shirt", "Medal for all participants", "Certificates","Refreshments"].map((item, idx) => (
+                        {["T-Shirt", "Medal for all participants", "Certificates", "Refreshments"].map((item, idx) => (
                             <div key={idx} className="c1 flex gap-2 items-center">
                                 <IoIosStar className="text-green-600 text-xl" />
                                 <h2 className="text-lg">{item}</h2>
@@ -61,8 +64,11 @@ export const Category = () => {
                         ))}
                     </CardContent>
                     <CardFooter>
-                        <Button className="w-full bg-green-600 text-white hover:bg-green-800" onClick={() => navigate("/register5", { state: { category: "5KM ₹299" } })}>
-                            Register
+                        <Button
+                            className="mt-6 bg-red-400 cursor-not-allowed w-full"
+                            disabled
+                        >
+                            Registration Closed
                         </Button>
                     </CardFooter>
                 </Card>
