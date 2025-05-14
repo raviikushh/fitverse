@@ -47,36 +47,7 @@ const MainPage = () => {
                   
                         
 
-                           {/* Event 5 */}
-
-                     <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" >
-                            <img
-                                src={event5}
-                                alt={event}
-                                className=" w-[400px] h-[500px] md:h-[500px] object-fit p-2 md:p-0"
-                            />
-
-                            <div className="p-6">
-                                <h3 className="text-3xl font-semibold">Summer 10K RUN</h3>
-                                <p className="text-gray-600 mt-2">11 May 2025</p>
-                                <p className="text-gray-600 font-semibold">Decathlon store, Bistupur</p>
-                                <p className="md:mt-10 text-gray-700 md:text-lg">join us for an unforgettable Summer Run</p>
-                                <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is being organised by Active Forever</p>
-                                <Button
-                                    className="mt-6 bg-green-500 hover:bg-green-600 w-full"
-                                    onClick={() => navigate(`/event5`)}
-                                >
-                                    View Event Details
-                                </Button>
-                                <Button
-                                    className="mt-6 bg-red-400 cursor-not-allowed w-full"
-                                    disabled
-                                >
-                                    Registration Closed
-                                </Button>
-                            </div>
-                        </div>
-
+                         
 
 
                            {/* Event 6 */}
@@ -112,6 +83,37 @@ const MainPage = () => {
 
                     <section className="bg-green-300 py-6 px-6">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Past Events</h2>
+
+
+  {/* Event 5 */}
+
+  <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" >
+                            <img
+                                src={event5}
+                                alt={event}
+                                className=" w-[400px] h-[500px] md:h-[500px] object-fit p-2 md:p-0"
+                            />
+
+                            <div className="p-6">
+                                <h3 className="text-3xl font-semibold">Summer 10K RUN</h3>
+                                <p className="text-gray-600 mt-2">11 May 2025</p>
+                                <p className="text-gray-600 font-semibold">Decathlon store, Bistupur</p>
+                                <p className="md:mt-10 text-gray-700 md:text-lg">join us for an unforgettable Summer Run</p>
+                                <p className="text-green-600 font-semibold md:mt-10 text-lg text-justify">This Event is being organised by Active Forever</p>
+                                <Button
+                                    className="mt-6 bg-green-500 hover:bg-green-600 w-full"
+                                    onClick={() => navigate(`/event5`)}
+                                >
+                                    View Event Details
+                                </Button>
+                                <Button
+                                    className="mt-6 bg-red-400 cursor-not-allowed w-full"
+                                    disabled
+                                >
+                                    Registration Closed
+                                </Button>
+                            </div>
+                        </div>
 
 
                         {/* Event 4 */}
