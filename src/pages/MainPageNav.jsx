@@ -2,9 +2,10 @@ import logo from '../assets/logo.png';
 import { TfiAlignJustify } from "react-icons/tfi"
 import { HashLink } from "react-router-hash-link";
 import { Button } from "@/components/ui/button";
-import { useState } from "react";
+import { useState,useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
+import toast, { Toaster } from "react-hot-toast";
 
 
 const MainPageNav = () => {
@@ -14,25 +15,71 @@ const MainPageNav = () => {
     const [password, setPassword] = useState("");
     const [showPassword, setShowPassword] = useState(false);
     const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const [LoginStatus, setLoginStatus] = useState("Login");
     const navigate = useNavigate();
     const handleLogin = () => {
          // Prevent default form submission
         //  console.log(email,password);
         if(email == "activeforever00@gmail.com" && password == "1528@kadma") {
+            localStorage.setItem("isLoggedIn", true); // Set login status in local storage
             // console.log("Login successful");
+            // toast.success("Login successful! Redirecting to admin dashboard...");
+            toast.promise(
+                    new Promise((resolve) => setTimeout(resolve, 1000)), // Simulate a delay
+                 {
+                   loading: 'Logging IN...',
+                   success: <p>Logged IN successful!!..</p>,
+                 }
+                 
+               )
+               setTimeout(() => {
+                navigate('/admin'); 
+               }, 1000);
+            setLoginStatus("Logout"); // Update login status
             setIsLoggedIn(true);
             // Redirect to admin dashboard or perform any other action
-            navigate('/admin'); // Replace with your admin dashboard URL
+            
         }
         else{
-            alert("Please try Again");
+            toast.error("Invalid email or password! Please try again.");
         }
                 // console.log("Login button clicked");
         setModalOpen(false); // Close the modal after login
     };
 
+    const handleLogout = () => {   
+        localStorage.removeItem("isLoggedIn"); // Remove login status from local storage
+        toast.promise(
+            new Promise((resolve) => setTimeout(resolve, 1000)), // Simulate a delay
+         {
+           loading: 'Logging OUT...',
+           success: <p>Logged out successful!!..</p>,
+         }
+         
+       )
+       setTimeout(() => {
+        navigate('/'); 
+       }, 1000);
+        // toast.success("Logout successful! Redirecting to home page...");
+        setIsLoggedIn(false); // Update state
+        setLoginStatus("Login"); // Reset login status
+        setModalOpen(false); // Close the modal after logout
+        // navigate('/'); // Redirect to home page or perform any other action
+        // console.log("Logout successful");
+     };
+
+     useEffect(() => {
+        const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
+        setIsLoggedIn(loggedInStatus); // Update state based on local storage
+        setLoginStatus(loggedInStatus ? "Logout" : "Login"); // Set login status text
+        
+    }, []);
+    // console.log("isLoggedIn:", isLoggedIn);
+    // console.log("LoginStatus:", LoginStatus);
+
     return (
         <div>
+            <Toaster position="top-center" reverseOrder={false} />
             {/* Navbar */}
             <div className="fixed top-0 z-50 w-full bg-green-600 shadow-md">
                 {/* Mobile View */}
@@ -70,9 +117,14 @@ const MainPageNav = () => {
                         >
                             Contact
                         </HashLink>
-                           {!isLoggedIn && (
+                           {!isLoggedIn ? (
                                 <Button asChild>
-                                    <p className="cursor-pointer" onClick={() => setModalOpen(true)}>Login</p>
+                                    <p className="cursor-pointer" onClick={() => setModalOpen(true)}>{LoginStatus}</p>
+                                </Button>
+                            )
+                        : (
+                                <Button asChild>
+                                    <p className="cursor-pointer" onClick={handleLogout}>{LoginStatus}</p>
                                 </Button>
                             )}
                     </div>
@@ -80,7 +132,7 @@ const MainPageNav = () => {
             </div>
             {/* Menu Modal */}
             {menuModal && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10 ">
                     <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative text-center">
                         <button
                             onClick={() => setMenuModal(false)}
@@ -113,7 +165,7 @@ const MainPageNav = () => {
                             >
                                 Contact
                             </HashLink>
-                           {!isLoggedIn && (
+                           {!isLoggedIn ? (
                                 <Button asChild>
                                     <p
                                         className="cursor-pointer"
@@ -122,7 +174,20 @@ const MainPageNav = () => {
                                             setModalOpen(true);
                                         }}
                                     >
-                                        Login
+                                        {LoginStatus}
+                                    </p>
+                                </Button>
+                            )
+                        :
+                               ( <Button asChild>
+                                    <p
+                                        className="cursor-pointer"
+                                        onClick={() => {
+                                            setMenuModal(false);
+                                            handleLogout();
+                                        }}
+                                    >
+                                        {LoginStatus}
                                     </p>
                                 </Button>
                             )}

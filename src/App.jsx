@@ -17,6 +17,7 @@ import Register5 from './pages/event5/Register5'
 import ContactForm from './database/ContactForm'
 import Payment from './payment/Payment'
 import AdminDashboard from './admin/AdminDashboard'
+import PrivateRoute from './admin/PrivateRoute'
 
 function App() {
 
@@ -40,7 +41,14 @@ function App() {
         <Route path='*' element={<LandingPage/>} />
         <Route path='/contactform' element={<ContactForm/>} />
         <Route path='/payment' element={<Payment/>} />
-        <Route path='/admin' element={<AdminDashboard/>} />
+        <Route
+                    path="/admin"
+                    element={
+                        <PrivateRoute>
+                            <AdminDashboard />
+                        </PrivateRoute>
+                    }
+                />
       </Routes>
      </HashRouter>
     </>
