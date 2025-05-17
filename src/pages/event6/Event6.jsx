@@ -13,13 +13,14 @@ import StarBorder from "../StarBorder";
 import { HashLink } from "react-router-hash-link";
 import EventDetails6 from "./EventDetails6";
 import Register6 from "./Register6";
+import DynamicEventForm from "../../database/DynamicEventForm"
 
 
 const Event6 = () => {
   return (
     <div>
         <MainPageNav />
-        <body>
+        <body className="bg-green-100/50">
         <div className="hero py-12 grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:px-32 bg-gradient-to-r from-green-600 via-green-500 to-green-400 text-white font-semibold mt-20">
                     <div className="textarea">
                         <h1 className="text-6xl">21 Days </h1>
@@ -86,8 +87,9 @@ const Event6 = () => {
                     </div>
                 </div>
                 <EventDetails6/>
+                <DynamicEventForm eventId="Transformation_Event"    />
                 {/* <Reg/> */}
-                <Register6/>
+                {/* <Register6/> */}
             <Contact/>
             <Footer/>
         </body>

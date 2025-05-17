@@ -1,88 +1,181 @@
-import logo from '../assets/logo.png'
-import { CiMenuBurger } from "react-icons/ci";
-import {
-    Dialog,
-    DialogContent,
-    DialogTitle,
-    DialogTrigger,
-} from "@/components/ui/dialog";
+import logo from '../assets/logo.png';
+import { TfiAlignJustify } from "react-icons/tfi"
 import { HashLink } from "react-router-hash-link";
-import { Input } from "@/components/ui/input";
-
+import { Button } from "@/components/ui/button";
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
 
 const MainPageNav = () => {
-  return (
-    <div>
-        {/* Navbar */}
-        <div className="fixed top-0 z-50 backdrop:blur right-0 left-0">
+    const [modalOpen, setModalOpen] = useState(false);
+    const [menuModal,setMenuModal] = useState(false);
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const [showPassword, setShowPassword] = useState(false);
+    const [isLoggedIn, setIsLoggedIn] = useState(false);
+    const navigate = useNavigate();
+    const handleLogin = () => {
+         // Prevent default form submission
+        //  console.log(email,password);
+        if(email == "activeforever00@gmail.com" && password == "1528@kadma") {
+            // console.log("Login successful");
+            setIsLoggedIn(true);
+            // Redirect to admin dashboard or perform any other action
+            navigate('/admin'); // Replace with your admin dashboard URL
+        }
+        else{
+            alert("Please try Again");
+        }
+                // console.log("Login button clicked");
+        setModalOpen(false); // Close the modal after login
+    };
+
+    return (
+        <div>
+            {/* Navbar */}
+            <div className="fixed top-0 z-50 w-full bg-green-600 shadow-md">
                 {/* Mobile View */}
-                <div className="mobile md:hidden flex justify-between p-4 bg-green-600">
-                    <Dialog>
-                        <div className="text-lg font-bold text-white">
-                            <a href="#">
-                                <img src={logo} alt="logo" className="h-14" />
-                            </a>
-                        </div>
-                        <DialogTrigger asChild>
-                            <CiMenuBurger className="text-3xl text-white" />
-                        </DialogTrigger>
-                        <DialogContent className="sm:max-w-[425px] bg-white text-green-600 top-44 py-20">
-                            <DialogTitle className="text-2xl font-semibold text-center">
-                                <HashLink smooth to="/about" className="hover:text-green-800">
-                                    About
-                                </HashLink>
-                            </DialogTitle>
-                            <DialogTitle className="text-2xl font-semibold text-center">
-                                <HashLink smooth to="/contact" className="hover:text-green-800">
-                                    Contact
-                                </HashLink>
-                            </DialogTitle>
-                        </DialogContent>
-                    </Dialog>
+                <div className="md:hidden flex justify-between items-center p-4">
+                    <div className="text-lg font-bold text-white">
+                        <a href="#">
+                            <img src={logo} alt="logo" className="h-14" />
+                        </a>
+                    </div>
+                    <TfiAlignJustify className="text-3xl text-white" onClick={()=>setMenuModal(true)}/>               
                 </div>
 
                 {/* Desktop View */}
-                <div className="nav hidden md:block">
-                    <nav className="flex items-center justify-around bg-green-600 py-4 shadow-md gap-48">
-                        {/* Left Section: Logo */}
-                        <div className="text-lg font-bold text-white">
-                            <a href="#">
-                                <img src={logo} alt="logo" className="h-14" />
-                            </a>
-                        </div>
+                <div className="hidden md:flex items-center justify-between px-16 py-4">
+                    {/* Logo */}
+                    <div className="text-lg font-bold text-white">
+                        <a href="#">
+                            <img src={logo} alt="logo" className="h-14" />
+                        </a>
+                    </div>
 
-                        {/* Center Section */}
-                        <div className="hidden md:block">
-                            <Input
-                                type="text"
-                                placeholder="Search events"
-                                className="w-64 bg-white text-green-600 border border-green-300 placeholder-green-400"
-                            />
-                        </div>
-
-                        {/* Right Section: Navigation Links */}
-                        <div className="flex space-x-6">
+                    {/* Nav Links */}
+                    <div className="flex items-center space-x-8">
+                        <HashLink
+                            smooth
+                            to="/about"
+                            className="text-white text-lg hover:text-green-200 font-semibold"
+                        >
+                            About
+                        </HashLink>
+                        <HashLink
+                            smooth
+                            to="/contact"
+                            className="text-white text-lg hover:text-green-200 font-semibold"
+                        >
+                            Contact
+                        </HashLink>
+                           {!isLoggedIn && (
+                                <Button asChild>
+                                    <p className="cursor-pointer" onClick={() => setModalOpen(true)}>Login</p>
+                                </Button>
+                            )}
+                    </div>
+                </div>
+            </div>
+            {/* Menu Modal */}
+            {menuModal && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+                    <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative text-center">
+                        <button
+                            onClick={() => setMenuModal(false)}
+                            className="absolute top-2 right-2 text-black hover:text-gray-800 text-xl"
+                        >
+                            &times;
+                        </button>
+                        <div className="flex flex-col space-y-4">
+                            <HashLink
+                                smooth
+                                to="/"
+                                className="text-lg text-gray-800 hover:text-green-600 font-semibold"
+                                onClick={() => setMenuModal(false)}
+                            >
+                                Home
+                            </HashLink>
                             <HashLink
                                 smooth
                                 to="/about"
-                                className="text-white text-lg hover:text-green-200 font-semibold"
+                                className="text-lg text-gray-800 hover:text-green-600 font-semibold"
+                                onClick={() => setMenuModal(false)}
                             >
                                 About
                             </HashLink>
                             <HashLink
                                 smooth
                                 to="/contact"
-                                className="text-white text-lg hover:text-green-200 font-semibold"
+                                className="text-lg text-gray-800 hover:text-green-600 font-semibold"
+                                onClick={() => setMenuModal(false)}
                             >
                                 Contact
                             </HashLink>
+                           {!isLoggedIn && (
+                                <Button asChild>
+                                    <p
+                                        className="cursor-pointer"
+                                        onClick={() => {
+                                            setMenuModal(false);
+                                            setModalOpen(true);
+                                        }}
+                                    >
+                                        Login
+                                    </p>
+                                </Button>
+                            )}
                         </div>
-                    </nav>
+                    </div>
                 </div>
-            </div>
-    </div>
-  )
-}
+            )}
 
-export default MainPageNav
+            {/* Login Modal */}
+            {modalOpen && (
+                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
+                    <div className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
+                        <button
+                            onClick={() => setModalOpen(false)}
+                            className="absolute top-2 right-2 text-black hover:text-gray-800 text-xl"
+                        >
+                            &times;
+                        </button>
+                        <h2 className="text-xl font-semibold mb-4">Login</h2>
+                        <div>
+                        <div className="mb-4">
+                                <label className="block text-gray-700 mb-2">Email</label>
+                                <input
+                                    type="email"
+                                    className="w-full border border-gray-300 p-2 rounded"
+                                    onChange={(e) => setEmail(e.target.value)}
+                                />
+                            </div>
+                            <div className="mb-4 relative">
+                                <label className="block text-gray-700 mb-2">Password</label>
+                                <input
+                                     type={showPassword ? "text" : "password"}
+                                    className="w-full border border-gray-300 p-2 rounded"
+                                    onChange={(e) => setPassword(e.target.value)}
+                                />
+                                 <button
+                                    type="button"
+                                    onClick={() => setShowPassword(!showPassword)}
+                                    className="absolute bottom-3 right-5  text-gray-500"
+                                >
+                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
+
+                                </button>
+                            </div>
+                            <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded w-full" onClick={handleLogin}>
+                                Login
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default MainPageNav;

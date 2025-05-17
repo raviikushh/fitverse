@@ -14,6 +14,9 @@ import Event5 from './pages/event5/Event5'
 import Event6 from './pages/event6/Event6'
 import Registration from './pages/event4/Registration'
 import Register5 from './pages/event5/Register5'
+import ContactForm from './database/ContactForm'
+import Payment from './payment/payment'
+import AdminDashboard from './admin/AdminDashboard'
 
 function App() {
 
@@ -35,6 +38,9 @@ function App() {
         <Route path='/register4' element={<Registration/>} />
         <Route path='/register5' element={<Register5/>} />
         <Route path='*' element={<LandingPage/>} />
+        <Route path='/contactform' element={<ContactForm/>} />
+        <Route path='/payment' element={<Payment/>} />
+        <Route path='/admin' element={<AdminDashboard/>} />
       </Routes>
      </HashRouter>
     </>
