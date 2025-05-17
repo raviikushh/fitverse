@@ -28,7 +28,7 @@ const MainPageNav = () => {
                     new Promise((resolve) => setTimeout(resolve, 1000)), // Simulate a delay
                  {
                    loading: 'Logging IN...',
-                   success: <p>Logged IN successful!!..</p>,
+                   success: <p>Logged IN successfully!!..</p>,
                  }
                  
                )
@@ -53,7 +53,7 @@ const MainPageNav = () => {
             new Promise((resolve) => setTimeout(resolve, 1000)), // Simulate a delay
          {
            loading: 'Logging OUT...',
-           success: <p>Logged out successful!!..</p>,
+           success: <p>Logged out successfully!!..</p>,
          }
          
        )
