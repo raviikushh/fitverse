@@ -15,7 +15,7 @@ import Event6 from './pages/event6/Event6'
 import Registration from './pages/event4/Registration'
 import Register5 from './pages/event5/Register5'
 import ContactForm from './database/ContactForm'
-import Payment from './payment/payment'
+import Payment from './payment/Payment'
 import AdminDashboard from './admin/AdminDashboard'
 
 function App() {
