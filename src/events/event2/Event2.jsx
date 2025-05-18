@@ -1,7 +1,7 @@
-import Navbar from "../Navbar"
-import BlurText from "../BlurText"
-import Contact from "../Contact"
-import Footer from "../Footer"
+import Navbar from "../event1/Navbar"
+import BlurText from "../../components/BlurText"
+import Contact from "../event1/Contact"
+import Footer from "../../pages/Footer"
 
 const event2 = () => {
     // Event 2

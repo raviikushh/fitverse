@@ -1,18 +1,41 @@
+import React from "react";
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
-import RollingGallery from "./RollingGallery";
 import event_img from '../assets/event_img.jpg'
 import MainPageNav from "./MainPageNav";
 import event3 from '../assets/event3.jpg'
 import event4 from '../assets/event4.jpg'
 import event5 from '../assets/event5.jpg'
 import event6 from '../assets/TRANSFORMATION CHALLENGE-1.jpg'
+ 
+import Autoplay from "embla-carousel-autoplay"
+import { Card, CardContent } from "@/components/ui/card"
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel"
+
+import img1 from '../assets/img1.jpg'
+import img2 from '../assets/img2.jpg'
+import img3 from '../assets/img3.jpg'
+import img4 from '../assets/img4.jpg'
+import img5 from '../assets/img5.jpg'
+// import img_medal from '../assets/img_medal.jpg'
+// import img_last from '../assets/img_last.jpg'
 
 
 
 const MainPage = () => {
     const navigate = useNavigate();
 
+    const plugin = React.useRef(
+        Autoplay({ delay: 2000, stopOnInteraction: true })
+      )
+
+      const images = [img1, img2, img3, img4, img5];
     // Event details
     const event = {
         id: 1,
@@ -26,29 +49,60 @@ const MainPage = () => {
     return (
         <>
             <MainPageNav />
-            <div className="bg-green-100 mt-[20%] md:mt-[4%] pt-10">
+            <div className=" mt-[10%] md:mt-[4%] overflow-hidden">
                 {/* Main Content */}
-                <main className="bg-green-100">
-                    <h1 className="text-center font-extrabold text-5xl md:text-6xl text-green-700 leading-tight tracking-wide mb-4 ">
-                        ActiveForever: <span className="text-green-500">Inspiring Fitness, Empowering Lives</span>.
-                    </h1>
-                    <p className="text-center text-lg md:text-xl text-gray-700 leading-relaxed max-w-2xl mx-auto">
+                <main className="bg-gradient-to-b from-green-100 to-green-200 py-16 px-4">
+                    {/* Carousel Centered */}
+                    <div className="flex justify-center items-center mb-12">
+                        <Carousel
+                        plugins={[plugin.current]}
+                        className="w-full max-w-3xl"
+                        onMouseEnter={plugin.current.stop}
+                        onMouseLeave={plugin.current.reset}
+                        >
+                        <CarouselContent>
+                            {images.map((image, index) => (
+                            <CarouselItem key={index}>
+                                <div className="p-4">
+                                <Card className="rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                                    <CardContent className="p-0">
+                                    <img
+                                        src={image}
+                                        alt={`Slide ${index + 1}`}
+                                        className="w-full h-[400px] md:h-[500px] object-cover"
+                                    />
+                                    </CardContent>
+                                </Card>
+                                </div>
+                            </CarouselItem>
+                            ))}
+                        </CarouselContent>
+                        <CarouselPrevious className="bg-green-600 text-white hover:bg-green-700" />
+                        <CarouselNext className="bg-green-600 text-white hover:bg-green-700" />
+                        </Carousel>
+                    </div>
+
+                    {/* Headline */}
+                    <div className="text-center max-w-4xl mx-auto px-4">
+                        <h1 className="text-4xl md:text-6xl font-extrabold text-green-800 leading-tight tracking-wide mb-4 animate-fade-in-up">
+                        ActiveForever: <span className="text-green-600">Inspiring Fitness, Empowering Lives</span>.
+                        </h1>
+                        <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6 animate-fade-in-up delay-100">
                         Join us for transformative activities, events, and programs designed to keep you moving and thriving!
-                    </p>
-
-                    <RollingGallery autoplay={true} pauseOnHover={true} />
-
+                        </p>
+                        <div className="flex justify-center mt-4">
+                        <a
+                            href="#/xyz"
+                            className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition duration-300"
+                        >
+                            Explore Events
+                        </a>
+                        </div>
+                    </div>
                     
 
-                    <section className="mb-8 px-6 pb-6 py-6 bg-green-200 md:mt-8">
+                    <section className="mb-8 px-6 pb-6 py-6 bg-green-200 md:mt-8" id="xyz">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Upcoming Events</h2>
-
-
-                  
-                        
-
-                         
-
 
                            {/* Event 6 */}
 

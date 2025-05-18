@@ -6,7 +6,7 @@ import {
     DialogTrigger,
 } from "@/components/ui/dialog";
 import { HashLink } from "react-router-hash-link";
-import logo from '../assets/logo.png';
+import logo from '../../assets/logo.png';
 
 const Navbar = () => {
     return (

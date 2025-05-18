@@ -1,15 +1,15 @@
 import { useState, useEffect } from "react";
-import MainPageNav from "../MainPageNav";
-import Contact from "../Contact";
-import Footer from "../Footer";
+import MainPageNav from "../../pages/MainPageNav";
+import Contact from "../event1/Contact";
+import Footer from "../../pages/Footer";
 import { Button } from "@/components/ui/button";
-import BlurText from "../BlurText";
-import ShinyText from "../ShinyText";
-import SpotlightCard from "../SpotlightCard";
+import BlurText from "../../components/BlurText";
+import ShinyText from "../../components/ShinyText";
+import SpotlightCard from "../../components/SpotlightCard";
 import { GrLocation } from "react-icons/gr";
 import { FaRunning } from "react-icons/fa";
 import { IoIosStarOutline } from "react-icons/io";
-import StarBorder from "../StarBorder";
+import StarBorder from "../../components/StarBorder";
 import { HashLink } from "react-router-hash-link";
 import { Category } from "./Category";
 

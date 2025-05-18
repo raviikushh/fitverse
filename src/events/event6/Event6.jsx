@@ -1,33 +1,35 @@
-import MainPageNav from "../MainPageNav";
+import MainPageNav from "../../pages/MainPageNav";
 // import BlurText from "../BlurText"
-import Contact from "../Contact"
-import Footer from "../Footer"
+import Contact from "../event1/Contact"
+import Footer from "../../pages/Footer"
 import { Button } from "@/components/ui/button";
-import BlurText from "../BlurText";
-import ShinyText from "../ShinyText";
-import SpotlightCard from "../SpotlightCard";
+import BlurText from "../../components/BlurText";
+import ShinyText from "../../components/ShinyText";
+import SpotlightCard from "../../components/SpotlightCard";
 import { GrLocation } from "react-icons/gr";
 import { FaRunning } from "react-icons/fa";
 import { IoIosStarOutline } from "react-icons/io";
-import StarBorder from "../StarBorder";
+import StarBorder from "../../components/StarBorder";
 import { HashLink } from "react-router-hash-link";
-import EventDetails from "./EventDetails";
+import EventDetails6 from "./EventDetails6";
+import Register6 from "./Register6";
+import DynamicEventForm from "../../database/DynamicEventForm"
 
 
-const Event4 = () => {
+const Event6 = () => {
   return (
     <div>
         <MainPageNav />
-        <body>
+        <body className="bg-green-100/50">
         <div className="hero py-12 grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:px-32 bg-gradient-to-r from-green-600 via-green-500 to-green-400 text-white font-semibold mt-20">
                     <div className="textarea">
-                        <h1 className="text-6xl">WALKATHON</h1>
+                        <h1 className="text-6xl">21 Days </h1>
                         <BlurText
-                            text="2025 WORLD EARTH DAY"
+                            text="Transformation Challenge"
                             delay={170}
                             animateBy="words"
                             direction="top"
-                            className="text-6xl mb-8 font-semibold text-green-100"
+                            className="text-5xl mb-8 font-semibold text-green-100"
                         />
                         {/* <ShinyText
                             text="Join the most exciting cycling event of the year. Experience the thrill of cycling through scenic routes."
@@ -42,7 +44,7 @@ const Event4 = () => {
                                 color="white"
                                 speed="5s"
                             >
-                                <HashLink smooth to="/event4#register" className="hover:text-green-300">
+                                <HashLink smooth to="/event6#register" className="hover:text-green-300">
                                     Register Now
                                 </HashLink>
                             </StarBorder>
@@ -61,19 +63,19 @@ const Event4 = () => {
                         >
                             <div className="location flex gap-2">
                                 <GrLocation className="text-2xl text-green-300" />
-                                <h2>Jamshedpur</h2>
+                                <h2>Online Zoom Calll</h2>
                             </div>
                             <div className="date flex gap-2 mt-2">
                                 <FaRunning className="text-2xl text-green-500" />
-                                <h2>22 April, 2025</h2>
+                                <h2>5-25 May 2025</h2>
                             </div>
                             <div className="multiple flex gap-2 mt-2">
                                 <IoIosStarOutline className="text-2xl text-green-400" />
-                                <h2>5 Km Walkathon </h2>
+                                <h2>Transformation Challenge </h2>
                             </div>
                             <div className="registration bg-green-600 text-white p-2 rounded-lg mt-2 text-lg">
-                                <h2>Gifts for all the participants</h2>
-                                <h2 className="custom-class text-white">Register Now</h2>
+                                <h2>Advanced BMI checkup</h2>
+                                <h2 className="custom-class text-white">₹499 Only</h2>
                                 <ShinyText
                                     text="Limited slots available"
                                     disabled={false}
@@ -84,8 +86,10 @@ const Event4 = () => {
                         </SpotlightCard>
                     </div>
                 </div>
-                <EventDetails/>
+                <EventDetails6/>
+                <DynamicEventForm eventId="Transformation_Event"    />
                 {/* <Reg/> */}
+                {/* <Register6/> */}
             <Contact/>
             <Footer/>
         </body>
@@ -93,4 +97,4 @@ const Event4 = () => {
   )
 }
 
-export default Event4
+export default Event6

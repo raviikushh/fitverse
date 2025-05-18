@@ -1,39 +1,40 @@
+import MainPageNav from "../../pages/MainPageNav";
+// import BlurText from "../BlurText"
+import Contact from "../event1/Contact"
+import Footer from "../../pages/Footer"
 import { Button } from "@/components/ui/button";
-import Navbar from "./Navbar";
-import BlurText from "./BlurText";
-import ShinyText from "./ShinyText";
-import SpotlightCard from "./SpotlightCard";
+import BlurText from "../../components/BlurText";
+import ShinyText from "../../components/ShinyText";
+import SpotlightCard from "../../components/SpotlightCard";
 import { GrLocation } from "react-icons/gr";
 import { FaRunning } from "react-icons/fa";
 import { IoIosStarOutline } from "react-icons/io";
-import StarBorder from "./StarBorder";
-import EventDetails from "./EventDetails";
-import { CategoryCard } from "./CategoryCard";
-import Contact from "./Contact";
-import Footer from "./Footer";
+import StarBorder from "../../components/StarBorder";
 import { HashLink } from "react-router-hash-link";
+import EventDetails from "./EventDetails";
 
-const LandingPage = () => {
-    return (
-        <div>
-            <Navbar />
-            <body>
-                <div className="hero py-12 grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:px-32 bg-gradient-to-r from-green-600 via-green-500 to-green-400 text-white font-semibold">
+
+const Event4 = () => {
+  return (
+    <div>
+        <MainPageNav />
+        <body>
+        <div className="hero py-12 grid grid-cols-1 md:grid-cols-2 gap-4 p-4 md:px-32 bg-gradient-to-r from-green-600 via-green-500 to-green-400 text-white font-semibold mt-20">
                     <div className="textarea">
-                        <h1 className="text-6xl">Cyclathon 2025</h1>
+                        <h1 className="text-6xl">WALKATHON</h1>
                         <BlurText
-                            text="Challenge Your Limits!"
+                            text="2025 WORLD EARTH DAY"
                             delay={170}
                             animateBy="words"
                             direction="top"
                             className="text-6xl mb-8 font-semibold text-green-100"
                         />
-                        <ShinyText
+                        {/* <ShinyText
                             text="Join the most exciting cycling event of the year. Experience the thrill of cycling through scenic routes."
                             disabled={false}
                             speed={6}
                             className="text-white"
-                        />
+                        /> */}
                         <div className="btn flex justify-center items-center mt-4 gap-6">
                             <StarBorder
                                 as="button"
@@ -41,7 +42,7 @@ const LandingPage = () => {
                                 color="white"
                                 speed="5s"
                             >
-                                <HashLink smooth to="/event#register" className="hover:text-green-300">
+                                <HashLink smooth to="/event4#register" className="hover:text-green-300">
                                     Register Now
                                 </HashLink>
                             </StarBorder>
@@ -64,15 +65,15 @@ const LandingPage = () => {
                             </div>
                             <div className="date flex gap-2 mt-2">
                                 <FaRunning className="text-2xl text-green-500" />
-                                <h2>08 feb, 2025</h2>
+                                <h2>22 April, 2025</h2>
                             </div>
                             <div className="multiple flex gap-2 mt-2">
                                 <IoIosStarOutline className="text-2xl text-green-400" />
-                                <h2>Multiple Categories Available</h2>
+                                <h2>5 Km Walkathon </h2>
                             </div>
                             <div className="registration bg-green-600 text-white p-2 rounded-lg mt-2 text-lg">
-                                <h2>Early Bird Registration</h2>
-                                <h2 className="custom-class text-white">₹ 500 onwards</h2>
+                                <h2>Gifts for all the participants</h2>
+                                <h2 className="custom-class text-white">Register Now</h2>
                                 <ShinyText
                                     text="Limited slots available"
                                     disabled={false}
@@ -83,13 +84,13 @@ const LandingPage = () => {
                         </SpotlightCard>
                     </div>
                 </div>
-                <EventDetails />
-                <CategoryCard />
-                <Contact />
-                <Footer />
-            </body>
-        </div>
-    );
-};
+                <EventDetails/>
+                {/* <Reg/> */}
+            <Contact/>
+            <Footer/>
+        </body>
+    </div>
+  )
+}
 
-export default LandingPage;
+export default Event4

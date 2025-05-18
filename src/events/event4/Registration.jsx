@@ -1,7 +1,7 @@
 import { useState } from "react";
 import toast, { Toaster } from "react-hot-toast";
-import MainPageNav from "../MainPageNav";
-import Footer from "../Footer";
+import MainPageNav from "../../pages/MainPageNav";
+import Footer from "../../pages/Footer";
 import RazorpayPaymentForm from "./RazorpayPaymentForm";
 
 const Registration = () => {

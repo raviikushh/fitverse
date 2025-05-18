@@ -1,19 +1,19 @@
 // import { Button } from "@/components/ui/button"
 import './App.css'
 import MainPage from "./pages/MainPage"
-import LandingPage from './pages/LandingPage'
+import LandingPage from './events/event1/LandingPage'
 import { HashRouter, Routes, Route } from 'react-router-dom'
-import ScrollToTop from './pages/ScrollToTop'
-import Register from './pages/Register'
+import ScrollToTop from './components/ScrollToTop'
+import Register from './events/event1/Register'
 import About from './pages/About'
 import MainPageContact from './pages/MainPageContact'
-import Event2 from './pages/event2/Event2'
-import Event3 from './pages/event3/Event3'
-import Event4 from './pages/event4/Event4'
-import Event5 from './pages/event5/Event5'
-import Event6 from './pages/event6/Event6'
-import Registration from './pages/event4/Registration'
-import Register5 from './pages/event5/Register5'
+import Event2 from './events/event2/Event2'
+import Event3 from './events/event3/Event3'
+import Event4 from './events/event4/Event4'
+import Event5 from './events/event5/Event5'
+import Event6 from './events/event6/Event6'
+import Registration from './events/event4/Registration'
+import Register5 from './events/event5/Register5'
 import ContactForm from './database/ContactForm'
 import Payment from './payment/Payment'
 import AdminDashboard from './admin/AdminDashboard'
@@ -38,7 +38,7 @@ function App() {
         <Route path='/event6' element={<Event6/>} />
         <Route path='/register4' element={<Registration/>} />
         <Route path='/register5' element={<Register5/>} />
-        <Route path='*' element={<LandingPage/>} />
+        <Route path='*' element={<MainPage/>} />
         <Route path='/contactform' element={<ContactForm/>} />
         <Route path='/payment' element={<Payment/>} />
         <Route

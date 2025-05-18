@@ -6,13 +6,13 @@ const Footer = () => {
           © {new Date().getFullYear()} Cyclathon. All rights reserved.
         </div>
         <div className="flex space-x-4 mt-4 md:mt-0">
-          <a href="#/event" className="text-green-300 hover:text-white transition duration-300">
+          <a href="" className="text-green-300 hover:text-white transition duration-300">
             Terms of Service
           </a>
-          <a href="#/event" className="text-green-300 hover:text-white transition duration-300">
+          <a href="" className="text-green-300 hover:text-white transition duration-300">
             Privacy Policy
           </a>
-          <a href="#/event" className="text-green-300 hover:text-white transition duration-300">
+          <a href="#/contact" className="text-green-300 hover:text-white transition duration-300">
             Contact Us
           </a>
         </div>

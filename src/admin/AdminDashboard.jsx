@@ -26,7 +26,8 @@ export default function AdminDashboard() {
     <>
     <MainPageNav />
     <div className="p-6 space-y-6 mt-28 overflow-auto">
-      <h2 className="text-2xl font-bold text-center">Admin Dashboard</h2>
+      <div className="">
+      <h2 className="text-2xl font-bold text-center ">Admin Dashboard</h2>
         <div className=" flex justify-center ">
       <select onChange={(e) => setSelectedEvent(e.target.value)} value={selectedEvent} className="border p-2 rounded text-center">
         <option value="" className="">Select Event</option>
@@ -35,7 +36,7 @@ export default function AdminDashboard() {
         ))}
       </select>
         </div>
-
+        </div>
       {submissions.length > 0 && (
         <>
           <CSVLink

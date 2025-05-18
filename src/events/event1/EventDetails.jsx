@@ -1,4 +1,4 @@
-import SpotlightCard from "./SpotlightCard";
+import SpotlightCard from "../../components/SpotlightCard";
 import { GrLocation } from "react-icons/gr";
 import { FaRunning } from "react-icons/fa";
 import { IoIosStar } from "react-icons/io";
