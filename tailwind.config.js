@@ -1,9 +1,14 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
     darkMode: ["class"],
     content: ["./index.html", "./src/**/*.{ts,tsx,js,jsx}"],
   theme: {
   	extend: {
+		fontFamily: {
+			poppins: ['Poppins', 'sans-serif'],
+			inter: ['Inter', 'sans-serif'],
+		  },
       keyframes: {
         shine: {
           '0%': { 'background-position': '100%' },

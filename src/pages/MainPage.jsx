@@ -49,7 +49,7 @@ const MainPage = () => {
     return (
         <>
             <MainPageNav />
-            <div className=" mt-[10%] md:mt-[4%] overflow-hidden">
+            <div className=" mt-[10%] md:mt-[4%] overflow-hidden font-poppins">
                 {/* Main Content */}
                 <main className="bg-gradient-to-b from-green-100 to-green-200 py-16 px-4">
                     {/* Carousel Centered */}
@@ -83,7 +83,7 @@ const MainPage = () => {
                     </div>
 
                     {/* Headline */}
-                    <div className="text-center max-w-4xl mx-auto px-4">
+                    <div className="text-center max-w-4xl mx-auto px-4 ">
                         <h1 className="text-4xl md:text-6xl font-extrabold text-green-800 leading-tight tracking-wide mb-4 animate-fade-in-up">
                         ActiveForever: <span className="text-green-600">Inspiring Fitness, Empowering Lives</span>.
                         </h1>
@@ -93,7 +93,7 @@ const MainPage = () => {
                         <div className="flex justify-center mt-4">
                         <a
                             href="#/xyz"
-                            className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition duration-300"
+                            className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition duration-300 mb-4"
                         >
                             Explore Events
                         </a>
