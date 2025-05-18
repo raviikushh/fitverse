@@ -18,13 +18,13 @@ import {
   CarouselPrevious,
 } from "@/components/ui/carousel"
 
-import img1 from '../assets/img1.jpg'
+import img5 from '../assets/img1.jpg'
 import img2 from '../assets/img2.jpg'
 import img3 from '../assets/img3.jpg'
 import img4 from '../assets/img4.jpg'
-import img5 from '../assets/img5.jpg'
+import img1 from '../assets/img5.jpg'
 // import img_medal from '../assets/img_medal.jpg'
-// import img_last from '../assets/img_last.jpg'
+import img6 from '../assets/img_last.jpg'
 
 
 
@@ -35,7 +35,7 @@ const MainPage = () => {
         Autoplay({ delay: 2000, stopOnInteraction: true })
       )
 
-      const images = [img1, img2, img3, img4, img5];
+      const images = [img1, img2, img3, img4, img5, img6];
     // Event details
     const event = {
         id: 1,
