@@ -17,6 +17,7 @@ export const eventFormFields = {
       { name: "name", label: "Full Name", type: "text" },
       { name: "bloodGroup", label: "Blood Group", type: "select", options: ["A+", "A-", "B+", "O+", "O-", "AB+"] },
       { name: "contact", label: "Contact Number", type: "tel" },
-    ]
+    ],
+    
   };
   
