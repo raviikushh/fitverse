@@ -126,6 +126,12 @@ const MainPage = () => {
                                 >
                                     View Event Details
                                 </Button>
+                                <Button
+                                    className="mt-6 bg-red-600 cursor-not-allowed w-full"
+                                    disabled
+                                >
+                                    Registrations will be closed by 30th May
+                                </Button>
                             </div>
                         </div>
 

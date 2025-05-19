@@ -53,7 +53,7 @@ const EventDetails6 = () => {
                         <h2>One Day Session by Dr. Anjali Lead Coach of Fit Bharat Mission
                         </h2>
                         <h2>
-                          16 Online Yoga Session by Alisha and Ridhi 
+                          21 Online Yoga Session by Alisha, Ridhi and Sonal 
                         </h2>
                         <h2>Generic Diet Chart for All the participants</h2>
                         <h2>Lifestyle Enhancement Session by life Coach Aparajita Apra</h2>
@@ -67,9 +67,9 @@ const EventDetails6 = () => {
                         <h2 className="text-xl font-semibold text-green-900">Important Information</h2>
                     </div>
                     <div className="info flex flex-col gap-2 mt-2 px-8 text-lg text-green-800">
-                        <h2>Event Date: 5th-25th May 2025</h2>
+                        <h2>Event Date: 1st-21st June 2025</h2>
                         <h2>Starts From 6:30 AM to 7:30 am</h2>
-                        <h2></h2>
+                        <h2>Registration Closes on 30th may</h2>
                     </div>
                 </SpotlightCard>
             </div>
