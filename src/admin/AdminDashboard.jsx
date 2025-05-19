@@ -8,19 +8,32 @@ export default function AdminDashboard() {
   const [selectedEvent, setSelectedEvent] = useState("");
   const [submissions, setSubmissions] = useState([]);
 
-  console.log("Admin Dashboard Loaded");
-    console.log("Events:", events);
+  // console.log("Admin Dashboard Loaded");
+  //   console.log("Events:", events);
   useEffect(() => {
     getEventIds().then(setEvents);
   }, []);
 
   useEffect(() => {
     if (selectedEvent) {
-      getSubmissions(selectedEvent).then(setSubmissions);
+      getSubmissions(selectedEvent).then((rawData) => {
+        const processedData = rawData.map((item) => {
+          const newItem = { ...item };
+          for (const key in newItem) {
+            if (typeof newItem[key] === "object" && newItem[key]?.seconds) {
+              // Convert Firestore Timestamp to readable string
+              newItem[key] = new Date(newItem[key].seconds * 1000).toLocaleString();
+            }
+          }
+          return newItem;
+        });
+        setSubmissions(processedData);
+      });
+      
     }
   }, [selectedEvent]);
-  console.log("Submissions:", submissions);
-  console.log("Selected Event:", selectedEvent);
+  // console.log("Submissions:", submissions);
+  // console.log("Selected Event:", selectedEvent);
 
   return (
     <>
