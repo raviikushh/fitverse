@@ -12,7 +12,7 @@ import { IoIosStarOutline } from "react-icons/io";
 import StarBorder from "../../components/StarBorder";
 import { HashLink } from "react-router-hash-link";
 import EventDetails6 from "./EventDetails6";
-import Register6 from "./Register6";
+// import Register6 from "./Register6";
 import DynamicEventForm from "../../database/DynamicEventForm"
 
 

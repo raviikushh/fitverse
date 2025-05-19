@@ -132,7 +132,7 @@ const MainPageNav = () => {
             </div>
             {/* Menu Modal */}
             {menuModal && (
-                <div className="fixed inset-0 flex items-start mt-20 justify-center bg-black bg-opacity-50 z-20 ">
+                <div className="fixed inset-0 flex items-center mt-20 justify-center bg-black bg-opacity-50 z-20 ">
                     <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative text-center h-56">
                         <button
                             onClick={() => setMenuModal(false)}
