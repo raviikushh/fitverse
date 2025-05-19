@@ -18,6 +18,7 @@ import ContactForm from './database/ContactForm'
 import Payment from './payment/Payment'
 import AdminDashboard from './admin/AdminDashboard'
 import PrivateRoute from './admin/PrivateRoute'
+import Thank_you from './pages/Thank_you'
 
 function App() {
 
@@ -41,6 +42,7 @@ function App() {
         <Route path='*' element={<MainPage/>} />
         <Route path='/contactform' element={<ContactForm/>} />
         <Route path='/payment' element={<Payment/>} />
+        <Route path='/thankyou' element={<Thank_you/>} />
         <Route
                     path="/admin"
                     element={

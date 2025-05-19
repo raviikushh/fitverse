@@ -25,6 +25,7 @@ import img4 from '../assets/img4.jpg'
 import img1 from '../assets/img5.jpg'
 // import img_medal from '../assets/img_medal.jpg'
 import img6 from '../assets/img_last.jpg'
+import img7 from '../assets/img7.jpg'
 
 
 
@@ -35,7 +36,7 @@ const MainPage = () => {
         Autoplay({ delay: 2000, stopOnInteraction: true })
       )
 
-      const images = [img1, img2, img3, img4, img5, img6];
+      const images = [img7,img1, img2, img3, img4, img5, img6];
     // Event details
     const event = {
         id: 1,

@@ -31,21 +31,66 @@ export default function DynamicEventForm({ eventId }) {
 
 
 
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     if (!validateForm()) return;
+        
+    //     const eventDoc = doc(db, "eventRegistrations", eventId);
+    //     const regRef = collection(eventDoc, "registrations");
+    //     await addDoc(regRef, formData);
+    //     toast.success("Registration successful! Redirecting to payment...");
+    //     setTimeout(() => {
+    //         navigate("/payment", { state: { eventId } });
+    //     }
+    //         , 2000); // Redirect after 1 seconds
+    //     setFormData({});
+    //     setErrors({});
+    // };
+
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (!validateForm()) return;
-        
-        const eventDoc = doc(db, "eventRegistrations", eventId);
-        const regRef = collection(eventDoc, "registrations");
-        await addDoc(regRef, formData);
-        toast.success("Registration successful! Redirecting to payment...");
-        setTimeout(() => {
-            navigate("/payment", { state: { eventId } });
-        }
-            , 2000); // Redirect after 1 seconds
-        setFormData({});
-        setErrors({});
-    };
+      
+        // Razorpay options
+        const options = {
+          key: "rzp_live_B9n1PDzQiKCbp1", // Replace with your Razorpay Key
+          amount: 59900, // Amount in paisa (₹599)
+          currency: "INR",
+          name: "ActiveForever",
+          description: "Event Registration",
+          image: "/logo.png", // optional
+          prefill: {
+            name: formData.name || "",
+            email: formData.email || "",
+            contact: formData.phone || "",
+          },
+          handler: async function (response) {
+            try {
+              const eventDoc = doc(db, "eventRegistrations", eventId);
+              const regRef = collection(eventDoc, "registrations");
+      
+              await addDoc(regRef, {
+                ...formData,
+                paymentId: response.razorpay_payment_id,
+                createdAt: new Date(),
+              });
+      
+              toast.success("Payment successful! Registration completed.");
+              navigate("/thankyou");
+            } catch (error) {
+              toast.error("Error saving data after payment.");
+              console.error(error);
+            }
+          },
+          theme: {
+            color: "#10B981",
+          },
+        };
+      
+        const rzp = new window.Razorpay(options);
+        rzp.open();
+      };
+      
 
     return (
         <div className="">

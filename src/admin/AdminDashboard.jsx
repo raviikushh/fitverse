@@ -8,8 +8,8 @@ export default function AdminDashboard() {
   const [selectedEvent, setSelectedEvent] = useState("");
   const [submissions, setSubmissions] = useState([]);
 
-//   console.log("Admin Dashboard Loaded");
-    // console.log("Events:", events);
+  console.log("Admin Dashboard Loaded");
+    console.log("Events:", events);
   useEffect(() => {
     getEventIds().then(setEvents);
   }, []);
@@ -19,8 +19,8 @@ export default function AdminDashboard() {
       getSubmissions(selectedEvent).then(setSubmissions);
     }
   }, [selectedEvent]);
-//   console.log("Submissions:", submissions);
-//   console.log("Selected Event:", selectedEvent);
+  console.log("Submissions:", submissions);
+  console.log("Selected Event:", selectedEvent);
 
   return (
     <>
@@ -59,7 +59,16 @@ export default function AdminDashboard() {
               {submissions.map((row) => (
                 <tr key={row.id}>
                   {Object.keys(row).map((key) => (
-                    <td key={key} className="border px-2 py-1">{row[key]}</td>
+                    <td key={key} className="border px-2 py-1">
+                    {
+                      row[key]?.seconds
+                        ? new Date(row[key].seconds * 1000).toLocaleString()
+                        : typeof row[key] === 'object'
+                          ? JSON.stringify(row[key])  // fallback to show something useful for objects
+                          : row[key]
+                    }
+                  </td>
+                  
                   ))}
                 </tr>
               ))}

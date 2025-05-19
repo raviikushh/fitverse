@@ -67,7 +67,7 @@ const Event6 = () => {
                             </div>
                             <div className="date flex gap-2 mt-2">
                                 <FaRunning className="text-2xl text-green-500" />
-                                <h2>5-25 May 2025</h2>
+                                <h2>1-21 June 2025</h2>
                             </div>
                             <div className="multiple flex gap-2 mt-2">
                                 <IoIosStarOutline className="text-2xl text-green-400" />
@@ -75,9 +75,9 @@ const Event6 = () => {
                             </div>
                             <div className="registration bg-green-600 text-white p-2 rounded-lg mt-2 text-lg">
                                 <h2>Advanced BMI checkup</h2>
-                                <h2 className="custom-class text-white">₹499 Only</h2>
+                                <h2 className="custom-class text-white">₹599 Only</h2>
                                 <ShinyText
-                                    text="Limited slots available"
+                                    text="First 100 participants get customised medal hanger "
                                     disabled={false}
                                     speed={5}
                                     className="custom-class text-sm"
