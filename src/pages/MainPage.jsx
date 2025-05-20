@@ -1,4 +1,9 @@
 import React from "react";
+import { events } from "@/mainpage_events/eventData";
+import { splitEvents } from "../mainpage_events/splitEvents";
+import { useMemo } from "react";
+
+
 import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import event_img from '../assets/event_img.jpg'
@@ -7,15 +12,15 @@ import event3 from '../assets/event3.jpg'
 import event4 from '../assets/event4.jpg'
 import event5 from '../assets/event5.jpg'
 import event6 from '../assets/TRANSFORMATION CHALLENGE-1.jpg'
- 
+
 import Autoplay from "embla-carousel-autoplay"
 import { Card, CardContent } from "@/components/ui/card"
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
+    Carousel,
+    CarouselContent,
+    CarouselItem,
+    CarouselNext,
+    CarouselPrevious,
 } from "@/components/ui/carousel"
 
 import img5 from '../assets/img1.jpg'
@@ -31,12 +36,32 @@ import img7 from '../assets/img7.jpg'
 
 const MainPage = () => {
     const navigate = useNavigate();
+    const { upcoming, past } = useMemo(() => splitEvents(events), []);
+
+    const renderCard = (event) => (
+        <div
+            key={event.id}
+            className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer"
+
+        >
+            <img src={event.image} alt={event.title} className="w-full h-48 object-cover" />
+            <div className="p-5">
+                <h3 className="text-xl font-semibold">{event.title}</h3>
+                <p className="text-sm text-gray-600">{event.startDate} - {event.endDate} • {event.mode}</p>
+                <p className="mt-2 text-sm text-gray-700">{event.description}</p>
+                <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
+                    onClick={() => navigate(event.link)}
+                >View Details</button>
+            </div>
+        </div>
+    );
+
 
     const plugin = React.useRef(
         Autoplay({ delay: 2000, stopOnInteraction: true })
-      )
+    )
 
-      const images = [img7,img1, img2, img3, img4, img5, img6];
+    const images = [img7, img1, img2, img3, img4, img5, img6];
     // Event details
     const event = {
         id: 1,
@@ -56,56 +81,63 @@ const MainPage = () => {
                     {/* Carousel Centered */}
                     <div className="flex justify-center items-center mb-12">
                         <Carousel
-                        plugins={[plugin.current]}
-                        className="w-full max-w-3xl"
-                        onMouseEnter={plugin.current.stop}
-                        onMouseLeave={plugin.current.reset}
+                            plugins={[plugin.current]}
+                            className="w-full max-w-3xl"
+                            onMouseEnter={plugin.current.stop}
+                            onMouseLeave={plugin.current.reset}
                         >
-                        <CarouselContent>
-                            {images.map((image, index) => (
-                            <CarouselItem key={index}>
-                                <div className="p-4">
-                                <Card className="rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
-                                    <CardContent className="p-0">
-                                    <img
-                                        src={image}
-                                        alt={`Slide ${index + 1}`}
-                                        className="w-full h-[400px] md:h-[500px] object-cover"
-                                    />
-                                    </CardContent>
-                                </Card>
-                                </div>
-                            </CarouselItem>
-                            ))}
-                        </CarouselContent>
-                        <CarouselPrevious className="bg-green-600 text-white hover:bg-green-700" />
-                        <CarouselNext className="bg-green-600 text-white hover:bg-green-700" />
+                            <CarouselContent>
+                                {images.map((image, index) => (
+                                    <CarouselItem key={index}>
+                                        <div className="p-4">
+                                            <Card className="rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
+                                                <CardContent className="p-0">
+                                                    <img
+                                                        src={image}
+                                                        alt={`Slide ${index + 1}`}
+                                                        className="w-full h-[400px] md:h-[500px] object-cover"
+                                                    />
+                                                </CardContent>
+                                            </Card>
+                                        </div>
+                                    </CarouselItem>
+                                ))}
+                            </CarouselContent>
+                            <CarouselPrevious className="bg-green-600 text-white hover:bg-green-700" />
+                            <CarouselNext className="bg-green-600 text-white hover:bg-green-700" />
                         </Carousel>
                     </div>
 
-                    {/* Headline */}
-                    <div className="text-center max-w-4xl mx-auto px-4 ">
-                        <h1 className="text-4xl md:text-6xl font-extrabold text-green-800 leading-tight tracking-wide mb-4 animate-fade-in-up">
-                        ActiveForever: <span className="text-green-600">Inspiring Fitness, Empowering Lives</span>.
-                        </h1>
-                        <p className="text-lg md:text-xl text-gray-700 leading-relaxed mb-6 animate-fade-in-up delay-100">
-                        Join us for transformative activities, events, and programs designed to keep you moving and thriving!
-                        </p>
-                        <div className="flex justify-center mt-4">
-                        <a
-                            href="#/xyz"
-                            className="bg-green-600 hover:bg-green-700 text-white px-6 py-3 rounded-full text-lg font-semibold transition duration-300 mb-4"
-                        >
-                            Explore Events
-                        </a>
-                        </div>
-                    </div>
-                    
 
-                    <section className="mb-8 px-6 pb-6 py-6 bg-green-200 md:mt-8" id="xyz">
+                    {/* Hero Section */}
+                    <section className="text-center py-20 px-4 bg-white">
+                        <h1 className="text-4xl md:text-5xl font-bold text-green-700">Transform Your Life with Active Forever</h1>
+                        <p className="mt-4 text-lg max-w-2xl mx-auto">Join fitness challenges, track your progress, and become the best version of yourself with our online and offline events.</p>
+                        <button className="mt-6 bg-green-600 text-white px-6 py-3 rounded-full shadow hover:bg-green-700 transition">Browse Events</button>
+                    </section>
+
+
+                    {/* Upcoming Events */}
+                    <section className="py-16 px-6">
+                        <h2 className="text-3xl font-bold text-center text-green-800 mb-10">Upcoming Events</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {upcoming.length > 0 ? upcoming.map(renderCard) : <p className="text-center col-span-full">No upcoming events</p>}
+                        </div>
+                    </section>
+
+                    {/* Past Events */}
+                    <section className="py-16 px-6 bg-gray-100">
+                        <h2 className="text-3xl font-bold text-center text-green-800 mb-10">Past Events</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {past.length > 0 ? past.map(renderCard) : <p className="text-center col-span-full">No past events</p>}
+                        </div>
+                    </section>
+
+
+                    {/* <section className="mb-8 px-6 pb-6 py-6 bg-green-200 md:mt-8" id="xyz">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Upcoming Events</h2>
 
-                           {/* Event 6 */}
+                           
 
                      <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" onClick={() => navigate(`/event6`)}>
                             <img
@@ -136,19 +168,19 @@ const MainPage = () => {
                         </div>
 
                         
-                    </section>
+                    </section> */}
 
 
-{/* -------------------------------------------------- PAST EVENTS ----------------------------------------------------------- */}
-                    
+                    {/* -------------------------------------------------- PAST EVENTS ----------------------------------------------------------- */}
 
-                    <section className="bg-green-300 py-6 px-6">
+
+                    {/* <section className="bg-green-300 py-6 px-6">
                         <h2 className="text-4xl font-extrabold mb-6 text-center text-green-800">Past Events</h2>
 
 
-  {/* Event 5 */}
 
-  <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" >
+
+                        <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" >
                             <img
                                 src={event5}
                                 alt={event}
@@ -177,7 +209,7 @@ const MainPage = () => {
                         </div>
 
 
-                        {/* Event 4 */}
+                       
 
                         <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" onClick={() => navigate(`/event4`)}>
                             <img
@@ -202,7 +234,7 @@ const MainPage = () => {
                         </div>
 
 
-                        {/* Event 3 */}
+                        
                         <div className="bg-white shadow-lg rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-10  flex flex-col md:flex-row" onClick={() => navigate(`/event3`)}>
                             <img
                                 src={event3}
@@ -226,8 +258,8 @@ const MainPage = () => {
 
                         </div>
 
-                        {/* Event 1 */}
-                    
+                   
+
                         <div className="past_events bg-white shadow-lg min-h-96 rounded-md overflow-hidden border max-w-2xl mx-auto cursor-pointer hover:scale-105 transition-all mt-14 flex flex-col  mb-8 p-6 gap-4" onClick={() => navigate(`/event`)}>
                             <h2 className="text-4xl font-extrabold mb-2 text-center text-black mt-2">Cyclathon 2025</h2>
                             <h2 className="text-xl font-semibold text-black text-center ">Challenge Your Limits!</h2>
@@ -241,10 +273,43 @@ const MainPage = () => {
                                 View Event Details
                             </Button>
                         </div>
-                        
+
+                    </section> */}
+                    {/* Why Choose Us */}
+                    <section className="bg-white py-16 px-6">
+                        <h2 className="text-3xl font-bold text-center text-green-800 mb-10">Why Choose Active Forever?</h2>
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                            {[
+                                { title: 'Community Support', icon: '🤝' },
+                                { title: 'Certified Coaches', icon: '🎓' },
+                                { title: 'Real Results', icon: '📈' },
+                                { title: 'Online & Offline Events', icon: '🌐' },
+                            ].map((item) => (
+                                <div key={item.title} className="p-6 bg-green-100 rounded-xl shadow">
+                                    <div className="text-4xl mb-4">{item.icon}</div>
+                                    <h3 className="text-xl font-semibold">{item.title}</h3>
+                                </div>
+                            ))}
+                        </div>
                     </section>
 
 
+                    {/* Testimonials */}
+                    <section className="bg-green-100 py-16 px-6">
+                        <h2 className="text-3xl font-bold text-center text-green-800 mb-10">What Participants Say</h2>
+                        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                            {[
+                                "Best challenge I ever joined! Helped me lose 5kg in 21 days.",
+                                "Super motivating and well-structured.",
+                                "Loved the community support and the live sessions."
+                            ].map((text, i) => (
+                                <div key={i} className="bg-white p-6 rounded-xl shadow">
+                                    <p className="text-gray-700 italic">“{text}”</p>
+                                    <div className="mt-4 font-bold text-green-700">— Participant</div>
+                                </div>
+                            ))}
+                        </div>
+                    </section>
 
                 </main>
 
