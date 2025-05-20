@@ -2,16 +2,9 @@ import React from "react";
 import { events } from "@/mainpage_events/eventData";
 import { splitEvents } from "../mainpage_events/splitEvents";
 import { useMemo } from "react";
-
-
-import { Button } from "@/components/ui/button";
 import { useNavigate } from "react-router-dom";
 import event_img from '../assets/event_img.jpg'
 import MainPageNav from "./MainPageNav";
-import event3 from '../assets/event3.jpg'
-import event4 from '../assets/event4.jpg'
-import event5 from '../assets/event5.jpg'
-import event6 from '../assets/TRANSFORMATION CHALLENGE-1.jpg'
 
 import Autoplay from "embla-carousel-autoplay"
 import { Card, CardContent } from "@/components/ui/card"

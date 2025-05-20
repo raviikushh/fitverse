@@ -47,7 +47,7 @@ export const events = [
       endDate: "2025-06-21",
       mode: "Online Sessions",
       description: "Join us for an unforgettable challenge to kickstart your fitness journey.",
-      image: "/public/images/event6_1.jpg",
+      image: "/images/event6_1.jpg",
       link: "/event6"
     },
     
