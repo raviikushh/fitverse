@@ -45,7 +45,7 @@ const Event6 = () => {
                                 speed="5s"
                             >
                                 <HashLink smooth to="/event6#register" className="hover:text-green-300">
-                                    Register Now
+                                    Register Below👇
                                 </HashLink>
                             </StarBorder>
                             <Button
