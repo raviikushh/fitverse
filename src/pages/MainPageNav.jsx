@@ -20,7 +20,7 @@ const MainPageNav = () => {
     const handleLogin = () => {
          // Prevent default form submission
         //  console.log(email,password);
-        if(email == "activeforever00@gmail" && password == "1528@kadma") {
+        if(email == "activeforever00@gmail.com" && password == "1528@kadma") {
             localStorage.setItem("isLoggedIn", true); // Set login status in local storage
             // console.log("Login successful");
             // toast.success("Login successful! Redirecting to admin dashboard...");
