@@ -53,10 +53,10 @@ export default function DynamicEventForm({ eventId }) {
       e.preventDefault();
       if (!validateForm()) return;
     
-      const amount = 1 * 100; // ₹599 in paise
+      const amount = 599 * 100; // ₹599 in paise
       const currency = "INR";
     
-      const loadingToastId = toast.loading("Creating order...");
+      const loadingToastId = toast.loading("Registering... Please wait");
     
       try {
         // Step 1: Create Order from Backend
