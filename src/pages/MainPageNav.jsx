@@ -81,7 +81,7 @@ const MainPageNav = () => {
         <div>
             <Toaster position="top-center" reverseOrder={false} />
             {/* Navbar */}
-            <div className="fixed top-0 z-10 w-full bg-green-600 shadow-md">
+            <div className="fixed top-0 left-0 w-full bg-green-500 shadow z-50">
                 {/* Mobile View */}
                 <div className="md:hidden flex justify-between items-center p-4">
                     <div className="text-lg font-bold text-white">

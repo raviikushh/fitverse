@@ -34,17 +34,18 @@ const MainPage = () => {
     const renderCard = (event) => (
         <div
             key={event.id}
-            className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition cursor-pointer"
-
+            className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-transform transform hover:scale-105 cursor-pointer"
         >
             <img src={event.image} alt={event.title} className="w-full h-48 object-cover" />
             <div className="p-5">
-                <h3 className="text-xl font-semibold">{event.title}</h3>
+                <h3 className="text-xl font-semibold text-green-800">{event.title}</h3>
                 <p className="text-sm text-gray-600">{event.startDate} - {event.endDate} • {event.mode}</p>
                 <p className="mt-2 text-sm text-gray-700">{event.description}</p>
-                <button className="mt-4 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
-                    onClick={() => navigate(event.link)}
-                >View Details</button>
+                <div className="mt-4 flex flex-col gap-2">
+                    <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition" onClick={() => navigate(event.link)}>
+                        View Details
+                    </button>
+                </div>
             </div>
         </div>
     );
