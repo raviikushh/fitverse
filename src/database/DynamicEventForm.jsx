@@ -53,7 +53,7 @@ export default function DynamicEventForm({ eventId }) {
       e.preventDefault();
       if (!validateForm()) return;
     
-      const amount = 599 * 100; // ₹599 in paise
+      const amount = 1 * 100; // ₹599 in paise
       const currency = "INR";
     
       const loadingToastId = toast.loading("Creating order...");
@@ -73,7 +73,7 @@ export default function DynamicEventForm({ eventId }) {
     
         // Step 2: Launch Razorpay Checkout
         const options = {
-          key: "rzp_test_Z35QzKUpQhqmkf", // ✅ Your Razorpay live key
+          key: "rzp_live_B9n1PDzQiKCbp1", // ✅ Your Razorpay live key
           amount,
           currency,
           name: "ActiveForever",
