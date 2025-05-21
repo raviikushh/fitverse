@@ -3,8 +3,8 @@ import { events } from "@/mainpage_events/eventData";
 import { splitEvents } from "../mainpage_events/splitEvents";
 import { useMemo } from "react";
 import { useNavigate } from "react-router-dom";
-import event_img from '../assets/event_img.jpg'
 import MainPageNav from "./MainPageNav";
+import { motion } from "framer-motion";
 
 import Autoplay from "embla-carousel-autoplay"
 import { Card, CardContent } from "@/components/ui/card"
@@ -32,14 +32,15 @@ const MainPage = () => {
     const { upcoming, past } = useMemo(() => splitEvents(events), []);
 
     const renderCard = (event) => (
-        <div
+        <motion.div
+        whileHover={{ scale: 1.05 }}
             key={event.id}
             className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-transform transform hover:scale-105 cursor-pointer"
         >
             <img src={event.image} alt={event.title} className="w-full h-48 object-cover" />
             <div className="p-5">
                 <h3 className="text-xl font-semibold text-green-800">{event.title}</h3>
-                <p className="text-sm text-gray-600">{event.startDate} - {event.endDate} • {event.mode}</p>
+                <p className="text-sm text-gray-600">{event.startDate} to {event.endDate} • {event.mode}</p>
                 <p className="mt-2 text-sm text-gray-700">{event.description}</p>
                 <div className="mt-4 flex flex-col gap-2">
                     <button className="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition" onClick={() => navigate(event.link)}>
@@ -47,7 +48,7 @@ const MainPage = () => {
                     </button>
                 </div>
             </div>
-        </div>
+        </motion.div>
     );
 
 
@@ -56,15 +57,7 @@ const MainPage = () => {
     )
 
     const images = [img7, img1, img2, img3, img4, img5, img6];
-    // Event details
-    const event = {
-        id: 1,
-        name: "7 Days Transaformation Program",
-        date: "24-30, MARCH 2025",
-        location: "Jamshedpur",
-        description: "Join us for an unforgettable 7 days transformation program.",
-        image: event_img, // Replace with actual image URL
-    };
+    
 
     return (
         <>

@@ -47,49 +47,141 @@ export default function DynamicEventForm({ eventId }) {
     //     setErrors({});
     // };
 
+
+
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        if (!validateForm()) return;
-      
-        // Razorpay options
+      e.preventDefault();
+      if (!validateForm()) return;
+    
+      const amount = 599 * 100; // ₹599 in paise
+      const currency = "INR";
+    
+      const loadingToastId = toast.loading("Creating order...");
+    
+      try {
+        // Step 1: Create Order from Backend
+        const orderRes = await fetch("https://cyclothon.onrender.com/order", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ amount, currency }),
+        });
+    
+        toast.dismiss(loadingToastId);
+        const order = await orderRes.json();
+    
+        // Step 2: Launch Razorpay Checkout
         const options = {
-          key: "rzp_live_B9n1PDzQiKCbp1", // Replace with your Razorpay Key
-          amount: 59900, // Amount in paisa (₹599)
-          currency: "INR",
+          key: "rzp_test_Z35QzKUpQhqmkf", // ✅ Your Razorpay live key
+          amount,
+          currency,
           name: "ActiveForever",
           description: "Event Registration",
-          image: "/logo.png", // optional
+          image: "/logo.png", // ✅ Optional logo (public path)
+          order_id: order.id,
           prefill: {
             name: formData.name || "",
             email: formData.email || "",
             contact: formData.phone || "",
           },
-          handler: async function (response) {
-            try {
-              const eventDoc = doc(db, "eventRegistrations", eventId);
-              const regRef = collection(eventDoc, "registrations");
-      
-              await addDoc(regRef, {
-                ...formData,
-                paymentId: response.razorpay_payment_id,
-                createdAt: new Date(),
-              });
-      
-              toast.success("Payment successful! Registration completed.");
-              navigate("/thankyou");
-            } catch (error) {
-              toast.error("Error saving data after payment.");
-              console.error(error);
-            }
-          },
           theme: {
             color: "#10B981",
           },
+          handler: async function (response) {
+            try {
+              // Step 3: Validate Payment Signature on Backend
+              const validateRes = await fetch("https://cyclothon.onrender.com/order/validate", {
+                method: "POST",
+                headers: {
+                  "Content-Type": "application/json",
+                },
+                body: JSON.stringify(response),
+              });
+    
+              const validateData = await validateRes.json();
+    
+              if (validateData.msg === "success") {
+                // Step 4: Save to Firestore if valid
+                const eventDoc = doc(db, "eventRegistrations", eventId);
+                const regRef = collection(eventDoc, "registrations");
+    
+                await addDoc(regRef, {
+                  ...formData,
+                  paymentId: response.razorpay_payment_id,
+                  createdAt: new Date(),
+                });
+    
+                toast.success("Payment successful! Registration completed.");
+                navigate("/thankyou");
+              } else {
+                toast.error("Payment validation failed.");
+              }
+            } catch (err) {
+              toast.error("Validation failed. Try again.");
+              console.error("Validation error:", err);
+            }
+          },
         };
-      
+    
         const rzp = new window.Razorpay(options);
+        rzp.on("payment.failed", (err) => {
+          toast.error("Payment failed. Try again.");
+          console.error("Razorpay payment failed:", err);
+        });
         rzp.open();
-      };
+      } catch (error) {
+        toast.dismiss(loadingToastId);
+        toast.error("Failed to create Razorpay order.");
+        console.error("Order creation error:", error);
+      }
+    };
+
+    
+
+    // const handleSubmit = async (e) => {
+    //     e.preventDefault();
+    //     if (!validateForm()) return;
+      
+    //     // Razorpay options
+    //     const options = {
+    //       key: "rzp_live_B9n1PDzQiKCbp1", // Replace with your Razorpay Key
+    //       amount: 59900, // Amount in paisa (₹599)
+    //       currency: "INR",
+    //       name: "ActiveForever",
+    //       description: "Event Registration",
+    //       image: "/logo.png", // optional
+    //       prefill: {
+    //         name: formData.name || "",
+    //         email: formData.email || "",
+    //         contact: formData.phone || "",
+    //       },
+    //       handler: async function (response) {
+    //         try {
+    //           const eventDoc = doc(db, "eventRegistrations", eventId);
+    //           const regRef = collection(eventDoc, "registrations");
+      
+    //           await addDoc(regRef, {
+    //             ...formData,
+    //             paymentId: response.razorpay_payment_id,
+    //             createdAt: new Date(),
+    //           });
+      
+    //           toast.success("Payment successful! Registration completed.");
+    //           navigate("/thankyou");
+    //         } catch (error) {
+    //           toast.error("Error saving data after payment.");
+    //           console.error(error);
+    //         }
+    //       },
+    //       theme: {
+    //         color: "#10B981",
+    //       },
+    //     };
+      
+    //     const rzp = new window.Razorpay(options);
+    //     rzp.open();
+    //   };
       
 
     return (

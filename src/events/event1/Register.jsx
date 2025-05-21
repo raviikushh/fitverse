@@ -75,9 +75,9 @@ const Register = () => {
             "image": "https://example.com/your_logo",
             "order_id": order.id, //This is a sample Order ID. Pass the `id` obtained in the response of Step 1
             "handler": async function (response) {
-                console.log(response.razorpay_payment_id);
-                console.log(response.razorpay_order_id);
-                console.log(response.razorpay_signature);
+                // console.log(response.razorpay_payment_id);
+                // console.log(response.razorpay_order_id);
+                // console.log(response.razorpay_signature);
                 // setPaymentId(response.razorpay_payment_id);
 
                 // formData.Payment_Id = response.razorpay_payment_id;

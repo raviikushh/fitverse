@@ -5,7 +5,10 @@ export const splitEvents = (events) => {
     const past = [];
   
     events.forEach(event => {
-      const eventEnd = new Date(event.endDate);
+      // Parse the date in dd-mm-yyyy format
+      const [day, month, year] = event.endDate.split('-').map(Number);
+      const eventEnd = new Date(year, month - 1, day); // Month is 0-indexed in JavaScript
+
       if (eventEnd >= today) {
         upcoming.push(event);
       } else {
@@ -14,5 +17,4 @@ export const splitEvents = (events) => {
     });
   
     return { upcoming, past };
-  };
-  
+};
