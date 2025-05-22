@@ -137,6 +137,7 @@ export default function DynamicEventForm({ eventId }) {
       } catch (error) {
         toast.dismiss(loadingToastId);
         toast.error("Failed to create Razorpay order.");
+        setIsLoading(false); // stop loading
         console.error("Order creation error:", error);
       }
     };
