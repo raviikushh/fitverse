@@ -10,6 +10,8 @@ export default function DynamicEventForm({ eventId }) {
     const fields = eventFormFields[eventId];
     const [formData, setFormData] = useState({});
     const [errors, setErrors] = useState({});
+    const [isLoading, setIsLoading] = useState(false);
+
     const navigate = useNavigate();
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -52,6 +54,7 @@ export default function DynamicEventForm({ eventId }) {
     const handleSubmit = async (e) => {
       e.preventDefault();
       if (!validateForm()) return;
+      setIsLoading(true); // start loading
     
       const amount = 599 * 100; // ₹599 in paise
       const currency = "INR";
@@ -69,6 +72,7 @@ export default function DynamicEventForm({ eventId }) {
         });
     
         toast.dismiss(loadingToastId);
+        setIsLoading(false); // stop loading
         const order = await orderRes.json();
     
         // Step 2: Launch Razorpay Checkout
@@ -228,6 +232,13 @@ export default function DynamicEventForm({ eventId }) {
                     Submit
                 </button>
             </form>
+            {isLoading && (
+  <div className="fixed inset-0 z-50 bg-white bg-opacity-80 flex flex-col items-center justify-center">
+    <img src="/public/images/running.webp" alt="Loading..." className="w-24 h-24" />
+    <p className="mt-4 text-green-700 font-semibold">Processing Payment...</p>
+  </div>
+)}
+
         </div>
     );
 }
