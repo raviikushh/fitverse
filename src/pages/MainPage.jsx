@@ -76,13 +76,13 @@ const MainPage = () => {
                             <CarouselContent>
                                 {images.map((image, index) => (
                                     <CarouselItem key={index}>
-                                        <div className="p-4">
+                                        <div className="p-0">
                                             <Card className="rounded-xl shadow-lg overflow-hidden transition-transform duration-300 hover:scale-105">
                                                 <CardContent className="p-0">
                                                     <img
                                                         src={image}
                                                         alt={`Slide ${index + 1}`}
-                                                        className="w-full h-[400px] md:h-[500px] object-cover"
+                                                        className="w-full h-[200px] md:h-[400px] object-cover"
                                                     />
                                                 </CardContent>
                                             </Card>
