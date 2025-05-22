@@ -234,7 +234,7 @@ export default function DynamicEventForm({ eventId }) {
             </form>
             {isLoading && (
   <div className="fixed inset-0 z-50 bg-white bg-opacity-80 flex flex-col items-center justify-center">
-    <img src="/public/images/running.webp" alt="Loading..." className="w-24 h-24" />
+    <img src="/images/running.webp" alt="Loading..." className="w-24 h-24" />
     <p className="mt-4 text-green-700 font-semibold">Processing Payment...</p>
   </div>
 )}
