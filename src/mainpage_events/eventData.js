@@ -50,5 +50,15 @@ export const events = [
       image: "/images/event6_1.jpg",
       link: "/event6"
     },
+    {
+        id: "event7",
+        title: "Jamshedpur Night Run",
+        startDate: "19-07-2025",
+        endDate: "19-07-2025",
+        mode: "In-Person (Jamshedpur)",
+        description: "Join the Night Run and experience the thrill of running under the stars!",
+        image: "/images/event7.jpg",
+        link: "/event7"
+    }
     
   ];

@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
 
-export default function DynamicEventForm({ eventId }) {
+export default function DynamicEventForm({ eventId, price }) {
     const fields = eventFormFields[eventId];
     const [formData, setFormData] = useState({});
     const [errors, setErrors] = useState({});
@@ -56,7 +56,7 @@ export default function DynamicEventForm({ eventId }) {
       if (!validateForm()) return;
       setIsLoading(true); // start loading
     
-      const amount = 599 * 100; // ₹599 in paise
+      const amount = price * 100; 
       const currency = "INR";
     
       const loadingToastId = toast.loading("Registering... Please wait");
@@ -192,7 +192,7 @@ export default function DynamicEventForm({ eventId }) {
     return (
         <div className="">
             <Toaster position="top-center" reverseOrder={false} />
-            <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-6 bg-green-100 shadow-md rounded-xl space-y-6 mt-32">
+            <form onSubmit={handleSubmit} className="max-w-xl mx-auto p-6 bg-green-100 shadow-md rounded-xl space-y-6 mt-16">
             <h1 className="text-3xl font-bold text-center mb-6 text-green-800">
                      Register Now
                 </h1>
@@ -230,7 +230,7 @@ export default function DynamicEventForm({ eventId }) {
                     type="submit"
                     className="w-full py-2 px-4 bg-green-600 hover:bg-green-700 text-white font-semibold rounded-md shadow transition duration-300"
                 >
-                    Submit
+                    Submit (₹{price})
                 </button>
             </form>
             {isLoading && (

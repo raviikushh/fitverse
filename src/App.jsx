@@ -12,6 +12,7 @@ import Event3 from './events/event3/Event3'
 import Event4 from './events/event4/Event4'
 import Event5 from './events/event5/Event5'
 import Event6 from './events/event6/Event6'
+import Event7 from './events/event7/Event7'
 import Registration from './events/event4/Registration'
 import Register5 from './events/event5/Register5'
 import ContactForm from './database/ContactForm'
@@ -37,6 +38,7 @@ function App() {
         <Route path='/event4' element={<Event4/>} />
         <Route path='/event5' element={<Event5/>} />
         <Route path='/event6' element={<Event6/>} />
+        <Route path='/event7' element={<Event7/>} />
         <Route path='/register4' element={<Registration/>} />
         <Route path='/register5' element={<Register5/>} />
         <Route path='*' element={<MainPage/>} />

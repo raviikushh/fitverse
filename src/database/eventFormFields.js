@@ -13,10 +13,12 @@ export const eventFormFields = {
       { name: "profession", label: "profession", type: "select", options: ["Student", "Self-Employed", "Service", "Others"] },
       { name: "Address", label: "Address", type: "select", options: ["Bistupur", "Kadma", "Sakchi", "Sonari","Telco", "Others"] },
     ],
-    "event7": [
+    "Night_Run": [
       { name: "name", label: "Full Name", type: "text" },
       { name: "bloodGroup", label: "Blood Group", type: "select", options: ["A+", "A-", "B+", "O+", "O-", "AB+"] },
       { name: "contact", label: "Contact Number", type: "tel" },
+      { name: "tshirtSize", label: "T-Shirt Size", type: "select", options: ["S", "M", "L", "XL"] },
+      { name: "Address", label: "Address", type: "select", options: ["Bistupur", "Kadma", "Sakchi", "Sonari","Telco", "Others"] },
     ],
     
   };
