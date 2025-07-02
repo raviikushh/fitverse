@@ -6,12 +6,11 @@ import { useNavigate } from "react-router-dom";
 import toast, { Toaster } from "react-hot-toast";
 
 
-export default function DynamicEventForm({ eventId, price }) {
+export default function DynamicEventForm({ eventId, price, category }) {
     const fields = eventFormFields[eventId];
     const [formData, setFormData] = useState({});
     const [errors, setErrors] = useState({});
     const [isLoading, setIsLoading] = useState(false);
-
     const navigate = useNavigate();
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -112,6 +111,8 @@ export default function DynamicEventForm({ eventId, price }) {
     
                 await addDoc(regRef, {
                   ...formData,
+                  price: price,
+                  category: category,
                   paymentId: response.razorpay_payment_id,
                   createdAt: new Date(),
                 });

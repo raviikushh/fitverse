@@ -122,7 +122,7 @@ const Event7 = () => {
                             </div>
                         )}
                     </div>
-                <DynamicEventForm eventId="Night_Run" price={price}/>
+                <DynamicEventForm eventId="Night_Run" price={price} category={selectedCategory}/>
                 {/* <Reg/> */}
                 {/* <Register6/> */}
             <Contact/>
