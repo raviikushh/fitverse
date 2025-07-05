@@ -127,13 +127,20 @@ const MainPageNav = () => {
                                     <p className="cursor-pointer" onClick={handleLogout}>{LoginStatus}</p>
                                 </Button>
                             )}
+                            {
+                                isLoggedIn && (
+                                    <Button asChild>
+                                        <p className="cursor-pointer" onClick={() => navigate('/admin')}>Admin</p>
+                                    </Button>
+                                )
+                            }
                     </div>
                 </div>
             </div>
             {/* Menu Modal */}
             {menuModal && (
-                <div className="fixed inset-0 flex items-center mt-20 justify-center bg-black bg-opacity-50 z-20 ">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative text-center h-56">
+                <div className="fixed inset-0 flex items-center mt-1 justify-center bg-black bg-opacity-50 z-20 ">
+                    <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative text-center">
                         <button
                             onClick={() => setMenuModal(false)}
                             className="absolute top-2 right-2 text-black hover:text-gray-800 text-xl"
@@ -191,6 +198,16 @@ const MainPageNav = () => {
                                     </p>
                                 </Button>
                             )}
+                                        {
+                                isLoggedIn && (
+                                    <Button asChild>
+                                        <p className="cursor-pointer" onClick={() => {
+                                            setMenuModal(false);
+                                            navigate('/admin');
+                                        }}>Admin</p>
+                                    </Button>
+                                )
+                            }
                         </div>
                     </div>
                 </div>
