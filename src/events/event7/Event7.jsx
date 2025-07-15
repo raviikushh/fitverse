@@ -122,7 +122,7 @@ const Event7 = () => {
                             </div>
                         )}
                     </div>
-                <DynamicEventForm eventId="Night_Run" price={price} category={selectedCategory}/>
+                <DynamicEventForm eventId="Night_Run" price={price} category={selectedCategory} date={'2025-07-14'} message={'Online registration is closed now, for offline registrations please connect on 9304599119 number'}/>
                 {/* <Reg/> */}
                 {/* <Register6/> */}
             <Contact/>
