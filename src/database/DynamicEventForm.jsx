@@ -277,16 +277,21 @@ export default function DynamicEventForm({ eventId, price, category, date, messa
         ))}
 
         <button
-          type="submit"
-          disabled={isFinalHour || isLoading}
-          className={`w-full py-2 px-4 ${
-            isFinalHour
-              ? "bg-gray-400 cursor-not-allowed"
-              : "bg-green-600 hover:bg-green-700"
-          } text-white font-semibold rounded-md shadow transition duration-300`}
-        >
-          {isFinalHour ? "Registration closing soon!" : `Submit (₹${price})`}
-        </button>
+            type="submit"
+            disabled={isRegistrationClosed || isLoading}
+            className={`w-full py-2 px-4 ${
+              isRegistrationClosed || isLoading
+                ? "bg-gray-400 cursor-not-allowed"
+                : "bg-green-600 hover:bg-green-700"
+            } text-white font-semibold rounded-md shadow transition duration-300`}
+          >
+            {isLoading
+              ? "Processing..."
+              : isRegistrationClosed
+              ? "Registration Closed"
+              : `Submit (₹${price})`}
+          </button>
+
       </form>
 
       {isLoading && (
