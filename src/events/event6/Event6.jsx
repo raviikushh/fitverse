@@ -87,7 +87,7 @@ const Event6 = () => {
                     </div>
                 </div>
                 <EventDetails6/>
-                <DynamicEventForm eventId="Transformation_Event"    />
+                <DynamicEventForm eventId="Transformation_Event" price='500' date="2025-06-21" message=""    />
                 {/* <Reg/> */}
                 {/* <Register6/> */}
             <Contact/>
