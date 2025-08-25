@@ -1,4 +1,4 @@
-import logo from '../../public/images/logo.png';
+import logo from '/images/logo.png';
 import { TfiAlignJustify } from "react-icons/tfi"
 import { HashLink } from "react-router-hash-link";
 import { Button } from "@/components/ui/button";
@@ -78,186 +78,202 @@ const MainPageNav = () => {
     // console.log("LoginStatus:", LoginStatus);
 
     return (
-        <div>
-            <Toaster position="top-center" reverseOrder={false} />
-            {/* Navbar */}
-            <div className="fixed top-0 left-0 w-full bg-green-500 shadow z-50">
-                {/* Mobile View */}
-                <div className="md:hidden flex justify-between items-center p-4">
-                    <div className="text-lg font-bold text-white">
-                        <a href="#">
-                            <img src={logo} alt="logo" className="h-14" />
-                        </a>
-                    </div>
-                    <TfiAlignJustify className="text-3xl text-white" onClick={()=>setMenuModal(true)}/>               
-                </div>
+  <div>
+    <Toaster position="top-center" reverseOrder={false} />
 
-                {/* Desktop View */}
-                <div className="hidden md:flex items-center justify-between px-16 py-4">
-                    {/* Logo */}
-                    <div className="text-lg font-bold text-white">
-                        <a href="#">
-                            <img src={logo} alt="logo" className="h-14" />
-                        </a>
-                    </div>
-
-                    {/* Nav Links */}
-                    <div className="flex items-center space-x-8">
-                        <HashLink
-                            smooth
-                            to="/about"
-                            className="text-white text-lg hover:text-green-200 font-semibold font-inter"
-                        >
-                            About
-                        </HashLink>
-                        <HashLink
-                            smooth
-                            to="/contact"
-                            className="text-white text-lg hover:text-green-200 font-semibold font-inter"
-                        >
-                            Contact
-                        </HashLink>
-                           {!isLoggedIn ? (
-                                <Button asChild>
-                                    <p className="cursor-pointer" onClick={() => setModalOpen(true)}>{LoginStatus}</p>
-                                </Button>
-                            )
-                        : (
-                                <Button asChild>
-                                    <p className="cursor-pointer" onClick={handleLogout}>{LoginStatus}</p>
-                                </Button>
-                            )}
-                            {
-                                isLoggedIn && (
-                                    <Button asChild>
-                                        <p className="cursor-pointer" onClick={() => navigate('/admin')}>Admin</p>
-                                    </Button>
-                                )
-                            }
-                    </div>
-                </div>
-            </div>
-            {/* Menu Modal */}
-            {menuModal && (
-                <div className="fixed inset-0 flex items-center mt-1 justify-center bg-black bg-opacity-50 z-20 ">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-80 relative text-center">
-                        <button
-                            onClick={() => setMenuModal(false)}
-                            className="absolute top-2 right-2 text-black hover:text-gray-800 text-xl"
-                        >
-                            &times;
-                        </button>
-                        <div className="flex flex-col space-y-4">
-                            <HashLink
-                                smooth
-                                to="/"
-                                className="text-lg text-gray-800 hover:text-green-600 font-semibold"
-                                onClick={() => setMenuModal(false)}
-                            >
-                                Home
-                            </HashLink>
-                            <HashLink
-                                smooth
-                                to="/about"
-                                className="text-lg text-gray-800 hover:text-green-600 font-semibold"
-                                onClick={() => setMenuModal(false)}
-                            >
-                                About
-                            </HashLink>
-                            <HashLink
-                                smooth
-                                to="/contact"
-                                className="text-lg text-gray-800 hover:text-green-600 font-semibold"
-                                onClick={() => setMenuModal(false)}
-                            >
-                                Contact
-                            </HashLink>
-                           {!isLoggedIn ? (
-                                <Button asChild>
-                                    <p
-                                        className="cursor-pointer"
-                                        onClick={() => {
-                                            setMenuModal(false);
-                                            setModalOpen(true);
-                                        }}
-                                    >
-                                        {LoginStatus}
-                                    </p>
-                                </Button>
-                            )
-                        :
-                               ( <Button asChild>
-                                    <p
-                                        className="cursor-pointer"
-                                        onClick={() => {
-                                            setMenuModal(false);
-                                            handleLogout();
-                                        }}
-                                    >
-                                        {LoginStatus}
-                                    </p>
-                                </Button>
-                            )}
-                                        {
-                                isLoggedIn && (
-                                    <Button asChild>
-                                        <p className="cursor-pointer" onClick={() => {
-                                            setMenuModal(false);
-                                            navigate('/admin');
-                                        }}>Admin</p>
-                                    </Button>
-                                )
-                            }
-                        </div>
-                    </div>
-                </div>
-            )}
-
-            {/* Login Modal */}
-            {modalOpen && (
-                <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-10">
-                    <div className="bg-white p-6 rounded-lg shadow-lg w-96 relative">
-                        <button
-                            onClick={() => setModalOpen(false)}
-                            className="absolute top-2 right-2 text-black hover:text-gray-800 text-xl"
-                        >
-                            &times;
-                        </button>
-                        <h2 className="text-xl font-semibold mb-4">Login</h2>
-                        <div>
-                        <div className="mb-4">
-                                <label className="block text-gray-700 mb-2">Email</label>
-                                <input
-                                    type="email"
-                                    className="w-full border border-gray-300 p-2 rounded"
-                                    onChange={(e) => setEmail(e.target.value)}
-                                />
-                            </div>
-                            <div className="mb-4 relative">
-                                <label className="block text-gray-700 mb-2">Password</label>
-                                <input
-                                     type={showPassword ? "text" : "password"}
-                                    className="w-full border border-gray-300 p-2 rounded"
-                                    onChange={(e) => setPassword(e.target.value)}
-                                />
-                                 <button
-                                    type="button"
-                                    onClick={() => setShowPassword(!showPassword)}
-                                    className="absolute bottom-3 right-5  text-gray-500"
-                                >
-                                    {showPassword ? <FaEyeSlash /> : <FaEye />}
-
-                                </button>
-                            </div>
-                            <button type="submit" className="bg-green-600 text-white px-4 py-2 rounded w-full" onClick={handleLogin}>
-                                Login
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            )}
+    {/* Navbar */}
+    <div className="fixed top-0 left-0 w-full bg-black shadow z-50">
+      {/* Mobile View */}
+      <div className="md:hidden flex justify-between items-center p-4">
+        <div className="text-lg font-bold text-white">
+          <a href="#">
+            <img src={logo} alt="logo" className="h-14" />
+          </a>
         </div>
-    );
+        <TfiAlignJustify
+          className="text-3xl text-orange-500"
+          onClick={() => setMenuModal(true)}
+        />
+      </div>
+
+      {/* Desktop View */}
+      <div className="hidden md:flex items-center justify-between px-16 py-4">
+        {/* Logo */}
+        <div className="text-lg font-bold text-white">
+          <a href="#">
+            <img src={logo} alt="logo" className="h-14" />
+          </a>
+        </div>
+
+        {/* Nav Links */}
+        <div className="flex items-center space-x-8">
+          <HashLink
+            smooth
+            to="/about"
+            className="text-white text-lg hover:text-orange-400 font-semibold font-inter transition-colors"
+          >
+            About
+          </HashLink>
+          <HashLink
+            smooth
+            to="/contact"
+            className="text-white text-lg hover:text-orange-400 font-semibold font-inter transition-colors"
+          >
+            Contact
+          </HashLink>
+
+          {!isLoggedIn ? (
+            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg">
+              <p className="cursor-pointer" onClick={() => setModalOpen(true)}>
+                {LoginStatus}
+              </p>
+            </Button>
+          ) : (
+            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg">
+              <p className="cursor-pointer" onClick={handleLogout}>{LoginStatus}</p>
+            </Button>
+          )}
+
+          {isLoggedIn && (
+            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg">
+              <p className="cursor-pointer" onClick={() => navigate('/admin')}>
+                Admin
+              </p>
+            </Button>
+          )}
+        </div>
+      </div>
+    </div>
+
+    {/* Menu Modal (Mobile) */}
+    {menuModal && (
+      <div className="fixed inset-0 flex items-center mt-1 justify-center bg-black bg-opacity-80 z-20">
+        <div className="bg-black p-6 rounded-lg shadow-lg w-80 relative text-center border border-orange-500">
+          <button
+            onClick={() => setMenuModal(false)}
+            className="absolute top-2 right-2 text-white hover:text-orange-400 text-xl"
+          >
+            &times;
+          </button>
+          <div className="flex flex-col space-y-4">
+            <HashLink
+              smooth
+              to="/"
+              className="text-lg text-white hover:text-orange-400 font-semibold"
+              onClick={() => setMenuModal(false)}
+            >
+              Home
+            </HashLink>
+            <HashLink
+              smooth
+              to="/about"
+              className="text-lg text-white hover:text-orange-400 font-semibold"
+              onClick={() => setMenuModal(false)}
+            >
+              About
+            </HashLink>
+            <HashLink
+              smooth
+              to="/contact"
+              className="text-lg text-white hover:text-orange-400 font-semibold"
+              onClick={() => setMenuModal(false)}
+            >
+              Contact
+            </HashLink>
+
+            {!isLoggedIn ? (
+              <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg">
+                <p
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setMenuModal(false);
+                    setModalOpen(true);
+                  }}
+                >
+                  {LoginStatus}
+                </p>
+              </Button>
+            ) : (
+              <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg">
+                <p
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setMenuModal(false);
+                    handleLogout();
+                  }}
+                >
+                  {LoginStatus}
+                </p>
+              </Button>
+            )}
+
+            {isLoggedIn && (
+              <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg">
+                <p
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setMenuModal(false);
+                    navigate('/admin');
+                  }}
+                >
+                  Admin
+                </p>
+              </Button>
+            )}
+          </div>
+        </div>
+      </div>
+    )}
+
+    {/* Login Modal */}
+    {modalOpen && (
+      <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-80 z-10">
+        <div className="bg-black p-6 rounded-lg shadow-lg w-96 relative border border-orange-500">
+          <button
+            onClick={() => setModalOpen(false)}
+            className="absolute top-2 right-2 text-white hover:text-orange-400 text-xl"
+          >
+            &times;
+          </button>
+          <h2 className="text-xl font-semibold mb-4 text-orange-400">Login</h2>
+          <div>
+            <div className="mb-4">
+              <label className="block text-white mb-2">Email</label>
+              <input
+                type="email"
+                className="w-full border border-gray-600 bg-black text-white p-2 rounded"
+                onChange={(e) => setEmail(e.target.value)}
+              />
+            </div>
+            <div className="mb-4 relative">
+              <label className="block text-white mb-2">Password</label>
+              <input
+                type={showPassword ? "text" : "password"}
+                className="w-full border border-gray-600 bg-black text-white p-2 rounded"
+                onChange={(e) => setPassword(e.target.value)}
+              />
+              <button
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute bottom-3 right-5 text-orange-400"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </button>
+            </div>
+            <button
+              type="submit"
+              className="bg-orange-500 text-white px-4 py-2 rounded w-full hover:bg-orange-600"
+              onClick={handleLogin}
+            >
+              Login
+            </button>
+          </div>
+        </div>
+      </div>
+    )}
+  </div>
+);
+
 };
 
 export default MainPageNav;

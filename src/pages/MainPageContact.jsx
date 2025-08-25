@@ -7,7 +7,7 @@ const MainPageContact = () => {
   const onSubmit = async (event) => {
          event.preventDefault();
          const formData = new FormData(event.target);
-         formData.append("access_key", "c0def3d7-e05c-43ad-a34b-d0dddfe618b2");
+         formData.append("access_key", "5a362b95-d295-4ea4-a4c7-e7b6e7cd2d4c");
  
          const saveFormSubmission = async () => {
              const response = await fetch("https://api.web3forms.com/submit", {
@@ -56,7 +56,7 @@ const MainPageContact = () => {
                  <h1 className="text-4xl font-bold text-center pt-10 text-green-800">
                      Reach to Us
                  </h1>
-                 <h1 className="text-3xl font-bold text-center mb-4 pt-10 text-green-800">Contact No: 6207345066</h1>
+                 <h1 className="text-3xl font-bold text-center mb-4 pt-10 text-green-800">Email : 2041011166.ravikumarkushwaha@gmail.com</h1>
                  <p className="text-center text-green-700 text-lg mb-8">
                      Have questions or need help? Fill out the form below, and we'll get back to you as soon as possible.
                  </p>
