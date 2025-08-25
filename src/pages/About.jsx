@@ -5,80 +5,48 @@ const About = () => {
   return (
     <>
       <MainPageNav />
-      <main className="bg-gray-100 min-h-screen py-12 px-6 mt-20">
-        <section className="max-w-6xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
-          {/* Header */}
-          <div className="bg-gradient-to-r from-green-500 to-green-700 text-white text-center py-10">
-            <h1 className="text-4xl font-bold mb-4">About Fitverse</h1>
-            <p className="text-lg">Your Digital Partner in Fitness & Wellness</p>
-          </div>
+      <main className=" min-h-screen py-16 px-6 mt-20 bg-fitverse-black">
+        <section className="bg-black text-gray-300 py-16">
+  <div className="container mx-auto px-6 text-center">
+    <h2 className="text-4xl font-bold text-orange-500 mb-6">
+      About FitVerse
+    </h2>
+    <p className="max-w-2xl mx-auto text-lg leading-relaxed">
+      At <span className="text-orange-400 font-semibold">FitVerse</span>, we believe fitness is more than a routine — 
+      it’s a lifestyle. Our mission is to create a community that inspires and empowers 
+      people to achieve their health goals while staying motivated and consistent.
+    </p>
 
-          {/* Content */}
-          <div className="p-8 md:p-12">
-            <p className="text-gray-800 text-lg mb-6 leading-relaxed">
-              <span className="font-semibold">Fitverse</span> is a modern
-              fitness and wellness platform designed to connect individuals,
-              trainers, and communities in one place. Built with{" "}
-              <span className="font-semibold">React, Tailwind CSS, Firebase</span>,
-              and other cutting-edge technologies, this project showcases how
-              technology can transform healthy living into a seamless
-              experience.
-            </p>
+    <div className="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+      <div className="bg-zinc-900 rounded-2xl p-6 shadow-lg hover:shadow-orange-500/30 transition duration-300">
+        <h3 className="text-xl font-semibold text-orange-400 mb-3">Our Mission</h3>
+        <p className="text-gray-400">
+          To make fitness fun, accessible, and part of everyday life through
+          innovative challenges, events, and a supportive community.
+        </p>
+      </div>
 
-            {/* Mission */}
-            <h2 className="text-2xl font-bold text-green-600 mb-4">
-              Our Vision
-            </h2>
-            <p className="text-gray-800 text-lg mb-6 leading-relaxed">
-              At Fitverse, our vision is to create a digital space where people
-              can explore events, join fitness programs, and stay motivated on
-              their wellness journey. It’s not just about building muscle or
-              running marathons—it’s about living better, every single day.
-            </p>
+      <div className="bg-zinc-900 rounded-2xl p-6 shadow-lg hover:shadow-orange-500/30 transition duration-300">
+        <h3 className="text-xl font-semibold text-orange-400 mb-3">Our Vision</h3>
+        <p className="text-gray-400">
+          Building a healthier future where people find strength, balance, 
+          and joy in staying active together.
+        </p>
+      </div>
 
-            {/* Features */}
-            <h2 className="text-2xl font-bold text-green-600 mb-4">
-              What This Project Offers
-            </h2>
-            <ul className="list-disc pl-6 space-y-2 text-gray-800">
-              <li>
-                <span className="font-semibold">Event Management:</span>{" "}
-                Browse upcoming and past events with auto-sorting features.
-              </li>
-              <li>
-                <span className="font-semibold">Dynamic Forms:</span>{" "}
-                Event-wise form submissions stored securely in Firebase.
-              </li>
-              <li>
-                <span className="font-semibold">Admin Dashboard:</span>{" "}
-                Manage event data, track participants, and download reports.
-              </li>
-              <li>
-                <span className="font-semibold">Responsive Design:</span>{" "}
-                Fully mobile-friendly and optimized with Tailwind CSS.
-              </li>
-            </ul>
+      <div className="bg-zinc-900 rounded-2xl p-6 shadow-lg hover:shadow-orange-500/30 transition duration-300">
+        <h3 className="text-xl font-semibold text-orange-400 mb-3">Our Community</h3>
+        <p className="text-gray-400">
+          A growing family of fitness enthusiasts who motivate each other 
+          to push limits and celebrate progress.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
 
-            {/* Call to Action */}
-            <div className="mt-10 text-center">
-              <h2 className="text-2xl font-bold text-green-600 mb-4">
-                Why I Built Fitverse
-              </h2>
-              <p className="text-gray-800 text-lg leading-relaxed mb-6">
-                This project demonstrates my ability to design and build
-                full-stack applications that combine{" "}
-                <span className="font-semibold">frontend design</span>,
-                <span className="font-semibold"> backend logic</span>, and{" "}
-                <span className="font-semibold">cloud integration</span>.
-              </p>
-              <p className="text-gray-800 text-lg font-semibold">
-                Fitverse is more than just a fitness app—it&apos;s a showcase of how
-                I bring ideas to life with code.
-              </p>
-            </div>
-          </div>
-        </section>
       </main>
+
       <Footer />
     </>
   );
