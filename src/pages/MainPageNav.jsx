@@ -20,7 +20,7 @@ const MainPageNav = () => {
     const handleLogin = () => {
          // Prevent default form submission
         //  console.log(email,password);
-        if(email == "activeforever00@gmail.com" && password == "1528@kadma") {
+        if(email == "admin" && password == "admin") {
             localStorage.setItem("isLoggedIn", true); // Set login status in local storage
             // console.log("Login successful");
             // toast.success("Login successful! Redirecting to admin dashboard...");
@@ -82,7 +82,7 @@ const MainPageNav = () => {
     <Toaster position="top-center" reverseOrder={false} />
 
     {/* Navbar */}
-    <div className="fixed top-0 left-0 w-full bg-black shadow z-50">
+    <div className="fixed top-0 left-0 w-full bg-transparent backdrop-blur shadow z-50">
       {/* Mobile View */}
       <div className="md:hidden flex justify-between items-center p-4">
         <div className="text-lg font-bold text-white">
@@ -97,7 +97,7 @@ const MainPageNav = () => {
       </div>
 
       {/* Desktop View */}
-      <div className="hidden md:flex items-center justify-between px-16 py-4">
+      <div className="hidden md:flex items-center justify-between px-16 py-4 ">
         {/* Logo */}
         <div className="text-lg font-bold text-white">
           <a href="#">

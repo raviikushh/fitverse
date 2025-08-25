@@ -117,3 +117,7 @@
     @apply bg-background text-foreground;
   }
 }
+
+body {
+  @apply bg-black text-gray-300;
+}
