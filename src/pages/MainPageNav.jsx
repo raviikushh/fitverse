@@ -1,4 +1,4 @@
-import logo from '../assets/logo.png';
+import logo from '../../public/images/logo.png';
 import { TfiAlignJustify } from "react-icons/tfi"
 import { HashLink } from "react-router-hash-link";
 import { Button } from "@/components/ui/button";

@@ -16,14 +16,13 @@ import {
     CarouselPrevious,
 } from "@/components/ui/carousel"
 
-import img5 from '../assets/img1.jpg'
-import img2 from '../assets/img2.jpg'
-import img3 from '../assets/img3.jpg'
-import img4 from '../assets/img4.jpg'
-import img1 from '../assets/img5.jpg'
-// import img_medal from '../assets/img_medal.jpg'
-import img6 from '../assets/img_last.jpg'
-import img7 from '../assets/img7.jpg'
+
+import img1 from '/images/img1.jpg'
+import img2 from '/images/img2.jpg'
+import img3 from '/images/img3.jpg'
+import img4 from '/images/img4.jpg'
+import img5 from '/images/img5.jpg'
+
 
 
 
@@ -56,7 +55,7 @@ const MainPage = () => {
         Autoplay({ delay: 2000, stopOnInteraction: true })
     )
 
-    const images = [img7, img1, img2, img3, img4, img5, img6];
+    const images = [ img1, img2, img3, img4, img5];
     
 
     return (
