@@ -64,7 +64,7 @@ export const events = [
     id: "event7",
     title: "Mindfulness Retreat",
     startDate: "20-08-2025",
-    endDate: "22-08-2025",
+    endDate: "30-08-2025",
     mode: "In-Person (Sample Hills)",
     description: "A 3-day retreat focusing on meditation, breathing, and self-care.",
     image: "/images/event7.jpg",
