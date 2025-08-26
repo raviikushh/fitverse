@@ -215,91 +215,98 @@ export default function DynamicEventForm({ eventId, price, category, date, messa
 
   return (
     <div className="">
-      <Toaster position="top-center" reverseOrder={false} />
-      <form
-        onSubmit={handleSubmit}
-        className="max-w-xl mx-auto p-6 bg-green-100 shadow-md rounded-xl space-y-6 mt-16"
-      >
-        <h1 className="text-3xl font-bold text-center mb-6 text-green-800">
-          Register Now
-        </h1>
+  <Toaster position="top-center" reverseOrder={false} />
+  <form
+    onSubmit={handleSubmit}
+    className="max-w-xl mx-auto p-6 bg-gray-950 shadow-lg rounded-2xl space-y-6 mt-16 border border-gray-800"
+  >
+    <h1 className="text-3xl font-bold text-center mb-6 text-orange-500">
+      Register Now
+    </h1>
 
-        {countdown && (
-            <div className="text-center mb-4">
-              <div className="inline-flex items-center space-x-2 bg-orange-100 px-4 py-2 rounded-full shadow-sm animate-pulse">
-                <svg
-                  className="w-5 h-5 text-red-600"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth={2}
-                  viewBox="0 0 24 24"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
-                  <path strokeLinecap="round" strokeLinejoin="round" d="M12 12a9 9 0 100-18 9 9 0 000 18z" />
-                </svg>
-                <span className="text-red-700 font-semibold">Registration closes in:</span>
-                <span className="bg-gradient-to-r from-red-500 to-orange-500 text-white font-bold px-3 py-1 rounded-md shadow-inner">
-                  {countdown}
-                </span>
-              </div>
-            </div>
-          )}
-
-                       
-        {fields.map((field) => (
-          <div key={field.name}>
-            <label className="block text-gray-700 font-semibold mb-1">{field.label}</label>
-            {field.type === "select" ? (
-              <select
-                name={field.name}
-                value={formData[field.name] || ""}
-                onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors[field.name] ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-green-500`}
-              >
-                <option value="">Select</option>
-                {field.options.map((opt) => (
-                  <option key={opt} value={opt}>{opt}</option>
-                ))}
-              </select>
-            ) : (
-              <input
-                type={field.type}
-                name={field.name}
-                value={formData[field.name] || ""}
-                onChange={handleChange}
-                className={`w-full px-4 py-2 border ${errors[field.name] ? 'border-red-500' : 'border-gray-300'} rounded-md focus:outline-none focus:ring-2 focus:ring-green-500`}
-              />
-            )}
-            {errors[field.name] && (
-              <p className="text-red-500 text-sm mt-1">{errors[field.name]}</p>
-            )}
-          </div>
-        ))}
-
-        <button
-            type="submit"
-            disabled={isRegistrationClosed || isLoading}
-            className={`w-full py-2 px-4 ${
-              isRegistrationClosed || isLoading
-                ? "bg-gray-400 cursor-not-allowed"
-                : "bg-green-600 hover:bg-green-700"
-            } text-white font-semibold rounded-md shadow transition duration-300`}
+    {countdown && (
+      <div className="text-center mb-4">
+        <div className="inline-flex items-center space-x-2 bg-gray-800 px-4 py-2 rounded-full shadow-md animate-pulse">
+          <svg
+            className="w-5 h-5 text-orange-500"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth={2}
+            viewBox="0 0 24 24"
           >
-            {isLoading
-              ? "Processing..."
-              : isRegistrationClosed
-              ? "Registration Closed"
-              : `Submit (₹${price})`}
-          </button>
-
-      </form>
-
-      {isLoading && (
-        <div className="fixed inset-0 z-50 bg-white bg-opacity-80 flex flex-col items-center justify-center">
-          <img src="/images/running.webp" alt="Loading..." className="w-24 h-24" />
-          <p className="mt-4 text-green-700 font-semibold">Processing Payment...</p>
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 6v6l4 2" />
+            <path strokeLinecap="round" strokeLinejoin="round" d="M12 12a9 9 0 100-18 9 9 0 000 18z" />
+          </svg>
+          <span className="text-orange-400 font-semibold">Registration closes in:</span>
+          <span className="bg-gradient-to-r from-orange-600 to-red-600 text-white font-bold px-3 py-1 rounded-md shadow-inner">
+            {countdown}
+          </span>
         </div>
-      )}
+      </div>
+    )}
+
+    {fields.map((field) => (
+      <div key={field.name}>
+        <label className="block text-orange-400 font-semibold mb-1">
+          {field.label}
+        </label>
+        {field.type === "select" ? (
+          <select
+            name={field.name}
+            value={formData[field.name] || ""}
+            onChange={handleChange}
+            className={`w-full px-4 py-2 border ${
+              errors[field.name] ? "border-red-500" : "border-gray-700"
+            } bg-black text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500`}
+          >
+            <option value="">Select</option>
+            {field.options.map((opt) => (
+              <option key={opt} value={opt} className="bg-gray-900 text-white">
+                {opt}
+              </option>
+            ))}
+          </select>
+        ) : (
+          <input
+            type={field.type}
+            name={field.name}
+            value={formData[field.name] || ""}
+            onChange={handleChange}
+            className={`w-full px-4 py-2 border ${
+              errors[field.name] ? "border-red-500" : "border-gray-700"
+            } bg-black text-white rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500`}
+          />
+        )}
+        {errors[field.name] && (
+          <p className="text-red-500 text-sm mt-1">{errors[field.name]}</p>
+        )}
+      </div>
+    ))}
+
+    <button
+      type="submit"
+      disabled={isRegistrationClosed || isLoading}
+      className={`w-full py-2 px-4 ${
+        isRegistrationClosed || isLoading
+          ? "bg-gray-600 cursor-not-allowed"
+          : "bg-gradient-to-r from-orange-600 to-orange-500 hover:from-orange-700 hover:to-orange-600"
+      } text-white font-semibold rounded-md shadow-md transition duration-300`}
+    >
+      {isLoading
+        ? "Processing..."
+        : isRegistrationClosed
+        ? "Registration Closed"
+        : `Submit (₹${price})`}
+    </button>
+  </form>
+
+  {isLoading && (
+    <div className="fixed inset-0 z-50 bg-black bg-opacity-80 flex flex-col items-center justify-center">
+      <img src="/images/running.webp" alt="Loading..." className="w-24 h-24 animate-pulse" />
+      <p className="mt-4 text-orange-400 font-semibold">Processing Payment...</p>
     </div>
+  )}
+</div>
+
   );
 }
