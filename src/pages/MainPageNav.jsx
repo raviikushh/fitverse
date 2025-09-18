@@ -67,7 +67,14 @@ const MainPageNav = () => {
         // navigate('/'); // Redirect to home page or perform any other action
         // console.log("Logout successful");
      };
+      const [scrolled, setScrolled] = useState(false);
+       useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    window.addEventListener("scroll", onScroll);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
 
+  
      useEffect(() => {
         const loggedInStatus = localStorage.getItem("isLoggedIn") === "true";
         setIsLoggedIn(loggedInStatus); // Update state based on local storage
@@ -78,35 +85,42 @@ const MainPageNav = () => {
     // console.log("LoginStatus:", LoginStatus);
 
     return (
-  <div>
+  <div className='p-4'>
     <Toaster position="top-center" reverseOrder={false} />
 
     {/* Navbar */}
-    <div className="fixed top-0 left-0 w-full bg-transparent backdrop-blur shadow z-50">
+  <div className={`fixed top-4 left-1/2 -translate-x-1/2 
+      w-[90%] md:w-[80%] 
+      bg-white/10 backdrop-blur-xl border border-white/20 
+      rounded-2xl z-50 px-8 py-4 flex items-center justify-between 
+      transition-all duration-300 
+      ${scrolled ? "shadow-lg" : "shadow-none"}`}>
       {/* Mobile View */}
-      <div className="md:hidden flex justify-between items-center p-4">
+      <div className="md:hidden flex justify-between items-center p-4 w-full">
         <div className="text-lg font-bold text-white">
           <a href="#">
             <img src={logo} alt="logo" className="h-14" />
           </a>
         </div>
-        <TfiAlignJustify
-          className="text-3xl text-orange-500"
-          onClick={() => setMenuModal(true)}
-        />
+        <div className="menu">
+          <TfiAlignJustify
+            className="text-3xl text-orange-500"
+            onClick={() => setMenuModal(true)}
+          />
+        </div>
       </div>
 
       {/* Desktop View */}
-      <div className="hidden md:flex items-center justify-between px-16 py-4 ">
+      {/* <div className="hidden md:flex items-center justify-between px-16 py-4 "> */}
         {/* Logo */}
-        <div className="text-lg font-bold text-white">
+        <div className="text-lg font-bold text-white hidden md:block">
           <a href="#">
             <img src={logo} alt="logo" className="h-14" />
           </a>
         </div>
 
         {/* Nav Links */}
-        <div className="flex items-center space-x-8">
+        <div className=" items-center space-x-8 hidden md:block">
           <HashLink
             smooth
             to="/about"
@@ -142,7 +156,7 @@ const MainPageNav = () => {
             </Button>
           )}
         </div>
-      </div>
+      {/* </div> */}
     </div>
 
     {/* Menu Modal (Mobile) */}
