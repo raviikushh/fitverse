@@ -92,7 +92,7 @@ const MainPageNav = () => {
   <div className={`fixed top-4 left-1/2 -translate-x-1/2 
       w-[90%] md:w-[80%] 
       bg-white/10 backdrop-blur-xl border border-white/20 
-      rounded-2xl z-50 px-8 py-4 flex items-center justify-between 
+      rounded-2xl z-50 px-4 py-1 md:py-4 flex items-center justify-between 
       transition-all duration-300 
       ${scrolled ? "shadow-lg" : "shadow-none"}`}>
       {/* Mobile View */}
@@ -137,7 +137,7 @@ const MainPageNav = () => {
           </HashLink>
 
           {!isLoggedIn ? (
-            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded-lg">
+            <Button asChild className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg">
               <p className="cursor-pointer" onClick={() => setModalOpen(true)}>
                 {LoginStatus}
               </p>
