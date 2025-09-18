@@ -7,7 +7,7 @@ export const events = [
     endDate: "05-01-2025",
     mode: "In-Person (Sample City)",
     description: "Kick off the year with our community fitness run.",
-    image: "/images/event1.jpg",
+    image: "/images/event1.webp",
     link: "/event1",
   },
   {
@@ -17,7 +17,7 @@ export const events = [
     endDate: "16-02-2025",
     mode: "Online Sessions",
     description: "Relax and recharge with guided yoga and meditation sessions.",
-    image: "/images/event2.jpg",
+    image: "/images/event2.webp",
     link: "/event2",
   },
   {
@@ -27,7 +27,7 @@ export const events = [
     endDate: "23-03-2025",
     mode: "In-Person (Sample City)",
     description: "A full-day wellness fair with workshops, talks, and activities.",
-    image: "/images/event3.jpg",
+    image: "/images/event3.webp",
     link: "/event3",
   },
   {
@@ -37,7 +37,7 @@ export const events = [
     endDate: "10-04-2025",
     mode: "In-Person (Sample City)",
     description: "Walk together for health and community spirit.",
-    image: "/images/event4.jpg",
+    image: "/images/event4.webp",
     link: "/event4",
   },
   {
@@ -47,7 +47,7 @@ export const events = [
     endDate: "30-06-2025",
     mode: "Online & In-Person",
     description: "A 30-day challenge with daily workouts and progress tracking.",
-    image: "/images/event5.jpg",
+    image: "/images/event5.webp",
     link: "/event5",
   },
   {
@@ -57,7 +57,7 @@ export const events = [
     endDate: "12-07-2025",
     mode: "In-Person (Sample City)",
     description: "Dance, sweat, and have fun in this high-energy Zumba event.",
-    image: "/images/event6.jpg",
+    image: "/images/event6.webp",
     link: "/event6",
   },
   {
@@ -67,7 +67,7 @@ export const events = [
     endDate: "30-08-2025",
     mode: "In-Person (Sample Hills)",
     description: "A 3-day retreat focusing on meditation, breathing, and self-care.",
-    image: "/images/event7.jpg",
+    image: "/images/event7.webp",
     link: "/event7",
   },
 ];
