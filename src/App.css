@@ -1,4 +1,6 @@
 *{
   margin: 0;
+  background-attachment: scroll;
+  box-sizing: border-box;
 }
 

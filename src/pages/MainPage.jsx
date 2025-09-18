@@ -9,11 +9,11 @@ import { motion } from "framer-motion";
 import Autoplay from "embla-carousel-autoplay"
 import { Card, CardContent } from "@/components/ui/card"
 import {
-    Carousel,
-    CarouselContent,
-    CarouselItem,
-    CarouselNext,
-    CarouselPrevious,
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
 } from "@/components/ui/carousel"
 
 
@@ -40,8 +40,11 @@ const MainPage = () => {
       <img
         src={event.image}
         alt={event.title}
+        loading="lazy"
+        decoding="async"
         className="w-full h-48 object-cover"
       />
+
       <div className="p-5">
         <h3 className="text-xl font-semibold text-fitverse-orange">
           {event.title}
@@ -93,6 +96,8 @@ const MainPage = () => {
                           <img
                             src={image}
                             alt={`Slide ${index + 1}`}
+                            loading="lazy"
+                            decoding="async"
                             className="w-full h-[200px] md:h-[400px] object-cover"
                           />
                         </CardContent>
