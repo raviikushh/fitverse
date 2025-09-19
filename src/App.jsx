@@ -33,6 +33,7 @@ function App() {
         <Route path='register' element={<Register/>} />
         <Route path='/about' element={<About/>} />
         <Route path='/contact' element={<MainPageContact/>} />
+        <Route path='/event1' element={<LandingPage/>} />
         <Route path='/event2' element={<Event2/>} />
         <Route path='/event3' element={<Event3/>} />
         <Route path='/event4' element={<Event4/>} />

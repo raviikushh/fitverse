@@ -1,7 +1,7 @@
 const StarBorder = ({
   as: Component = "button",
   className = "",
-  color = "white",
+  color = "orange",
   speed = "6s",
   children,
   ...rest
@@ -22,7 +22,7 @@ const StarBorder = ({
           animationDuration: speed,
         }}
       ></div>
-      <div className="relative z-1 bg-gradient-to-r from-green-700 to-green-600 border border-green-400  text-white text-center text-[14px] py-[10px] px-[20px] ">
+      <div className="relative z-1 bg-fitverse-dark border border-orange-400 text-white text-center text-[14px] py-[10px] px-[20px] ">
         {children}
       </div>
     </Component>
