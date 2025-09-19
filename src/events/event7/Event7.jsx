@@ -118,7 +118,7 @@ const Event7 = () => {
     category={selectedCategory}
     date={"2025-08-30"}
     message={
-      "Online registration is closed now, for offline registrations please connect on 9304599119 number"
+      "Online registration is closed now, for offline registrations please reach to venue, jamshedpur"
     }
   />
 

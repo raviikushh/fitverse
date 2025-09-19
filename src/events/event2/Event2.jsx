@@ -140,7 +140,7 @@ const Event2 = () => {
           eventId="event2"
           price={price}
           category={selectedCategory}
-          date={"2025-02-15"}
+          date={"2025-12-15"}
           message={
             "Registrations are closed!."
           }

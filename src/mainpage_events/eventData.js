@@ -13,8 +13,8 @@ export const events = [
   {
     id: "event2",
     title: "Virtual Yoga Weekend",
-    startDate: "15-02-2025",
-    endDate: "16-02-2025",
+    startDate: "15-12-2025",
+    endDate: "16-12-2025",
     mode: "Online Sessions",
     description: "Relax and recharge with guided yoga and meditation sessions.",
     image: "/images/event2.webp",
