@@ -20,6 +20,12 @@ export const eventFormFields = {
       { name: "tshirtSize", label: "T-Shirt Size", type: "select", options: ["XS","S", "M", "L", "XL","XXL"] },
       { name: "Address", label: "Address", type: "select", options: ["Bistupur", "Kadma", "Sakchi", "Sonari","Telco", "Others"] },
     ],
-    
+    "event2": [
+    { name: "name", label: "Full Name", type: "text" },
+    { name: "email", label: "Email Address", type: "email" },
+    { name: "contact", label: "Contact Number", type: "tel" },
+    { name: "experience", label: "Yoga Experience Level", type: "select", options: ["Beginner", "Intermediate", "Advanced"] },
+    { name: "preference", label: "Session Preference", type: "select", options: ["Yoga", "Meditation", "Both"] },
+    ],
   };
   

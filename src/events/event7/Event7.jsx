@@ -1,5 +1,4 @@
 import MainPageNav from "../../pages/MainPageNav";
-// import BlurText from "../BlurText"
 import Contact from "../event1/Contact"
 import Footer from "../../pages/Footer"
 import { Button } from "@/components/ui/button";
@@ -9,7 +8,6 @@ import SpotlightCard from "../../components/SpotlightCard";
 import { GrLocation } from "react-icons/gr";
 import { FaRunning } from "react-icons/fa";
 import { IoIosStarOutline } from "react-icons/io";
-import StarBorder from "../../components/StarBorder";
 import { HashLink } from "react-router-hash-link";
 import EventDetails7 from "./EventDetails7";
 // import Register6 from "./Register6";

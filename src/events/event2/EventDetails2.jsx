@@ -6,7 +6,7 @@ import { IoIosStar } from "react-icons/io";
 // import { useNavigate } from "react-router-dom";
 // import RazorpayPaymentForm from "./RazorpayPaymentForm";
 
-const EventDetails7 = () => {
+const EventDetails2 = () => {
     // const navigate = useNavigate();
 
     return (
@@ -75,4 +75,4 @@ const EventDetails7 = () => {
     );
 };
 
-export default EventDetails7;
+export default EventDetails2;
