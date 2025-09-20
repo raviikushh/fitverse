@@ -36,12 +36,11 @@ const MainPage = () => {
   const navigate = useNavigate();
   const { upcoming, past } = useMemo(() => splitEvents(events), []);
 
-  const [loading, setLoading] = useState(true);
 
-  useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 2800); // 1.5s loading
-    return () => clearTimeout(t);
-  }, []);
+
+ 
+
+
 
   const renderCard = (event, i) => (
     <motion.div
@@ -87,21 +86,6 @@ const MainPage = () => {
 
   const images = [img6, img2, img3, img4, img5, img1];
 
-  if (loading) {
-    return (
-      <motion.div
-        className="flex items-center justify-center h-screen bg-fitverse-black text-fitverse-orange text-3xl font-bold"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        exit={{ opacity: 0 }}
-      >
-      <div className="flex flex-col items-center justify-center min-h-screen bg-black gap-8">
-        <div className="eyes-loader"></div>
-        {/* <div className="loader-circle mt-10"></div> */}
-      </div>
-      </motion.div>
-    );
-  }
 
   return (
     <>

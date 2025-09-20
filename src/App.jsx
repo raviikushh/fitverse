@@ -20,42 +20,44 @@ import Payment from './payment/Payment'
 import AdminDashboard from './admin/AdminDashboard'
 import PrivateRoute from './admin/PrivateRoute'
 import Thank_you from './pages/Thank_you'
+import Loader from './pages/Loader'
 
 function App() {
 
   return (
     <>
-     <HashRouter>
-      <ScrollToTop />
-      <Routes>
-        <Route path='/' element={<MainPage/>}/>
-        <Route path='event' element={<LandingPage/>} />
-        <Route path='register' element={<Register/>} />
-        <Route path='/about' element={<About/>} />
-        <Route path='/contact' element={<MainPageContact/>} />
-        <Route path='/event1' element={<LandingPage/>} />
-        <Route path='/event2' element={<Event2/>} />
-        <Route path='/event3' element={<Event3/>} />
-        <Route path='/event4' element={<Event4/>} />
-        <Route path='/event5' element={<Event5/>} />
-        <Route path='/event6' element={<Event6/>} />
-        <Route path='/event7' element={<Event7/>} />
-        <Route path='/register4' element={<Registration/>} />
-        <Route path='/register5' element={<Register5/>} />
-        <Route path='*' element={<MainPage/>} />
-        <Route path='/contactform' element={<ContactForm/>} />
-        <Route path='/payment' element={<Payment/>} />
-        <Route path='/thankyou' element={<Thank_you/>} />
-        <Route
-                    path="/admin"
-                    element={
-                        <PrivateRoute>
-                            <AdminDashboard />
-                        </PrivateRoute>
-                    }
-                />
-      </Routes>
-     </HashRouter>
+      <Loader />
+      <HashRouter>
+        <ScrollToTop />
+        <Routes>
+          <Route path='/' element={<MainPage />} />
+          <Route path='event' element={<LandingPage />} />
+          <Route path='register' element={<Register />} />
+          <Route path='/about' element={<About />} />
+          <Route path='/contact' element={<MainPageContact />} />
+          <Route path='/event1' element={<LandingPage />} />
+          <Route path='/event2' element={<Event2 />} />
+          <Route path='/event3' element={<Event3 />} />
+          <Route path='/event4' element={<Event4 />} />
+          <Route path='/event5' element={<Event5 />} />
+          <Route path='/event6' element={<Event6 />} />
+          <Route path='/event7' element={<Event7 />} />
+          <Route path='/register4' element={<Registration />} />
+          <Route path='/register5' element={<Register5 />} />
+          <Route path='*' element={<MainPage />} />
+          <Route path='/contactform' element={<ContactForm />} />
+          <Route path='/payment' element={<Payment />} />
+          <Route path='/thankyou' element={<Thank_you />} />
+          <Route
+            path="/admin"
+            element={
+              <PrivateRoute>
+                <AdminDashboard />
+              </PrivateRoute>
+            }
+          />
+        </Routes>
+      </HashRouter>
     </>
   )
 }
