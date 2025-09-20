@@ -39,7 +39,7 @@ const MainPage = () => {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    const t = setTimeout(() => setLoading(false), 1200); // 1.5s loading
+    const t = setTimeout(() => setLoading(false), 2800); // 1.5s loading
     return () => clearTimeout(t);
   }, []);
 
@@ -94,12 +94,11 @@ const MainPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-      ><div className="flex flex-col items-center justify-center min-h-screen bg-black">
-
-      {/* Second Loader */}
-      <div className="loader-circle mt-10"></div>
-      
-    </div>
+      >
+      <div className="flex flex-col items-center justify-center min-h-screen bg-black gap-8">
+        <div className="eyes-loader"></div>
+        <div className="loader-circle mt-10"></div>
+      </div>
       </motion.div>
     );
   }
