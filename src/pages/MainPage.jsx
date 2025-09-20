@@ -94,10 +94,12 @@ const MainPage = () => {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-      ><div className="loading">
-        <img src={loadingImg} alt="Loading..." className="h-20 w-20 mb-4 mx-auto" />
-        <span className="animate-pulse">Loading...</span>
-      </div>
+      ><div className="flex flex-col items-center justify-center min-h-screen bg-black">
+
+      {/* Second Loader */}
+      <div className="loader-circle mt-10"></div>
+      
+    </div>
       </motion.div>
     );
   }
