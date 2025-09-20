@@ -97,7 +97,7 @@ const MainPage = () => {
       >
       <div className="flex flex-col items-center justify-center min-h-screen bg-black gap-8">
         <div className="eyes-loader"></div>
-        <div className="loader-circle mt-10"></div>
+        {/* <div className="loader-circle mt-10"></div> */}
       </div>
       </motion.div>
     );
