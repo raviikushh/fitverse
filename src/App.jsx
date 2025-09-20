@@ -1,4 +1,5 @@
 // import { Button } from "@/components/ui/button"
+import { useState } from "react"
 import './App.css'
 import MainPage from "./pages/MainPage"
 import LandingPage from './events/event1/LandingPage'
@@ -24,9 +25,14 @@ import Loader from './pages/Loader'
 
 function App() {
 
+  const [loadingDone, setLoadingDone] = useState(false);
+
+  if (!loadingDone) {
+    return <Loader onFinish={() => setLoadingDone(true)} />;
+  }
+
   return (
     <>
-      <Loader />
       <HashRouter>
         <ScrollToTop />
         <Routes>

@@ -1,24 +1,27 @@
-// src/components/Loader.jsx
-import  { useEffect, useState } from "react";
-import { motion } from "framer-motion";
+import  { useState, useEffect } from "react";
 import PropTypes from "prop-types";
+import { motion } from "framer-motion";
 
-const Loader = ({ duration = 2800 }) => {
-  const [show, setShow] = useState(() => {
-    // Only show on first load / reload
-    const hasLoaded = sessionStorage.getItem("appLoaded");
-    return !hasLoaded;
-  });
+const Loader = ({ duration = 2800, onFinish }) => {
+  const [show, setShow] = useState(false);
 
   useEffect(() => {
-    if (show) {
+    const isReload = window.performance
+      ? performance.getEntriesByType("navigation")[0].type === "reload"
+      : false;
+
+    if (isReload || !sessionStorage.getItem("appLoaded")) {
+      setShow(true);
       const timer = setTimeout(() => {
         setShow(false);
         sessionStorage.setItem("appLoaded", "true");
+        if (onFinish) onFinish(); // notify App that loading is done
       }, duration);
       return () => clearTimeout(timer);
+    } else {
+      if (onFinish) onFinish();
     }
-  }, [show, duration]);
+  }, [duration, onFinish]);
 
   if (!show) return null;
 
@@ -33,9 +36,9 @@ const Loader = ({ duration = 2800 }) => {
     </motion.div>
   );
 };
-
 Loader.propTypes = {
   duration: PropTypes.number,
+  onFinish: PropTypes.func,
 };
 
 export default Loader;

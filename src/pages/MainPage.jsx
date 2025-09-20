@@ -21,7 +21,6 @@ import img3 from "/images/img3.webp";
 import img4 from "/images/img4.webp";
 import img5 from "/images/img5.webp";
 import img6 from "/images/img6.jpg";
-import loadingImg from "/images/running.webp";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
