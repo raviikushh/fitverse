@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useMemo } from "react";
 import { events } from "@/mainpage_events/eventData";
 import { splitEvents } from "../mainpage_events/splitEvents";
 import { useNavigate } from "react-router-dom";
