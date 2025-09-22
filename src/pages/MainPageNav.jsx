@@ -18,7 +18,6 @@ const MainPageNav = () => {
     const [LoginStatus, setLoginStatus] = useState("Login");
     const navigate = useNavigate();
     const handleLogin = () => {
-         // Prevent default form submission
         //  console.log(email,password);
         if(email == "admin" && password == "admin") {
             localStorage.setItem("isLoggedIn", true); // Set login status in local storage

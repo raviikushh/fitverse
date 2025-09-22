@@ -8,7 +8,6 @@ export default function Payment() {
     const location = useLocation();
     const { eventId } = location.state || {};
     const buttons = buttonFields[eventId] || [];
-    // const [payment,setPayment] = useState(false);
     const[clicked,setClicked] = useState(false);
     console.log(buttons);
     useEffect(() => {
